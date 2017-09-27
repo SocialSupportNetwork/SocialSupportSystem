@@ -47,6 +47,9 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+# Custom thredded gem
+gem 'thredded', :git => 'git://github.com/SocialSupportNetwork/thredded.git'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rspec-rails', groups: %i(test)
@@ -58,7 +61,6 @@ gem 'devise-i18n'
 gem 'rails_email_preview'
 gem 'roadie-rails'
 gem 'plain-david'
-gem 'thredded'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
