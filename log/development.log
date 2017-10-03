@@ -1059,3 +1059,198 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 354ms (Views: 349.8ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/favicon.ico" for 129.81.157.13 at 2017-09-30 21:51:35 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:20:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+request_store (1.3.2) lib/request_store/middleware.rb:9:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 129.81.157.13 at 2017-09-30 21:51:38 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (4.1ms)
+Started GET "/" for 129.81.157.13 at 2017-09-30 21:51:43 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (2.6ms)
+  Rendered shared/_header.html.erb (20.9ms)
+  Rendered shared/_flash_messages.html.erb (1.1ms)
+Completed 200 OK in 146088ms (Views: 146078.8ms | ActiveRecord: 0.0ms)
+
+
+  Rendered shared/_header.html.erb (4.1ms)
+  Rendered shared/_flash_messages.html.erb (0.6ms)
+Completed 200 OK in 141228ms (Views: 141225.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 129.81.157.13 at 2017-09-30 21:57:39 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (5.2ms)
+  Rendered shared/_header.html.erb (7.3ms)
+  Rendered shared/_flash_messages.html.erb (0.5ms)
+Completed 200 OK in 1859ms (Views: 1846.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/forum/" for 129.81.157.13 at 2017-09-30 21:57:45 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  [1m[36mThredded::Topic Load (0.2ms)[0m  [1m[34mSELECT "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."id" = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_breadcrumbs.html.erb (1.3ms)
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/_messageboard.html.erb [1 times] (11.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_notification_preferences.html.erb (4.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_private_topics.html.erb (3.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/search/_form.html.erb (1.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_nav.html.erb (24.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_header.html.erb (27.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_flash_messages.html.erb (0.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-09-30 21:52:46.210479')[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_currently_online.html.erb (133.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_page.html.erb (172.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/index.html.erb within layouts/application (204.5ms)
+  Rendered shared/_header.html.erb (3.5ms)
+Completed 200 OK in 867ms (Views: 556.9ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/forum/general" for 129.81.157.13 at 2017-09-30 21:57:55 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Thredded::TopicsController#index as HTML
+  Parameters: {"messageboard_id"=>"general"}
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."slug" = ? LIMIT ?[0m  [["slug", "general"], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.1ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Topic Load (0.3ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."messageboard_id" = ? AND ("thredded_topics"."moderation_state" != 2) ORDER BY "thredded_topics"."sticky" DESC, "thredded_topics"."last_post_at" DESC, "thredded_topics"."id" DESC LIMIT ? OFFSET ?[0m  [["messageboard_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mThredded::TopicCategory Load (0.1ms)[0m  [1m[34mSELECT "thredded_topic_categories".* FROM "thredded_topic_categories" WHERE "thredded_topic_categories"."topic_id" = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/index.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_breadcrumbs.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/users/_link.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/users/_link.html.erb (0.2ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/_topic.html.erb [1 times] (11.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_notification_preferences.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_private_topics.html.erb (3.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/search/_form.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_nav.html.erb (19.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_header.html.erb (134.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_flash_messages.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = ? AND ("thredded_messageboard_users"."last_seen_at" > '2017-09-30 21:52:55.568500')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_currently_online.html.erb (17.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_page.html.erb (160.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/index.html.erb within layouts/application (190.4ms)
+  Rendered shared/_header.html.erb (4.6ms)
+Completed 200 OK in 703ms (Views: 573.6ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/forum/general/my-first-topic" for 129.81.157.13 at 2017-09-30 21:57:57 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Thredded::TopicsController#show as HTML
+  Parameters: {"messageboard_id"=>"general", "id"=>"my-first-topic"}
+  [1m[36mThredded::Topic Load (0.3ms)[0m  [1m[34mSELECT  "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."slug" = ? ORDER BY "thredded_topics"."id" ASC LIMIT ?[0m  [["slug", "my-first-topic"], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT  "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mThredded::Messageboard Load (0.1ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  [1m[36mThredded::Post Load (0.3ms)[0m  [1m[34mSELECT  "thredded_posts".* FROM "thredded_posts" WHERE "thredded_posts"."postable_id" = ? AND ("thredded_posts"."moderation_state" != 2) ORDER BY "thredded_posts"."created_at" ASC, "thredded_posts"."id" ASC LIMIT ? OFFSET ?[0m  [["postable_id", 1], ["LIMIT", 50], ["OFFSET", 0]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  [1m[36mThredded::Messageboard Load (0.2ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards" WHERE "thredded_messageboards"."id" = 1[0m
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/show.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_breadcrumbs.html.erb (1.0ms)
+  [1m[36mThredded::Category Load (0.2ms)[0m  [1m[34mSELECT "thredded_categories".* FROM "thredded_categories" INNER JOIN "thredded_topic_categories" ON "thredded_categories"."id" = "thredded_topic_categories"."category_id" WHERE "thredded_topic_categories"."topic_id" = ?[0m  [["topic_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/users/_link.html.erb (0.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/_followers.html.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/_header.html.erb (12.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/posts_common/_content.html.erb (389.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/posts/_content.html.erb (392.5ms)
+  Rendered collection of templates [0 / 1 cache hits] (400.7ms)
+  [1m[36mThredded::Post Load (0.3ms)[0m  [1m[34mSELECT  "thredded_posts".* FROM "thredded_posts" WHERE "thredded_posts"."postable_id" = ? ORDER BY "thredded_posts"."created_at" ASC, "thredded_posts"."id" ASC LIMIT ?[0m  [["postable_id", 1], ["LIMIT", 1]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/posts_common/_actions.html.erb (6.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/users/_link.html.erb (0.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/posts_common/_header.html.erb (4.3ms)
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/posts/_post.html.erb [1 times] (18.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_notification_preferences.html.erb (9.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_private_topics.html.erb (4.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/search/_form.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_nav.html.erb (26.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_header.html.erb (28.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_flash_messages.html.erb (0.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "users"."id" = "thredded_user_details"."user_id" INNER JOIN "thredded_messageboard_users" ON "thredded_user_details"."id" = "thredded_messageboard_users"."thredded_user_detail_id" WHERE "thredded_messageboard_users"."thredded_messageboard_id" = ? AND ("thredded_messageboard_users"."last_seen_at" > '2017-09-30 21:52:58.196222')[0m  [["thredded_messageboard_id", 1]]
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_currently_online.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_page.html.erb (40.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/topics/show.html.erb within layouts/application (621.1ms)
+  Rendered shared/_header.html.erb (4.7ms)
+Completed 200 OK in 1210ms (Views: 986.0ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/forum/" for 129.81.157.13 at 2017-09-30 21:58:02 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Thredded::MessageboardsController#index as HTML
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards"."id" AS t0_r0, "thredded_messageboards"."name" AS t0_r1, "thredded_messageboards"."slug" AS t0_r2, "thredded_messageboards"."description" AS t0_r3, "thredded_messageboards"."topics_count" AS t0_r4, "thredded_messageboards"."posts_count" AS t0_r5, "thredded_messageboards"."position" AS t0_r6, "thredded_messageboards"."last_topic_id" AS t0_r7, "thredded_messageboards"."messageboard_group_id" AS t0_r8, "thredded_messageboards"."created_at" AS t0_r9, "thredded_messageboards"."updated_at" AS t0_r10, "thredded_messageboard_groups"."id" AS t1_r0, "thredded_messageboard_groups"."name" AS t1_r1, "thredded_messageboard_groups"."position" AS t1_r2, "thredded_messageboard_groups"."created_at" AS t1_r3, "thredded_messageboard_groups"."updated_at" AS t1_r4 FROM "thredded_messageboards" LEFT OUTER JOIN "thredded_messageboard_groups" ON "thredded_messageboard_groups"."id" = "thredded_messageboards"."messageboard_group_id" ORDER BY coalesce(thredded_messageboard_groups.position, 0) asc, thredded_messageboard_groups.id asc, "thredded_messageboards"."position" ASC, "thredded_messageboards"."id" ASC[0m
+  [1m[36mThredded::Topic Load (0.2ms)[0m  [1m[34mSELECT "thredded_topics".* FROM "thredded_topics" WHERE "thredded_topics"."id" = 1[0m
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 1[0m
+  Rendering /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/index.html.erb within layouts/application
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_breadcrumbs.html.erb (1.2ms)
+  [1m[36mThredded::Messageboard Load (0.3ms)[0m  [1m[34mSELECT "thredded_messageboards".* FROM "thredded_messageboards"[0m
+  Rendered collection of /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/_messageboard.html.erb [1 times] (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_moderation.html.erb (0.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_notification_preferences.html.erb (4.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/nav/_private_topics.html.erb (4.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/search/_form.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_nav.html.erb (21.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_header.html.erb (24.3ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_flash_messages.html.erb (0.6ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" INNER JOIN "thredded_user_details" ON "thredded_user_details"."user_id" = "users"."id" WHERE ("thredded_user_details"."last_seen_at" > '2017-09-30 21:53:03.180439')[0m
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_currently_online.html.erb (2.9ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/shared/_page.html.erb (36.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.4/bundler/gems/thredded-cd62c9213c6e/app/views/thredded/messageboards/index.html.erb within layouts/application (49.5ms)
+  Rendered shared/_header.html.erb (6.0ms)
+Completed 200 OK in 608ms (Views: 453.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 129.81.157.13 at 2017-09-30 21:58:05 +0000
+Cannot render console from 129.81.157.13! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomeController#show as HTML
+  Rendering home/show.html.erb within layouts/application
+  Rendered home/show.html.erb within layouts/application (1.6ms)
+  Rendered shared/_header.html.erb (5.7ms)
+  Rendered shared/_flash_messages.html.erb (0.6ms)
+Completed 200 OK in 616ms (Views: 610.7ms | ActiveRecord: 0.0ms)
+
+
