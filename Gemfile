@@ -49,6 +49,8 @@ end
 
 # Custom thredded gem
 gem 'thredded', :git => 'git://github.com/SocialSupportNetwork/thredded.git'
+# For development locally
+# gem 'thredded', :path => "../thredded"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
