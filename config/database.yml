@@ -25,8 +25,9 @@ test:
 
 
 production:
-  <<: *defaults
+  adapter: postgresql
   encoding: utf8
-  min_messages: WARNING
-  url: <%= ENV['DATABASE_URL'].inspect if ENV['DATABASE_URL'] %>
-  database: <%= 'db/production.sqlite3' unless ENV['DATABASE_URL'] %>
+  database: social_support_system
+  pool: 5
+  username: 
+  password:
