@@ -69,7 +69,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (7.1.4.1)
+    autoprefixer-rails (7.1.5)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -181,6 +181,7 @@ GEM
       nokogiri (~> 1.7)
       sanitize
     orm_adapter (0.5.0)
+    pg (0.21.0)
     plain-david (1.1.0)
       html2markdown
       htmlentities
@@ -334,6 +335,7 @@ DEPENDENCIES
   devise-i18n
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  pg
   plain-david
   puma (~> 3.7)
   rails (~> 5.1.4)
