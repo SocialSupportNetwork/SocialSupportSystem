@@ -1,5 +1,6 @@
 // Monkey patch Turbolinks to render 403, 404 & 500 normally
 // See https://github.com/turbolinks/turbolinks/issues/179
+//Dependency not working- patch
 window.Turbolinks.HttpRequest.prototype.requestLoaded = function() {
   return this.endRequest(function() {
     var code = this.xhr.status;

@@ -8,12 +8,14 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  # Authenticates users- need a new strategy that uses user names instead of email
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   private
 
   # Makes the display_name unique by appending a number to it if necessary.
   # "Gleb" => Gleb 1"
+  # Use this section to make all posts and comments anonymous instead of just adding a number
   def uniq_display_name!
     if display_name.present?
       new_display_name = display_name
