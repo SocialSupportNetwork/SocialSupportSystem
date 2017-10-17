@@ -28,10 +28,16 @@ test:
   <<: *defaults
   database: social-support-system_test
 
-
 production:
   <<: *defaults
   encoding: utf8
+<<<<<<< HEAD
+  database: social_support_system
+  pool: <%= pool_size %>
+  username: 
+  password:
+=======
   min_messages: WARNING
   url: <%= ENV['DATABASE_URL'].inspect if ENV['DATABASE_URL'] %>
   database: <%= 'social-support-system_prod' unless ENV['DATABASE_URL'] %>
+>>>>>>> 14e280ddb215fa614f7ef768a6af5e1cfdbd9d38
