@@ -23,11 +23,10 @@ test:
   <<: *defaults
   database: db/test.sqlite3
 
-
 production:
   adapter: postgresql
   encoding: utf8
   database: social_support_system
-  pool: 5
+  pool: <%= pool_size %>
   username: 
   password:
