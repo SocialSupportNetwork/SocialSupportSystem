@@ -1,3 +1,4 @@
+# Move from sqlite3 without crashing
 <%
 require 'etc'
 pool_size =
