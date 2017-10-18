@@ -1,3 +1,4 @@
+# Guidelines, rules, other pages, etc. tells it where to go
 Rails.application.routes.draw do  
   root to: 'home#show'
   scope path: 'admin' do

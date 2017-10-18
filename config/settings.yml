@@ -1,3 +1,4 @@
+# Domain name
 <% hostname = ENV['APP_HOST'] || 'social-support-system.com' %>
 hostname: <%= hostname.inspect %>
 email_sender: <%= (ENV['SMTP_USER'] || "no-reply@#{hostname}").inspect %>
