@@ -1,5 +1,7 @@
 class User < ApplicationRecord
-  validates :display_name, presence: true, uniqueness: true
+  
+  #ricki changed here from display_name to username
+  validates :username, presence: true, uniqueness: true
   before_validation :uniq_display_name!, on: :create
 
   def display_name=(value)
