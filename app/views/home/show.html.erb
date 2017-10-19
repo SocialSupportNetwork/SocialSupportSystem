@@ -1,12 +1,12 @@
-<h1>Welcome to Crrnt</h1>
+<h1><center>Users Must Sign In To Access Forum</center></h1>
 
-<p>Share your story 
-  <b><%= link_to 'here', thredded.root_path %></b>.
+<p>Member Discussion:
+  <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
 </p>
 
 <% unless Rails.env.production? %>
-  <p>You must log in or sign up to access our forums. You can do that 
-  <%= link_to 'here', new_user_session_path %></b>.</p>
+  <p>Temporary Login Information:</p>
+
   <ul>
     <li>
       <p>Edit this page at <code>app/views/home/show.html.erb</code>.</p>

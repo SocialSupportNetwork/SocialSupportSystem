@@ -1,3 +1,4 @@
+#May get rid of mailer
 require_relative 'boot'
 
 require "rails"
