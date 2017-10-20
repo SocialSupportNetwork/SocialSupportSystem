@@ -12,8 +12,19 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # Authenticates users- need a new strategy that uses user names instead of email
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+        :validatable
   private
+  
+  def will_save_change_to_email?
+  end
+    
+  def email_required?
+    false
+  end
+  
+  def email_changed?
+    false
+  end
 
   # Makes the display_name unique by appending a number to it if necessary.
   # "Gleb" => Gleb 1"
