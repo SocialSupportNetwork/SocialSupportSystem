@@ -43,4 +43,9 @@ class User < ApplicationRecord
       self.display_name = new_display_name
     end
   end
+  
+  def display_name
+    return username
+  end
+  
 end
