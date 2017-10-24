@@ -2,7 +2,7 @@ class User < ApplicationRecord
   
   #ricki changed here from display_name to username
   validates :username, presence: true, uniqueness: true
-  before_validation :uniq_username!, on: :create
+  #before_validation :uniq_username!, on: :create
 
   def display_name=(value)
     #super(value ? value.strip : nil)
@@ -32,6 +32,7 @@ class User < ApplicationRecord
   
   
   # Use this section to make all posts and comments anonymous instead of just adding a number
+  
   def uniq_display_name!
     if display_name.present?
       new_display_name = display_name
