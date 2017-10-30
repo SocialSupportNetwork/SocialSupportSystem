@@ -22,8 +22,12 @@ defaults: &defaults
   encoding: utf8
 
 development:
-  <<: *defaults
-  database: social-support-system_dev
+  adapter: sqlite3
+  min_messages: WARNING
+  pool: <%= pool_size %>
+  timeout: 5000
+  encoding: utf8
+  database: db/development.sqlite3
 
 test:
   <<: *defaults
