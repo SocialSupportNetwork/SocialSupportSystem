@@ -15,44 +15,7 @@ messageboard = Thredded::Messageboard.create!(
 Thredded::TopicForm.new(
     title: 'My first topic',
     content: <<-MARKDOWN,
-Hello **world**! :smile: This first post shows some of the Thredded default post
-formatting functionality.
-
-### Quote
-
-> There is nothing either good or bad, but thinking makes it so.
-
-### Image
-
-![lime-cat](https://cloud.githubusercontent.com/assets/216339/19857777/2be75b1e-9f3c-11e6-9845-f30ceb4308a9.jpg)
-
-### Video
-
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-
-### Table
-
-| x | y | x ⊕ y |
-|---|---|:-----:|
-| 1 | 1 |   0   |
-| 1 | 0 |   1   |
-| 0 | 1 |   1   |
-| 0 | 0 |   0   |
-
-### Code
-
-```ruby
-puts 'Hello world'
-```
-
-Code highlighting can be enabled by installing the
-[Markdown Coderay plugin](https://github.com/thredded/thredded-markdown_coderay).
-
-BBCode support (e.g. [b]bold[/b]) can be enabled by installing the
-[BBCode plugin](https://github.com/thredded/thredded-bbcode).
-
-TeX Math support (e.g. $$\phi$$) can be enabled by installing the
-[KaTeX plugin](https://github.com/thredded/thredded-markdown_katex).
+This is a test post
     MARKDOWN
     user: admin,
     messageboard: messageboard
