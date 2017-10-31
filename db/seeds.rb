@@ -9,11 +9,11 @@ admin = User.create!(
 messageboard = Thredded::Messageboard.create!(
     name: 'General',
     slug: 'general',
-    description: 'A board is not a board without some posts'
+    description: 'Determine severity of specific situations by polling our community'
 )
 
 Thredded::TopicForm.new(
-    title: 'My first topic',
+    title: 'Group Consensus',
     content: <<-MARKDOWN,
 This is a test post
     MARKDOWN
