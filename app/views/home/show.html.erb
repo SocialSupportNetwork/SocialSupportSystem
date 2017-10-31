@@ -1,16 +1,18 @@
 <h1><center>Users Must Sign In To Access Forum</center></h1>
 
-<p>Member Discussion:
+<p><center>Member Discussion:
   <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
-</p>
+</center></p>
 
 <% unless Rails.env.production? %>
-  <p>Temporary Login Information:</p>
+  <p><center><strong>Why Do I Need to Sign In?</strong></center></p>
 
-  <ul>
-    <li>
-      <p>Edit this page at <code>app/views/home/show.html.erb</code>.</p>
-    </li>
-  </ul>
+    
+      <p><center>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.
+
+Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.
+
+In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</center></p>
+    
 
 <% end %>
