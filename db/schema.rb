@@ -11,12 +11,15 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20171102145535) do
+<<<<<<< HEAD
 
   create_table "advice", force: :cascade do |t|
     t.string "title"
     t.text "tip"
     t.string "subject"
   end
+=======
+>>>>>>> 5989ba78da90d69ce28269242ca7b060375cbd02
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false

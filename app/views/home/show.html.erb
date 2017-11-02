@@ -1,3 +1,5 @@
+<center><img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:80%;"></center>
+
 <h1><center>Users Must Sign In To Access Forum</center></h1>
 
  <p>This is our site, this is why you have to make an account, this is why we are very secure</p>
@@ -7,10 +9,14 @@
 </p>
 
 
-<p>Helpful Resources:<a href=""><strong><%= link_to "About", "/about" %></strong</a></p>
-
+<p>Helpful Resources: <a href=""><strong><%= link_to "About", "/about" %></strong></a></p>
+<p>Give Advice to our Members: <a href=""><strong><%= link_to "Advice", "/advice" %></strong</a></p>
 
 <!--
+<p>Give Advice to our Members:
+  <b><%= link_to "Advice", "/advice" %></b>.
+</p>
+
 <% unless Rails.env.production? %>
 
   <p>Temporary Login Information:</p>
@@ -58,4 +64,12 @@
   
   <p></p>
 -->
+  
+  <!--
+<%= form_tag do %>
+  Form contents
 <% end %>
+-->
+<% end %>
+
+
