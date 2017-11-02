@@ -4,6 +4,10 @@
   <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
 </p>
 
+<p>Give Advice to our Members:
+  <b><%= link_to "Advice", "/advice" %></b>.
+</p>
+
 <% unless Rails.env.production? %>
   <p>Temporary Login Information:</p>
 
@@ -12,5 +16,12 @@
       <p>Edit this page at <code>app/views/home/show.html.erb</code>.</p>
     </li>
   </ul>
+  
+  
+<%= form_tag do %>
+  Form contents
+<% end %>
 
 <% end %>
+
+
