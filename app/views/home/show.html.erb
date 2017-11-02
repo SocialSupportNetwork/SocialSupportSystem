@@ -4,6 +4,11 @@
   <b><%= link_to t('nav.forums'), thredded.root_path %></b>.
 </p>
 
+<p>Member Discussion:
+  <b><%= link_to "Advice", "/advice" %></b>.
+<%= link_to "Advice", "/advice" %>
+</p>
+
 <% unless Rails.env.production? %>
   <p>Temporary Login Information:</p>
 
