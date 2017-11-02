@@ -1,7 +1,7 @@
 # Guidelines, rules, other pages, etc. tells it where to go
 Rails.application.routes.draw do  
   root to: 'home#show'
-  get "/:page" => "static#show"
+  get "/about" => "static#about"
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
       mount RailsEmailPreview::Engine, at: 'emails'
@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
   
   # added by Billy, look into mount format
+  get "/advice" => "advice#advice"
+  
+  
 end
