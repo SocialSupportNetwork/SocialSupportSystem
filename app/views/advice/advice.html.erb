@@ -6,6 +6,12 @@
 <p>Category of advice:</p>
 <%= select_tag(:subject, options_for_select([['Safety', 1], ['Resources', 2]])) %>
 
+<%= submit_tag (:advice) %>
 
+<% form_for :advice, @advice, :url => { :action => "create" }, :html => {:class => "advice"} do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :tip, :size => "60x12" %>
+  <%= submit_tag "Create" %>
+<% end %>
 
 
