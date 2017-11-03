@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20171102145535) do
 
+
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
