@@ -1,11 +1,16 @@
 
-<p>Title:</p>
-<%= text_field(:advice, :title) %>
-<p>Tip:</p>
-<%= text_field(:advice, :tip) %>
-<p>Category of advice:</p>
-<%= select_tag(:subject, options_for_select([['Safety', 1], ['Resources', 2]])) %>
+ <form action="/forms#index" method="post">
+    <p>Title:</p>
+    <%= text_field(:advice, :title) %>
 
+    <p>Tip:</p>
+    <%= text_area(:advice, :tip, "cols" => 50, "rows" => 10) %>
 
+    <p>Category of advice:</p>
+    <%= select_tag(:subject, options_for_select([['Safety', 1], ['Resources', 2], ['Rest', 3]])) %>
 
+    <p></p>
+    <input type="submit" value="Submit">
+</form>
 
+  

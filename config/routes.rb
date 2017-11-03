@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   
   # added by Billy, look into mount format
   get "/advice" => "advice#advice"
+
   
   
 end
