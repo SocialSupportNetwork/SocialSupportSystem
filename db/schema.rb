@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102145535) do
+ActiveRecord::Schema.define(version: 20171103185232) do
+
+  create_table "display_names", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
+    t.string "display_name", null: false
+    t.index ["post_id"], name: "index_user_display_on_post_id"
+    t.index ["user_id", "post_id"], name: "index_user_display_on_user_id_post_id", unique: true
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false

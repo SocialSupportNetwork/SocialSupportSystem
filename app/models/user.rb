@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
   
   def display_name
-    return username
+    return Haikunator.haikunate(0, '-').capitalize!
   end
   
 end

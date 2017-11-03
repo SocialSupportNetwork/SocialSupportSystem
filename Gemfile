@@ -59,7 +59,11 @@ gem 'devise-i18n'
 gem 'rails_email_preview'
 gem 'roadie-rails'
 gem 'plain-david'
+# for local development:
+# gem 'thredded', :path => '../thredded'
 gem 'thredded'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
+
+gem 'haikunator'
