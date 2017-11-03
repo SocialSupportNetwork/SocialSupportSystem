@@ -3,21 +3,11 @@
     <p>Title:</p>
     <%= text_field(:advice, :title) %>
 
-<<<<<<< HEAD
-<%= submit_tag (:advice) %>
-
-<% form_for :advice, @advice, :url => { :action => "create" }, :html => {:class => "advice"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_area :tip, :size => "60x12" %>
-  <%= submit_tag "Create" %>
-<% end %>
-=======
     <p>Tip:</p>
     <%= text_area(:advice, :tip, "cols" => 50, "rows" => 10) %>
 
     <p>Category of advice:</p>
     <%= select_tag(:subject, options_for_select([['Safety', 1], ['Resources', 2], ['Rest', 3]])) %>
->>>>>>> master
 
     <p></p>
     <input type="submit" value="Submit">
