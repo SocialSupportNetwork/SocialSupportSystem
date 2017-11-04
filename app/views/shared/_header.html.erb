@@ -9,9 +9,15 @@
         <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
     <% end %>
   </span>
-  <a class="app-nav-logo" href="/"><%= t 'brand.name' %></a>
+  <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
   
   <a <b><%= link_to 'Forum', thredded.root_path %></b>.</a>
+  
+  <a <b><%= link_to 'About', "/about" %></b>.</a>
+  
+  <a <b><%= link_to 'Advice', "/advice" %></b>.</a>
+  
+  <a <b><%= link_to 'Tips', "/displaytips" %></b>.</a>
   
   
 </header>

@@ -4,7 +4,7 @@ class AdviceController < ApplicationController
     public 
     
     def new 
-        @advice = Advice.new
+        super
     end
     
     def create

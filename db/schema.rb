@@ -12,6 +12,11 @@
 
 ActiveRecord::Schema.define(version: 20171102145535) do
 
+  create_table "advice", force: :cascade do |t|
+    t.string "title"
+    t.text "tip"
+    t.string "subject"
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
