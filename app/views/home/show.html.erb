@@ -1,75 +1,42 @@
+<body onload="myFunction()">
+<p> </p>
 <center><img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:80%;"></center>
+<center><h2><%= link_to t('nav.forums'), thredded.root_path %> • <%= link_to "Helpful Resources", "/about" %>	• <%= link_to "Anonymously Submit Advice", "/tips/new" %>	• <%= link_to "Rick's Tips", "/tips" %></h2></center>
 
 <h1><center>Users Must Sign In To Access Forum</center></h1>
+<center>
 
+<<<<<<< HEAD
  <p><center><h3>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.</h3></center></p>
  <p><center><h3>Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.</h3></center></p>
  <p><center><h3>In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</h3></center></p>
 
 <p><center><h1> <b><%= link_to t('nav.forums'), thredded.root_path %></b></h1></center></p>
+=======
+<p>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.</p>
+>>>>>>> haiku-names
 
+<p>Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.</p>
 
+<<<<<<< HEAD
 <p><center><h1> <a href=""><strong><%= link_to "Resources", "/about" %></strong></a></h1></center></p>
 <p><center><h1><a href=""><strong><%= link_to "Give Advice", "/advice" %></strong</a></h1></center></p>
+=======
+<p>In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</p>
+>>>>>>> haiku-names
 
-<!--
-<p>Give Advice to our Members:
-  <b><%= link_to "Advice", "/advice" %></b>.
-</p>
+ </center>
 
-<% unless Rails.env.production? %>
+<div class="popup">
+  <span class="popuptext" id="myPopup"><a href="https://www.womenslaw.org/about-abuse/safety-tips/safety-while-using-internet" target="_blank"><div class="internetsafety">Click here for internet safety tips</div></a></span>
+</div>
 
-  <p>Temporary Login Information:</p>
-
-  <ul>
-    <li>
-      <p>Edit this page at <code>app/views/home/show.html.erb</code>.</p>
-    </li>
-  </ul>
-  -->
-  
- 
-  
- 
-  
-  <!--
-  <ul>
-    <li>
-      <p><a href="https://ncadv.org/learn-more"><strong>National Coalition Against Domestic Violence defintion of abuse</strong></a></p>
-    </li>
-    <li>
-      <p><a href="https://www.helpguide.org/articles/abuse/getting-out-of-an-abusive-relationship.htm"><strong>Helpguide.org tips to get out of an abusive relationship</strong></a></p>
-    </li>
-    <li>
-      <p><a href="https://nnedv.org/"></a><strong>National Network to End Domestic Violence</strong></p>
-    </li>
-    <li>
-      <p><a href="http://www.womenslaw.org/">Women's Law legal help</a></p>
-    </li>
-    <li>
-      <p>The U.S. National Domestic Violence Hotline:</p>
-        <ul>
-          <li>
-            <p>1-800-799-7233</p>
-          </li>
-          <li>
-            <p>TTY: 1-800-787-3224</p>
-          </li>
-        </ul>
-    </li>
-    <li>
-      <p><strong>If you feel you are in immediate danger call 911</strong></p>
-    </li>
-  </ul>
-  
-  <p></p>
--->
-  
-  <!--
-<%= form_tag do %>
-  Form contents
-<% end %>
--->
-<% end %>
-
+<script>
+// When the user clicks on <div>, open the popup
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
+</script>
+</body>
 

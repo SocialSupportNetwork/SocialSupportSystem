@@ -1,14 +1,16 @@
 <header role="banner" class="app-header">
   <span class="app-nav-auth">
     <% if current_user %>
-        <%= link_to current_user.username, user_path(current_user) %>
-        |
+    <!--<div id = "usernameHeader"> -->
+    <!--current_user.username-->
+    <!--</div>-->
         <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
                     method: :delete %>
     <% else %>
         <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
     <% end %>
   </span>
+<<<<<<< HEAD
   <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
   
   <a <b><%= link_to 'Forum', thredded.root_path %></b>.</a>
@@ -19,5 +21,34 @@
   
   <a <b><%= link_to 'Tips', "/displaytips" %></b>.</a>
   
+=======
+ <!--t brand.name-->
+>>>>>>> haiku-names
   
+  <div id="menuToggle">
+    <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
+    <input type="checkbox" />
+    
+    <!--Some spans to act as a hamburger-->
+    <span></span>
+    <span></span>
+    <span></span>
+    
+    <ul id=menu>
+      <li><a <strong><%= link_to 'Home', "/" %></strong></a></li>
+      <li><a <strong><%= link_to 'Forum', thredded.root_path %></strong></a></li>
+      <li><a <strong><%= link_to 'Resources', "/about" %></strong></a></li>
+      <li><a <strong><%= link_to 'Give Advice', "/tips/new" %></strong></a></li>
+      <li><a <strong><%= link_to 'About', "/info" %></strong></a></li>
+      <li><a <strong><%= link_to 'Contact', "/contacts/new" %></strong></a></li>
+    </ul>
+  </div>
+  <div id="desktopMenu"> 
+    <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
+    <a <strong><%= link_to 'Forum', thredded.root_path %></strong></a>
+    <a <strong><%= link_to 'Resources', "/about" %></strong></a>
+    <a <strong><%= link_to 'Advice', "/tips/new" %></strong></a>
+    <a <strong><%= link_to 'About', "/info" %></strong></a>
+    <a <strong><%= link_to 'Contact', "/contacts/new" %></strong></a>
+  </div>
 </header>

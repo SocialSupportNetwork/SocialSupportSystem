@@ -56,5 +56,6 @@ Rails.application.configure do
     host: 'localhost',
     port: 3000,
   }
+  
 
 end

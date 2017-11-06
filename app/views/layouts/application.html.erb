@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= page_title %></title>
+    <title><%= "Extinguish" %></title>
     <%= favicon_link_tag 'favicon.ico' %>
     <%= favicon_link_tag 'apple-touch-icon.png',
                          rel: 'apple-touch-icon', type: 'image/png' %>
@@ -24,8 +24,13 @@
                 id: ('app-page-container' unless is_thredded),
                 'data-locale' => I18n.locale do %>
   <%= render 'shared/header' %>
+ 
   <%= render 'shared/flash_messages' unless is_thredded %>
   <div class="app-content-container"><%= yield %></div>
+  
+  
+  
+  
   <%# If the app JS is loaded via an [async] script, the JS may
   run before or after DOMContentLoaded. Expose a flag, so it can
   initialize correctly. %>
@@ -35,6 +40,11 @@
     });
   </script>
 <% end %>
+
+
+ <%= render 'shared/footer' %>
+ <% debug(params) if Rails.env.development? %>
+
 </body>
 
 </html>
