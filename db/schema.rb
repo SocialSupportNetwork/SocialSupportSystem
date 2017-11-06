@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171103185232) do
+ActiveRecord::Schema.define(version: 20171106162159) do
+
+  create_table "advice", force: :cascade do |t|
+    t.string "title"
+    t.text "tip"
+    t.string "subject"
+  end
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "display_names", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -251,6 +262,14 @@ ActiveRecord::Schema.define(version: 20171103185232) do
     t.integer "page", default: 1, null: false
     t.datetime "read_at", null: false
     t.index ["user_id", "postable_id"], name: "thredded_user_topic_read_states_user_postable", unique: true
+  end
+
+  create_table "tips", force: :cascade do |t|
+    t.string "title"
+    t.string "body"
+    t.string "subject"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

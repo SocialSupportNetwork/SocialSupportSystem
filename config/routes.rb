@@ -1,7 +1,19 @@
 # Guidelines, rules, other pages, etc. tells it where to go
 Rails.application.routes.draw do  
+  # get 'tips/index'
+
+  # get 'tips/new'
+
+  # get 'tips/create'
+
+  # get 'tips/show'
+
   root to: 'home#show'
   get "/about" => "static#about"
+  get "/contact" => "static#contact"
+  get "/info" => "static#info"
+  get "/terms" => "static#terms"
+  get "/privacy" => "static#privacy"
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
       mount RailsEmailPreview::Engine, at: 'emails'
@@ -16,7 +28,12 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
   
   # added by Billy, look into mount format
-  get "/advice" => "advice#advice"
+  resources :tips
+  
+  match '/contacts',     to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+  
+  
   
   
 end

@@ -1,6 +1,0 @@
-<% form_for :advice, @advice, :url => { :action => "create" }, :html => {:class => "nifty_form"} do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :subject %>
-  <%= f.text_area :tip, :size => "60x12" %>
-  <%= submit_tag "Create" %>
-<% end %>

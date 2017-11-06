@@ -65,5 +65,6 @@ gem 'thredded', :path => '../thredded'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
-
 gem 'haikunator'
+gem 'mail_form'
+gem 'simple_form'
