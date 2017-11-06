@@ -1,17 +1,172 @@
 @import "./header/theme_selector";
 
 .app-header {
-  border-bottom: 1px solid $light-gray;
+  //border-bottom: 1px solid $light-gray;
   a {
     display: inline-block;
     padding: 1rem 0;
   }
+  background-color: $banner-color;
+  // #menu{
+  //   li {
+  //     display: inline;
+  //   }
+  // }
+  #menuToggle{
+    display: none;
+  }
+  @include thredded-media-mobile {
+    //IF ON MOBILE
+    #desktopMenu{
+      display: none;
+    }
+    // #menuToggle{
+    //   display: inline-block;
+    //   padding: 1rem 0;
+    // }
+    li {
+      display: block;
+    }
+    body {
+      margin: 0;
+      padding: 1rem;
+      
+      background: black;
+      color: white; //CHANGE TO BLACK
+      }
+    a {
+      text-decoration: none;
+      // color: white;transition: color 0.3s ease;
+      }
+    a:active {
+      color: white; //CHANGE TO WHATEVER CLICKED LINK COLOR IS
+    }
+    #menuToggle
+    {
+       display: inline-block;
+       padding: 1rem 0;
+       
+       z-index: 4;
+       -webkit-user-select: none;
+       user-select: none;
+    }
+    #menuToggle input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      cursor: pointer;
+      opacity: 0; /* hide this */
+      z-index: 5; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd; //change to app background color
+  border-radius: 3px;
+  
+  z-index: 5;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  background: black;
+  
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-120%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  
+  z-index: 5; //added to be on top of everything
+}
+
+#menu li
+{
+  margin-right: 20px;
+  font-size: 22px;
+}
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+  }
+  
 }
 
 .app-nav-logo {
-  color: $text-color;
+  color: $home-button;
   text-decoration: none;
   font-weight: bold;
+  margin-left: 1rem;
+  margin-right: 0.5rem;
 }
 
 .app-nav-auth {
@@ -25,4 +180,10 @@
       font-size: 1rem;
     }
   }
+  margin-right: 1rem
+  
+}
+
+.usernameHeader {
+  color: white;
 }
