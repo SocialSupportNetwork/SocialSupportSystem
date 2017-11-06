@@ -29,6 +29,18 @@ body {
   }
   .hidden { display: none; }
   
+  margin-bottom: -142px; 
+  
+}
+.app-content-container:after {
+  content: "";
+  display: block;
+}
+.footer, .app-content-container:after {
+  height: 142px; 
+}
+.footer {
+  background: orange;
 }
 .app-content-container .thredded-container{
   margin: 1 auto;
@@ -44,7 +56,7 @@ body {
   margin: 0 auto;
   padding: 0 0rem 0rem 0rem;
 }
-.app {
+.app-footer {
   @include thredded--clearfix;
   -webkit-font-smoothing: antialiased;
   color: $text-color;
@@ -57,18 +69,8 @@ body {
       display: none;
     }
   }
-  margin-bottom: -142px; 
 }
-.app:after {
-  content: "";
-  display: block;
-}
-.footer, .app:after {
-  height: 142px; 
-}
-.footer {
-  background: orange;
-}
+
 .app-container {
 
   //background: rgba(0, 0, 0, .1);
