@@ -1,0 +1,17 @@
+<h1>Tips#new</h1>
+<p>Find me in app/views/tips/new.html.erb</p>
+
+<%= form_for(@tip) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body%>
+    
+    <%= f.label :subject %>
+    <%= f.select :subject, ['Safety', 'Resources', 'Misc.'] %>
+    
+    <%= submit_tag "Submit" %>
+<%end%>
+    
+        
