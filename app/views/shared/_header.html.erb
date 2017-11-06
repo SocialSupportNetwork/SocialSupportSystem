@@ -1,8 +1,9 @@
 <header role="banner" class="app-header">
   <span class="app-nav-auth">
     <% if current_user %>
-        <%= link_to current_user.username, user_path(current_user) %>
-        |
+    <!--<div id = "usernameHeader"> -->
+    <!--current_user.username-->
+    <!--</div>-->
         <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
                     method: :delete %>
     <% else %>
