@@ -48,4 +48,7 @@ class User < ApplicationRecord
     return username
   end
   
+  # def thredded_can_message_users
+  # end
+  
 end
