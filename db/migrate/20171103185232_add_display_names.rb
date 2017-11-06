@@ -1,9 +1,9 @@
 require 'thredded/base_migration'
 
-class AddDisplayNames < ActiveRecord::Migration[5.1]
+class AddDisplayNames < Thredded::BaseMigration
   def change
     create_table :display_names do |t|
-      t.references :user, null: false, index: false
+      t.references :user, type: user_id_type, null: false, index: false
       t.references :post, null: false, index: false
       t.string :display_name, null: false
       
