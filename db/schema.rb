@@ -10,8 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20171103185232) do
+ActiveRecord::Schema.define(version: 20171106162159) do
+
+  create_table "contacts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "display_names", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -19,19 +23,6 @@ ActiveRecord::Schema.define(version: 20171103185232) do
     t.string "display_name", null: false
     t.index ["post_id"], name: "index_user_display_on_post_id"
     t.index ["user_id", "post_id"], name: "index_user_display_on_user_id_post_id", unique: true
-=======
-ActiveRecord::Schema.define(version: 20171106162159) do
-
-  create_table "advice", force: :cascade do |t|
-    t.string "title"
-    t.text "tip"
-    t.string "subject"
-  end
-
-  create_table "contacts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
->>>>>>> master
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|

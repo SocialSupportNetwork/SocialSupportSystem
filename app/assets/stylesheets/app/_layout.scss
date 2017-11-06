@@ -27,6 +27,7 @@ body {
   li {
     font-size: 120%;
   }
+  .hidden { display: none; }
   
 }
 .app-content-container .thredded-container{
@@ -56,14 +57,20 @@ body {
       display: none;
     }
   }
-  
+  margin-bottom: -142px; 
 }
-
+.app:after {
+  content: "";
+  display: block;
+}
+.footer, .app:after {
+  height: 142px; 
+}
+.footer {
+  background: orange;
+}
 .app-container {
-<<<<<<< HEAD
-  margin-bottom: -50px;
-=======
->>>>>>> master
+
   //background: rgba(0, 0, 0, .1);
   // margin: 0 auto;
   // //max-width: ($grid-container-max-width + 4rem);
