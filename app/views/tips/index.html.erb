@@ -1,0 +1,19 @@
+<h1>Tips#index</h1>
+<p>Find me in app/views/tips/index.html.erb</p>
+
+<table>
+    <thead>
+        <th width=110rem>Title</th>
+        <th>Advice</th>
+        <th width=70rem>Subject</th>
+    </thead>
+    <tbody>
+<% @tips.each do |tip| %>
+    <tr>
+        <td><%= tip.title %></td>
+        <td><%= tip.body %></td>
+        <td><%= tip.subject %></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
