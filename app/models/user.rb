@@ -48,4 +48,7 @@ class User < ApplicationRecord
     return Haikunator.haikunate(0, '-').capitalize!
   end
   
+  # def thredded_can_message_users
+  # end
+  
 end
