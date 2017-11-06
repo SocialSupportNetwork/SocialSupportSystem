@@ -12,11 +12,16 @@
 
 ActiveRecord::Schema.define(version: 20171106162159) do
 
+  create_table "advice", force: :cascade do |t|
+    t.string "title"
+    t.text "tip"
+    t.string "subject"
+  end
+
   create_table "contacts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false

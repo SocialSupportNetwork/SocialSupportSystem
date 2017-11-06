@@ -26,17 +26,12 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
   
   # added by Billy, look into mount format
-<<<<<<< HEAD
-  get "/advice" => "advice#advice"
-
-=======
   resources :tips
   
-  # match '/contacts',     to: 'contacts#new', via: 'get'
-  # resources "contacts", only: [:new, :create]
+  match '/contacts',     to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
   
-  resources :contacts
->>>>>>> 343d647d7c1f9e71a507148102958103f2cf5df9
+  #resources :contacts
   
   
 end
