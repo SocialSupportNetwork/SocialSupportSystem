@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get "/about" => "static#about"
   get "/contact" => "static#contact"
   get "/info" => "static#info"
+  get "/terms" => "static#terms"
+  get "/privacy" => "static#privacy"
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
       mount RailsEmailPreview::Engine, at: 'emails'
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
   
   match '/contacts',     to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
+  
   
   
   

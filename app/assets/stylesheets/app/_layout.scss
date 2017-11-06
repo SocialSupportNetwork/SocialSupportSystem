@@ -19,6 +19,10 @@ body {
   @include thredded-media-mobile { 
     padding: 0 1.2rem 0.75rem 1.2rem;
   }
+  
+  p {
+    font-size: 200px;
+  }
 }
 .app-content-container .thredded-container{
   margin: 1 auto;
