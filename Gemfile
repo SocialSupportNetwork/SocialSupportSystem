@@ -63,7 +63,6 @@ gem 'thredded'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
-<<<<<<< HEAD
 
 group :test do
   gem 'cucumber-rails', :require => false
@@ -72,7 +71,6 @@ group :test do
   gem 'capybara' #lets Cucumber pretend to be a web browser
   gem 'launchy' #a useful debyggubg aid for user stories
 end
-=======
 gem 'mail_form'
 gem 'simple_form'
->>>>>>> 7d49e6741a314465f980ae68d358a5bb40d610b7
+gem 'haikunator'
