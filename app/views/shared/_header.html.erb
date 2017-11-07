@@ -10,20 +10,8 @@
         <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
     <% end %>
   </span>
-<<<<<<< HEAD
-  <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
+ 
   
-  <a <b><%= link_to 'Forum', thredded.root_path %></b>.</a>
-  
-  <a <b><%= link_to 'About', "/about" %></b>.</a>
-  
-  <a <b><%= link_to 'Advice', "/advice" %></b>.</a>
-  
-  <a <b><%= link_to 'Tips', "/displaytips" %></b>.</a>
-  
-=======
- <!--t brand.name-->
->>>>>>> haiku-names
   
   <div id="menuToggle">
     <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
@@ -35,8 +23,8 @@
     <span></span>
     
     <ul id=menu>
-      <li><a <strong><%= link_to 'Home', "/" %></strong></a></li>
-      <li><a <strong><%= link_to 'Forum', thredded.root_path %></strong></a></li>
+      <li><h1><a <strong><%= link_to 'Home', "/" %></strong></h1></a></li>
+      <li><h1><a <strong><%= link_to 'Forum', thredded.root_path %></strong></h1></a></li>
       <li><a <strong><%= link_to 'Resources', "/about" %></strong></a></li>
       <li><a <strong><%= link_to 'Give Advice', "/tips/new" %></strong></a></li>
       <li><a <strong><%= link_to 'About', "/info" %></strong></a></li>

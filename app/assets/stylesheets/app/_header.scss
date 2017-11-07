@@ -1,7 +1,6 @@
 @import "./header/theme_selector";
-
 .app-header {
-  //border-bottom: 1px solid $light-gray;
+  padding: 20px;
   a {
     display: inline-block;
     padding: 1rem 0;
@@ -30,7 +29,6 @@
     body {
       margin: 0;
       padding: 1rem;
-      
       background: black;
       color: white; //CHANGE TO BLACK
       }

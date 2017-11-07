@@ -9,15 +9,11 @@ Rails.application.routes.draw do
   # get 'tips/show'
 
   root to: 'home#show'
-<<<<<<< HEAD
-  
-=======
   get "/about" => "static#about"
   get "/contact" => "static#contact"
   get "/info" => "static#info"
   get "/terms" => "static#terms"
   get "/privacy" => "static#privacy"
->>>>>>> haiku-names
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
       mount RailsEmailPreview::Engine, at: 'emails'
@@ -31,14 +27,6 @@ Rails.application.routes.draw do
   resources :users, only: [:show]
   mount Thredded::Engine => '/forum'
   
-<<<<<<< HEAD
-  # routes for pages
-  get "/about" => "static#about"
-  get "/advice" => "advice#advice"
-  
-  get "/displaytips" => "static#displaytips"
-
-=======
   # added by Billy, look into mount format
   resources :tips
   
@@ -46,7 +34,12 @@ Rails.application.routes.draw do
   resources "contacts", only: [:new, :create]
   
   
->>>>>>> haiku-names
+  # routes for pages
+  get "/about" => "static#about"
+  get "/advice" => "advice#advice"
+  
+  get "/displaytips" => "static#displaytips"
+
   
   
 end

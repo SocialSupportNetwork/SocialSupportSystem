@@ -1,6 +1,17 @@
 body {
   background-color: $body-background-color;
 }
+
+.app {
+  @include thredded--clearfix;
+  -webkit-font-smoothing: antialiased;
+  color: $text-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  margin: 0;
+}
+
 .app-content-container{
   position: center;
   padding: 10px;
@@ -28,20 +39,18 @@ body {
     font-size: 120%;
   }
   .hidden { display: none; }
-  
   margin-bottom: -142px; 
-  
 }
-.app-content-container:after {
-  content: "";
-  display: block;
-}
-.app-footer, .app-content-container:after {
-  height: 142px; 
-}
-.app-footer {
-  background: orange;
-}
+// .app-content-container:after {
+//   content: "";
+//   display: block;
+// }
+// .app-footer, .app-content-container:after {
+//   height: 142px; 
+// }
+// .app-footer {
+//   background: orange;
+// }
 .app-content-container .thredded-container{
   margin: 1 auto;
   max-width: ($grid-container-max-width + 4rem);
