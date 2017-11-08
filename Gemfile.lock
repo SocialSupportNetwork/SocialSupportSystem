@@ -1,5 +1,6 @@
-PATH
-  remote: ../thredded
+GIT
+  remote: https://github.com/SocialSupportNetwork/thredded.git
+  revision: 26227fa3c0f86cd310f0d18d2c2812af1f9d3ffa
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
