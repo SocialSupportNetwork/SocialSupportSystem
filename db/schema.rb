@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106162159) do
+ActiveRecord::Schema.define(version: 20171108053824) do
 
   create_table "advice", force: :cascade do |t|
     t.string "title"
@@ -25,10 +25,9 @@ ActiveRecord::Schema.define(version: 20171106162159) do
 
   create_table "display_names", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "post_id", null: false
+    t.integer "topic_id", null: false
     t.string "display_name", null: false
-    t.index ["post_id"], name: "index_user_display_on_post_id"
-    t.index ["user_id", "post_id"], name: "index_user_display_on_user_id_post_id", unique: true
+    t.index ["user_id", "topic_id"], name: "index_user_display_on_user_id_topic_id", unique: true
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
