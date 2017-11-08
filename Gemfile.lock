@@ -206,7 +206,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
       nokogiri
-    onebox (1.8.22)
+    onebox (1.8.23)
       fast_blank (>= 1.0.0)
       htmlentities (~> 4.3)
       moneta (~> 1.0)
