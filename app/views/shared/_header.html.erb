@@ -10,8 +10,6 @@
         <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
     <% end %>
   </span>
- 
-  
   
   <div id="menuToggle">
     <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
@@ -33,11 +31,11 @@
   </div>
   <div id="desktopMenu"> 
     <!--<img src=<%= asset_path('icon_white.png') %> alt="white_icon" style="width:50px;">-->
-    <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
-    <a <strong><%= link_to 'Forum', thredded.root_path %></strong></a>
-    <a <strong><%= link_to 'Resources', "/about" %></strong></a>
-    <a <strong><%= link_to 'Advice', "/tips/new" %></strong></a>
-    <a <strong><%= link_to 'About', "/info" %></strong></a>
-    <a <strong><%= link_to 'Contact', "/contacts/new" %></strong></a>
+    <a class="app-nav-logo" href="/"><%= t 'Home' %>
+    <a <%= link_to 'Forum', thredded.root_path %></a>
+    <a <%= link_to 'Resources', "/about" %></a>
+    <a <%= link_to 'Advice', "/tips/new" %></a>
+    <a <%= link_to 'About', "/info" %></a>
+    <a <%= link_to 'Contact', "/contacts/new" %></a>
   </div>
 </header>
