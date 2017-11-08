@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable and :omniauthable
   # Authenticates users- need a new strategy that uses user names instead of email
   devise :database_authenticatable, :registerable,
-        :validatable
+        :validatable, :timeoutable
   private
   
   def will_save_change_to_email?
