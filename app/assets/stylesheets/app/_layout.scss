@@ -6,7 +6,7 @@ html, body {
 body {
   background-color: $body-background-color;
   position: relative;
-  height:100%;
+  //height:100%;
   padding-top: 5rem;
   padding-bottom: 1rem;
 }
@@ -18,7 +18,7 @@ body {
   max-width: ($grid-container-max-width + 25rem);
   padding-left: 20rem;
   padding-right: 20rem;
-  padding-bottom: 7rem;
+  //padding-bottom: 7rem;
   @include thredded-media-tablet-and-up {
      padding: 0 2rem 0.75rem 2rem;
   }
@@ -38,7 +38,7 @@ body {
   position:absolute;
   bottom:0;
   width:100%;
-  height:50px;   /* Height of the footer */
+  //height:50px;   /* Height of the footer */
   //border-top: 1px solid grey;
   background: rgba(0, 0, 0, 0);
   #desktopfooter {
