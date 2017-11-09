@@ -59,10 +59,13 @@ gem 'devise-i18n'
 gem 'rails_email_preview'
 gem 'roadie-rails'
 gem 'plain-david'
-gem 'thredded'
+# for local development:
+# gem 'thredded', :path => '../thredded'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
+gem 'haikunator'
 gem 'mail_form'
 gem 'simple_form'
 
@@ -73,3 +76,4 @@ group :test do
   gem 'capybara' #lets Cucumber pretend to be a web browser
   gem 'launchy' #a useful debyggubg aid for user stories
 end
+gem 'simple_form'

@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
   
   def display_name
-    return username
+    return "Anonymous User"
   end
   
   # def thredded_can_message_users
