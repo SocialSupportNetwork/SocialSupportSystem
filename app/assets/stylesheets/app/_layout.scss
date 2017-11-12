@@ -1,29 +1,27 @@
-html, body {
-    margin: 0;
-    height: 100%;
+html {
+  height: 100%;
+  background: $banner-color;
 }
-
 body {
-  background-color: $body-background-color;
-  position: relative;
-  //height:100%;
-  padding-top: 5rem;
-  padding-bottom: 1rem;
+  height: 100%;
+  background: $banner-color;
 }
 .app-content-container{
-  border: 1px solid gray;
-  margin: 2.5rem auto; 
-  background: rgba(255,255,255,0.5);
-  //box-shadow: 2.5px 2.5px 1px rgba(0,0,0,0.25);
-  max-width: ($grid-container-max-width + 25rem);
-  padding-left: 20rem;
-  padding-right: 20rem;
-  //padding-bottom: 7rem;
+  margin: auto;
+  padding-top: 7rem;
+  padding-bottom: 5rem;
+  height: 100%;
+  width:70%;
+  // background-image: image-url('backgroundtile.png');
+  // background-attachment: fixed;
+  //background: rgba(0,0,0,0.25);
+  
   @include thredded-media-tablet-and-up {
-     padding: 0 2rem 0.75rem 2rem;
+     //padding: 0 2rem 0.75rem 2rem;
   }
   @include thredded-media-mobile { 
-    padding: 0 1.2rem 0.75rem 1.2rem;
+    padding: 0.5rem auto;
+    width: 100%;
   }
   center {
     font-size: 120%;
@@ -32,37 +30,24 @@ body {
   li {
     font-size: 120%;
   }
-}
+  
 
-.app-footer {
-  position:absolute;
-  bottom:0;
-  width:100%;
-  //height:50px;   /* Height of the footer */
-  //border-top: 1px solid grey;
-  background: rgba(0, 0, 0, 0);
-  #desktopfooter {
-    //padding-right: 5%;
-    font-size: 120%;
-    //margin: 0rem auto;
-  }
 }
-
 .app-content-container .thredded-container{
-  margin: 1 auto;
-  max-width: ($grid-container-max-width + 4rem);
-  padding: 0 1.2rem 0.75rem 1.2rem;
+  width: 100%;
+  margin: 0;
+  //max-width: ($grid-container-max-width + 4rem);
+  //padding: 0 1.2rem 0.75rem 1.2rem;
+  //margin: 5rem 5rem; 
   @include thredded-media-tablet-and-up {
      padding: 0 2rem 0.75rem 2rem;
   }
-  padding-bottom:60px;
+  
 }
-
 .app-header {
   margin: 0 auto;
   padding: 0 0rem 0rem 0rem;
 }
-
 .app {
   @include thredded--clearfix;
   -webkit-font-smoothing: antialiased;
@@ -71,20 +56,39 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin: 0;
+  
+  //background-repeat: no-repeat;
   @include thredded-media-mobile {
     .app-content-container .popup {
       display: none;
     }
   }
-  min-height:100%;
-  position:relative;
+  a:hover{
+    color: $button-hover-background;
+  }
+  height: 100%;
+  
 }
 
 .app-container {
+  //height: 100%;
+  background: $body-background-color;
+  // background: linear-gradient(to bottom right, orange, #721817);
+  //background: linear-gradient(to bottom right, #BDD5EA, #495867);
+  //background: linear-gradient(to bottom right, #FF99C9, #C1BDDB);
+  //background: linear-gradient(to bottom right, #7353BA, #FAA6FF); //purple-pink gradient
+  background: linear-gradient(to bottom right, $body-background-color, white);
+
+  // @include thredded-media-tablet-and-up {
+  //   padding: 0 2rem 0.75rem 2rem;
+  // }
+  // @media (min-width: $grid-container-max-width + 0.01rem) {
+  //   padding-left: 3.5rem;
+  //   padding-right: 3.5rem;
+  // }
 }
 
 .turbolinks-progress-bar {
   background-color: $brand-primary;
   height: 0.25rem;
 }
-
