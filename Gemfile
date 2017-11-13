@@ -61,10 +61,18 @@ gem 'roadie-rails'
 gem 'plain-david'
 # for local development:
 # gem 'thredded', :path => '../thredded'
-gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/threddeds'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
 gem 'haikunator'
 gem 'mail_form'
 gem 'simple_form'
+
+group :test do 
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+end
