@@ -68,3 +68,11 @@ gem 'connection_pool'
 gem 'haikunator'
 gem 'mail_form'
 gem 'simple_form'
+
+group :test do 
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
+end

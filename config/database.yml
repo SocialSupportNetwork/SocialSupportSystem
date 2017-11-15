@@ -29,7 +29,7 @@ development:
   encoding: utf8
   database: db/development.sqlite3
 
-test:
+test: &test
   <<: *defaults
   database: social-support-system_test
 
@@ -39,3 +39,6 @@ production:
   min_messages: WARNING
   url: <%= ENV['DATABASE_URL'].inspect if ENV['DATABASE_URL'] %>
   database: <%= 'social-support-system_prod' unless ENV['DATABASE_URL'] %>
+
+cucumber:
+  <<: *test
