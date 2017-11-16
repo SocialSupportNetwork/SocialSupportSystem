@@ -69,11 +69,10 @@ gem 'haikunator'
 gem 'mail_form'
 gem 'simple_form'
 
-group :test do
+group :test do 
   gem 'cucumber-rails', :require => false
-  gem 'cucumber-rails-training-wheels' #some pre-fabbed step definitions
-  gem 'database_cleaner' #to clear Cucumber's test database between runs
-  gem 'capybara' #lets Cucumber pretend to be a web browser
-  gem 'launchy' #a useful debyggubg aid for user stories
+  gem 'cucumber-rails-training-wheels'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'launchy'
 end
-gem 'simple_form'

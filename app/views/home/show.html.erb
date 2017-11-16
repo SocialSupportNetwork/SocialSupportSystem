@@ -1,36 +1,38 @@
 <body>
-<p> </p>
-<center><img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:80%;"></center>
-<center><h2><%= link_to t('nav.forums'), thredded.root_path %> • <%= link_to "Helpful Resources", "/about" %>	• <%= link_to "Anonymously Submit Advice", "/tips/new" %>	• <%= link_to "Rick's Tips", "/tips" %></h2></center>
 
-<h1><center>Users Must Sign In To Access Forum</center></h1>
-
-
-<% unless Rails.env.production? %>
-  <p><center><strong>Why Do I Need to Sign In?</strong></center></p>
-
-    
-      <p><center>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.
-
-Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.
-
-In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</center></p>
-    
-
-
--->
-<% end %>
-
-<div class="popup">
-  <span class="popuptext" id="myPopup"><a href="https://www.womenslaw.org/about-abuse/safety-tips/safety-while-using-internet" target="_blank"><div class="internetsafety">Click here for internet safety tips</div></a></span>
+<center>
+    <img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:100%;">
+    <!--<h1>Users Must Sign In To Access Forum</h1>-->
+</center>
+<div class=home-description>
+<h2>What is Extinguish?</h2>
+<p>Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.</p>
+<h2>What is gaslighting?</h2>
+<p>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.</p>
+<h2>Where do I begin?</h2>
+<p>In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</p>
 </div>
+<center>
+    <div id=homebutton>
+    <%= button_to "Sign Up Now", "/users/sign_up", :method => "get" %>
+    </div>
+</center>
+<style>
+    .home-description {
+    /*box-shadow: 2.5px 2.5px 1px rgba(0,0,0,0.25);*/
+    /*padding: 2rem;*/
+    /*border: 1px solid #969698;*/
+    text-align: center;
+    font-size: 150%;
+    /*font-weight: bold;*/
+    color: $banner-color;
+    h2 {
+        font-weight: bold;
+        color: green;
+        }
+    }
+</style>
 
-<script>
-// When the user clicks on <div>, open the popup
-function myFunction() {
-    var popup = document.getElementById("myPopup");
-    popup.classList.toggle("show");
-}
-</script>
+
+
 </body>
-
