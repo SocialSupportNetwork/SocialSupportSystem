@@ -12,6 +12,8 @@ messageboard = Thredded::Messageboard.create!(
     description: 'Determine severity of specific situations by polling our community'
 )
 
+
+
 Thredded::TopicForm.new(
     title: 'Group Consensus',
     content: <<-MARKDOWN,
@@ -20,3 +22,4 @@ This is a test post
     user: admin,
     messageboard: messageboard
 ).save
+

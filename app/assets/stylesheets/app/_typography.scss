@@ -13,6 +13,7 @@ h1 {
 }
 
 h2 {
+  color: $brand-primary;
   @include thredded-media-tablet-and-up {
     font-size: 1.125em;
   }
