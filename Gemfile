@@ -62,7 +62,7 @@ gem 'plain-david'
 # for local development:
 # gem 'thredded', :path => '../thredded'
 # gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git'
-gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git'
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
