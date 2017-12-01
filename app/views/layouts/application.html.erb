@@ -34,10 +34,14 @@
   <%# If the app JS is loaded via an [async] script, the JS may
   run before or after DOMContentLoaded. Expose a flag, so it can
   initialize correctly. %>
+  
+
   <script data-turbolinks-eval="false">
     document.addEventListener('DOMContentLoaded', function() {
       (window.App = window.App || {}).DOMContentLoadedFired = true;
     });
+    
+    
   </script>
 <% end %>
 
