@@ -2,7 +2,7 @@
 .app-nav-locale {
   display: inline-block;
   margin: 0 0 0 1.25rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: $secondary-text-color;
   > ul {
     display: inline;
@@ -49,8 +49,8 @@
       display: block;
       svg {
         fill: currentColor;
-        height: 1.5rem;
-        width: 1.5rem;
+        height: 2rem;
+        width: 2rem;
       }
     }
   }
