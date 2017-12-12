@@ -1,13 +1,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <header role="banner" class="app-header" onload="function()">
   <div class="top-navbar">
       <div id="desktopMenu"> 
+        
         <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
         <!--<a <%= link_to 'Forum', thredded.root_path %></a>-->
         <!--<a <%= link_to 'Resources', "/about" %></a>-->
         <!--<a <%= link_to 'Give Advice', "/tips/new" %></a>-->
         <a <%= link_to 'About', "/info" %></a>
-        <a <%= link_to 'Contact', "/contacts/new" %></a>
+        <a <%= link_to 'Contact', "/contacts/new" %><span class="glyphicon glyphicon-envelope"/></a>
       </div>
       <div class="app-nav-auth">
       <% if current_user %>
@@ -54,7 +57,7 @@
       <li><a<%= link_to 'Contact', "/contacts/new" %></a></li>
     </ul>
   </div>
-
+<%= javascript_include_tag "shortcut" %>
 <script>
 $(window).on("scroll", function () {
     if ($(this).scrollTop() > 100) {
@@ -64,6 +67,10 @@ $(window).on("scroll", function () {
         $('.app-header').removeClass('shrink');
     }
 });
+
+shortcut.add("ctrl+x", function() {
+  window.location.replace("https://www.reddit.com/r/all/");
+});  
 </script>
 
 </header>

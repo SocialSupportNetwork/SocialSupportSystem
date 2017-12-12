@@ -1,12 +1,15 @@
 @import "./header/theme_selector";
 
 .app-header {
+  font-size: 110%;
   z-index: 5;
   position: fixed;
   width: 100%;
   box-shadow: 0px 2.5px 1px rgba(0,0,0,0.25);
   .top-navbar {
     background-color: $banner-color;
+    opacity: 1.0;
+    transition: opacity 0.25s;
     a:hover {
       background: $menu-hover-color;
       color: $body-background-color;
@@ -50,6 +53,9 @@
 }
 //the class the header switches to on scroll down
 .app-header.shrink {
+    .top-navbar {
+      opacity: 0.8;
+    }
     .bottom-navbar {
       height: 0px;
       .left-menu {
