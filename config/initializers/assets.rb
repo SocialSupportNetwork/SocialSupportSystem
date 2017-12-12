@@ -14,3 +14,5 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 Rails.application.config.assets.precompile += %w(email.css day.css night.css)
 
 Rails.application.config.assets.precompile += %w( shortcut.js )
+
+Rails.application.config.assets.precompile += %w( shortcut.js )
