@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
 
+  before_action :canTalk?
 
   protected
 
@@ -23,6 +24,16 @@ class ApplicationController < ActionController::Base
   def after_sign_out_path_for(resource)
     stored_location_for(:user) || (respond_to?(:root_path) ? root_path : thredded.root_path)
   end
+  
+  def after_sign_in_path_for(resource)
+    if resource.is_a?(User) && !resource.canTalk
+      sign_out resource
+      flash[:error] = "You have been banned!"
+      root_path
+    else
+      super
+    end 
+  end 
 
   def back_url
     session[:user_return_to] || (respond_to?(:root_path) ? root_path : thredded.root_path)
@@ -31,6 +42,14 @@ class ApplicationController < ActionController::Base
   def deny_banned
     if current_user.!canTalk?
         redirect_to root_path, :notice => "You are banned from this site."
+    end 
+  end 
+  
+  def canTalk?
+    if current_user.present? && !current_user.canTalk
+      sign_out current_user
+      flash[:error] = "This account is banned!"
+      root_path
     end 
   end 
   
