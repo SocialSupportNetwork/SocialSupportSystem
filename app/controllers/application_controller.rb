@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_user!
-  
+
 
   protected
 
@@ -27,4 +27,11 @@ class ApplicationController < ActionController::Base
   def back_url
     session[:user_return_to] || (respond_to?(:root_path) ? root_path : thredded.root_path)
   end
+  
+  def deny_banned
+    if current_user.!canTalk?
+        redirect_to root_path, :notice => "You are banned from this site."
+    end 
+  end 
+  
 end
