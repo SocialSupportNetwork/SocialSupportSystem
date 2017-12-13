@@ -22,6 +22,7 @@ body {
   @include thredded-media-mobile { 
     padding: 0.5rem auto;
     width: 100%;
+    
   }
   center {
     font-size: 120%;
@@ -57,11 +58,8 @@ body {
   line-height: $base-line-height;
   margin: 0;
   
-  //background-repeat: no-repeat;
   @include thredded-media-mobile {
-    .app-content-container .popup {
-      display: none;
-    }
+    
   }
   a:hover{
     color: $button-hover-background;
@@ -71,21 +69,7 @@ body {
 }
 
 .app-container {
-  //height: 100%;
   background: $body-background-color;
-  // background: linear-gradient(to bottom right, orange, #721817);
-  //background: linear-gradient(to bottom right, #BDD5EA, #495867);
-  //background: linear-gradient(to bottom right, #FF99C9, #C1BDDB);
-  //background: linear-gradient(to bottom right, #7353BA, #FAA6FF); //purple-pink gradient
-  background: linear-gradient(to bottom right, $body-background-color, white);
-
-  // @include thredded-media-tablet-and-up {
-  //   padding: 0 2rem 0.75rem 2rem;
-  // }
-  // @media (min-width: $grid-container-max-width + 0.01rem) {
-  //   padding-left: 3.5rem;
-  //   padding-right: 3.5rem;
-  // }
 }
 
 .turbolinks-progress-bar {
