@@ -3,7 +3,7 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <title>cookies_serializer.rb</title>
+    <title>rdoc.rake</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
@@ -19,11 +19,15 @@
     <div class="banner">
         
         <h1>
-            cookies_serializer.rb
+            rdoc.rake
         </h1>
         <ul class="files">
-            <li>config/initializers/cookies_serializer.rb</li>
-            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+            
+            <li>
+                lib/tasks/rdoc.rake
+                
+            </li>
+            <li>Last modified: 2017-12-13 21:55:21 +0000</li>
         </ul>
     </div>
 
@@ -32,7 +36,20 @@
   
     <div class="description">
       
-<p>Be sure to restart your server when you modify this file.</p>
+<p>require &#39;sdoc&#39; # and use your RDoc task the same way you used it
+before require &#39;rdoc/task&#39; # ensure this file is also required in
+order to use `RDoc::Task`</p>
+
+<p>RDoc::Task.new do |rdoc|</p>
+
+<pre><code>rdoc.rdoc_dir = &#39;doc/app&#39; # name of output directory
+rdoc.generator = &#39;sdoc&#39; # explictly set the sdoc generator
+rdoc.template = &#39;rails&#39; # template used on api.rubyonrails.org
+rdoc.main = &#39;README.md&#39;
+rdoc.rdoc_files.include(&#39;README.md&#39;, &#39;app/&#39;, &#39;lib/&#39;)
+</code></pre>
+
+<p>end</p>
 
     </div>
   
