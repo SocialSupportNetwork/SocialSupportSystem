@@ -51,4 +51,10 @@ class User < ApplicationRecord
   # def thredded_can_message_users
   # end
   
+    def blockUser
+       @user.canTalk = false 
+    end
+    
+  
+  
 end
