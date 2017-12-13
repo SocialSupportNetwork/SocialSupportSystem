@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>app.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            app.js
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/assets/javascripts/app.js
+                
+            </li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>//= require_self //= require_tree ./app</p>
+
+<p>(function () {</p>
+
+<pre><code>this.App = this.App || {};
+var App = this.App;
+
+var isTurbolinks = &#39;Turbolinks&#39; in window &amp;&amp; window.Turbolinks.supported;
+var isTurbolinks5 = isTurbolinks &amp;&amp; &#39;clearCache&#39; in window.Turbolinks;
+
+var onPageLoadFiredOnce = false;
+var pageLoadCallbacks = [];
+var triggerOnPageLoad = function () {
+  pageLoadCallbacks.forEach(function (callback) {
+    callback();
+  });
+  onPageLoadFiredOnce = true;
+};
+
+// Fires the callback on DOMContentLoaded or a Turbolinks page load.
+// If called from an async script on the first page load, and the DOMContentLoad event
+// has already fired, will execute the callback immediately.
+App.onPageLoad = function (callback) {
+  pageLoadCallbacks.push(callback);
+  // With async script loading, a callback may be added after the DOMContentLoaded event has already triggered.
+  // This means we will receive neither a DOMContentLoaded event, nor a turbolinks:load event on Turbolinks 5.
+  if (!onPageLoadFiredOnce &amp;&amp; App.DOMContentLoadedFired) {
+    callback();
+  }
+};
+
+if (isTurbolinks5) {
+  // In Turbolinks 5.0.1, turbolinks:load may have already fired (before DOMContentLoaded).
+  // If so, add our own DOMContentLoaded listener:
+  // See: https://github.com/turbolinks/turbolinks/commit/69d353ea73d10ee6b25c2866fc5706879ba403e3
+  if (window.Turbolinks.controller.lastRenderedLocation) {
+    document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+      triggerOnPageLoad();
+    });
+  }
+  document.addEventListener(&#39;turbolinks:load&#39;, function () {
+    triggerOnPageLoad();
+  });
+} else {
+  // Turbolinks Classic (with or without jQuery.Turbolinks), or no Turbolinks:
+  if (!App.DOMContentLoadedFired) {
+    document.addEventListener(&#39;DOMContentLoaded&#39;, function () {
+      triggerOnPageLoad();
+    });
+  }
+  if (isTurbolinks) {
+    document.addEventListener(&#39;page:load&#39;, function () {
+      triggerOnPageLoad();
+    })
+  }
+}
+
+App.isAppPage = function() {
+  return !!document.getElementById(&#39;app-page-container&#39;);
+}</code></pre>
+
+<p>}).call(this);</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

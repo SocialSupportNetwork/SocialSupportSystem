@@ -68,6 +68,7 @@ gem 'connection_pool'
 gem 'haikunator'
 gem 'mail_form'
 gem 'simple_form'
+gem 'sdoc'
 
 group :test do 
   gem 'cucumber-rails', :require => false
