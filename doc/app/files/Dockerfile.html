@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Dockerfile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            Dockerfile
+        </h1>
+        <ul class="files">
+            <li>Dockerfile</li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p># A <a href="Dockerfile.html">Dockerfile</a> for development.</p>
+
+<p>FROM alpine:3.4</p>
+
+<p>RUN apk add –no-cache \</p>
+
+<pre><code># Runtime deps
+ruby ruby-bundler ruby-bigdecimal ruby-io-console tzdata nodejs bash \
+# Bundle install deps
+build-base ruby-dev libc-dev linux-headers gmp-dev openssl-dev libxml2-dev \
+libxslt-dev postgresql-dev</code></pre>
+
+<p>ENV BUNDLE_SILENCE_ROOT_WARNING=1</p>
+
+<p>ENV APP_HOME /social-support-system WORKDIR $APP_HOME RUN mkdir -p
+$APP_HOME</p>
+
+<p># Copy <a href="Gemfile.html">Gemfile</a> and run bundle install first to
+allow for caching ADD <a href="Gemfile.html">Gemfile</a> <a
+href="Gemfile_lock.html">Gemfile.lock</a> $APP_HOME/ RUN bundle install</p>
+
+<p>ADD <a href="Rakefile.html">Rakefile</a> <a
+href="config_ru.html">config.ru</a> app/ bin/ config/ db/ lib/ script/
+spec/ $APP_HOME/</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

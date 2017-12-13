@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>_thredded-custom.scss</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            _thredded-custom.scss
+        </h1>
+        <ul class="files">
+            <li>app/assets/stylesheets/_thredded-custom.scss</li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@import “variables”; @import “thredded-variables”; @import “thredded”;</p>
+
+<p>.thredded–main-container {</p>
+
+<pre><code>// The padding and max-width are handled by the app&#39;s container.
+max-width: none;
+padding: 0;
+@include thredded-media-tablet-and-up {
+  padding: 0;
+}</code></pre>
+
+<p>}</p>
+
+<p>.popup {</p>
+
+<pre><code>position:absolute;
+bottom:1rem;
+right: 6rem;
+display: inline-block;
+cursor: pointer;</code></pre>
+
+<p>}</p>
+
+<pre><code>The actual popup
+</code></pre>
+
+<p>.popup .popuptext {</p>
+
+<pre><code>visibility: hidden;
+width: 160px;
+background-color: #c62b2b;
+color: #fff;
+text-align: center;
+border-radius: 6px;
+padding: 8px 0;
+position: absolute;
+z-index: 1;
+bottom: 125%;
+left: 50%;
+margin-left: -80px;</code></pre>
+
+<p>}</p>
+
+<pre><code>Popup arrow
+</code></pre>
+
+<p>// .popup .popuptext::after { //     content: “”; //     position:
+absolute; //     top: 100%; //     left: 50%; //     margin-left: -5px; // 
+border-width: 5px; //     border-style: solid; //     border-color: #555
+transparent transparent transparent; // }</p>
+
+<p>/* Toggle this class when clicking on the popup container (hide and show
+the popup) */ .popup .show {</p>
+
+<pre><code>visibility: visible;
+-webkit-animation: fadeIn 1s;
+animation: fadeIn 1s</code></pre>
+
+<p>}</p>
+
+<p>/* Add animation (fade in the popup) */ @-webkit-keyframes fadeIn {</p>
+
+<pre><code>from {opacity: 0;} 
+to {opacity: 1;}</code></pre>
+
+<p>}</p>
+
+<p>@keyframes fadeIn {</p>
+
+<pre><code>from {opacity: 0;}
+to {opacity:1 ;}</code></pre>
+
+<p>}</p>
+
+<p>.popup .popuptext .internetsafety{</p>
+
+<pre><code>color: white;</code></pre>
+
+<p>}</p>
+
+<p>.thredded–currently-online {</p>
+
+<pre><code>display: none;</code></pre>
+
+<p>}</p>
+
+<p>.thredded–post–avatar {</p>
+
+<pre><code>display: none;</code></pre>
+
+<p>}</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

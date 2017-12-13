@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>_theme_selector.scss</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            _theme_selector.scss
+        </h1>
+        <ul class="files">
+            <li>app/assets/stylesheets/app/header/_theme_selector.scss</li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>.app-nav-theme, .app-nav-locale {</p>
+
+<pre><code>display: inline-block;
+margin: 0 0 0 1.25rem;
+font-size: 0.9rem;
+color: $secondary-text-color;
+&gt; ul {
+  display: inline;
+  list-style: none;
+  padding: 0;
+  &gt; li {
+    display: inline;
+    &gt; button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: inherit;
+      padding: 0;
+      vertical-align: baseline;
+      @extend %thredded--link;
+    }
+    &gt; span {
+      color: $secondary-text-color;
+      font-weight: bold;
+    }
+  }
+}
+.app-nav-icon {
+  display: none;
+}</code></pre>
+
+<p>}</p>
+
+<p>@media (max-width: 620px) {</p>
+
+<pre><code>.app-nav-theme,
+.app-nav-locale {
+  margin: 0 0 0 0.3125rem;
+  &gt; .app-nav-text, .app-current {
+    display: none;
+  }
+}
+.app-nav-theme {
+  .app-nav-text {
+    display: none;
+  }
+  &gt; ul &gt; li &gt; button {
+    vertical-align: middle;
+  }
+  .app-nav-icon {
+    display: block;
+    svg {
+      fill: currentColor;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+}</code></pre>
+
+<p>}</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>_header.scss</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            _header.scss
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/assets/stylesheets/app/_header.scss
+                
+            </li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>@import “./header/theme_selector”;</p>
+
+<p>.app-header {</p>
+
+<pre><code>font-size: 110%;
+z-index: 5;
+position: fixed;
+width: 100%;
+box-shadow: 0px 2.5px 1px rgba(0,0,0,0.25);
+.top-navbar {
+  background-color: $banner-color;
+  opacity: 1.0;
+  transition: opacity 0.25s;
+  a:hover {
+    background: $menu-hover-color;
+    color: $body-background-color;
+  }
+}
+.bottom-navbar {
+  background: $secondary-banner-color;
+  height: 3.5rem;
+  transition: height 0.25s;
+  color: white;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: $banner-color;
+  }
+  .left-menu {
+    height: 40px;
+    //margin: 0;
+    //padding: 0;
+    }
+  .center-icon {
+    height: 40px;
+    display: inline-block;
+    vertical-align:middle;
+    }
+  .right-menu {
+    height:40px;
+    }
+    @include thredded-media-mobile { 
+      font-size: 65%;
+      .center-icon {
+        padding-top: 0.5rem;
+      }
+    }
+  }
+a {
+  display: inline-block;
+  padding: 0.8rem 0.5rem;
+}
+#menuToggle{
+  display: none;
+}</code></pre>
+
+<p>} //the class the header switches to on scroll down .app-header.shrink {</p>
+
+<pre><code>  .top-navbar {
+    opacity: 0.8;
+  }
+  .bottom-navbar {
+    height: 0px;
+    .left-menu {
+      display: none;
+    }
+    .center-icon {
+      display: none;
+    }
+    .right-menu {
+      display: none;
+    }
+  }
+}</code></pre>
+
+<p>.app-nav-logo {</p>
+
+<pre><code>color: $body-background-color;
+:hover {
+  color: $brand-primary;
+}</code></pre>
+
+<p>} .app-nav-auth {</p>
+
+<pre><code>display: inline-block;
+position: fixed;
+top: 0;
+right: 0;
+
+ @include thredded-media-mobile {
+   font-size: 0;
+
+   a {
+     margin-left: 0.4rem;
+     font-size: 1rem;
+   }
+ }
+ margin-right: 1rem</code></pre>
+
+<p>}</p>
+
+<p>//footer css .app-footer {</p>
+
+<pre><code>background: $banner-color;
+padding-bottom: 5rem;
+color: $body-background-color;</code></pre>
+
+<p>}</p>
+
+<p>.desktopfooter {</p>
+
+<pre><code>position: absolute;
+right: 0;
+bottom: 0;
+left: 0;
+height: 5rem;
+
+//margin-top: 7rem;
+//margin-bottom: 5rem;
+text-align: center;
+//border: 5px;
+a {
+  display: inline-block;
+  padding: 1rem 0;
+}</code></pre>
+
+<p>}</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CreateThredded</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span>
+            CreateThredded
+            
+                <span class="parent">&lt;
+                    
+                    Thredded::BaseMigration
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/db/migrate/20170927215712_create_thredded_thredded_rb.html">db/migrate/20170927215712_create_thredded.thredded.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>rubocop:disable Metrics/ClassLength rubocop:disable Metrics/MethodLength</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-change">change</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-change">
+            
+              <b>change</b>()
+            
+            <a href="../classes/CreateThredded.html#method-i-change" name="method-i-change" class="permalink">Link</a>
+          </div>
+
+          
+            <div class="description">
+              
+            </div>
+          
+
+          
+
+          
+
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source:
+                <a href="javascript:toggleSource('method-i-change_source')" id="l_method-i-change_source">show</a>
+                
+              </p>
+              <div id="method-i-change_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File db/migrate/20170927215712_create_thredded.thredded.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">change</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">table_exists?</span>(<span class="ruby-value">:friendly_id_slugs</span>)
+    <span class="ruby-comment"># The user might have installed FriendlyId separately already.</span>
+    <span class="ruby-identifier">create_table</span> <span class="ruby-value">:friendly_id_slugs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:slug</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:sluggable_id</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:sluggable_type</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">50</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:scope</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:created_at</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">add_index</span> <span class="ruby-value">:friendly_id_slugs</span>, <span class="ruby-value">:sluggable_id</span>
+    <span class="ruby-identifier">add_index</span> <span class="ruby-value">:friendly_id_slugs</span>, <span class="ruby-operator">%</span>[<span class="ruby-identifier">slug</span> <span class="ruby-identifier">sluggable_type</span>], <span class="ruby-identifier">length</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">slug</span><span class="ruby-operator">:</span> <span class="ruby-number">140</span>, <span class="ruby-identifier">sluggable_type</span><span class="ruby-operator">:</span> <span class="ruby-number">50</span> }
+    <span class="ruby-identifier">add_index</span> <span class="ruby-value">:friendly_id_slugs</span>, <span class="ruby-operator">%</span>[<span class="ruby-identifier">slug</span> <span class="ruby-identifier">sluggable_type</span> <span class="ruby-identifier">scope</span>],
+              <span class="ruby-identifier">length</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">slug</span><span class="ruby-operator">:</span> <span class="ruby-number">70</span>, <span class="ruby-identifier">sluggable_type</span><span class="ruby-operator">:</span> <span class="ruby-number">50</span>, <span class="ruby-identifier">scope</span><span class="ruby-operator">:</span> <span class="ruby-number">70</span> },
+              <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">add_index</span> <span class="ruby-value">:friendly_id_slugs</span>, <span class="ruby-value">:sluggable_type</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_categories</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:name</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:description</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:slug</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">messageboard_id</span> <span class="ruby-identifier">slug</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_categories_on_messageboard_id_and_slug</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:messageboard_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_categories_on_messageboard_id</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">DbTextSearch</span><span class="ruby-operator">::</span><span class="ruby-constant">CaseInsensitive</span>.<span class="ruby-identifier">add_index</span> <span class="ruby-identifier">connection</span>, <span class="ruby-value">:thredded_categories</span>, <span class="ruby-value">:name</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_categories_name_ci</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_messageboards</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:name</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:slug</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:description</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:topics_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:posts_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:position</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:last_topic</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard_group</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:messageboard_group_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_messageboards_on_messageboard_group_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:slug</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_messageboards_on_slug</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_posts</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:content</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">65_535</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:ip</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:source</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;web&#39;</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:postable</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:moderation_state</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">moderation_state</span> <span class="ruby-identifier">updated_at</span>],
+            <span class="ruby-identifier">order</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">updated_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:asc</span> },
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span>  <span class="ruby-value">:index_thredded_posts_for_display</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:messageboard_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_posts_on_messageboard_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:postable_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_posts_on_postable_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:postable_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_posts_on_postable_id_and_postable_type</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:user_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_posts_on_user_id</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">DbTextSearch</span><span class="ruby-operator">::</span><span class="ruby-constant">FullText</span>.<span class="ruby-identifier">add_index</span> <span class="ruby-identifier">connection</span>, <span class="ruby-value">:thredded_posts</span>, <span class="ruby-value">:content</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_posts_content_fts</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_private_posts</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:content</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">65_535</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:postable</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:ip</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_private_topics</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:last_user</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:title</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:slug</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:posts_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:hash_id</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:last_post_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:hash_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_private_topics_on_hash_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:slug</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_private_topics_on_slug</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_private_users</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:private_topic</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:private_topic_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_private_users_on_private_topic_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:user_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_private_users_on_user_id</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_topic_categories</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:topic</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:category</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:category_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topic_categories_on_category_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:topic_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topic_categories_on_topic_id</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_topics</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:last_user</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:title</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">255</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:slug</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:posts_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:sticky</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:locked</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:hash_id</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:type</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">191</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:moderation_state</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:last_post_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">moderation_state</span> <span class="ruby-identifier">sticky</span> <span class="ruby-identifier">updated_at</span>],
+            <span class="ruby-identifier">order</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">sticky</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>, <span class="ruby-identifier">updated_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span> },
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span>  <span class="ruby-value">:index_thredded_topics_for_display</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:hash_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topics_on_hash_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:slug</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topics_on_slug</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:messageboard_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topics_on_messageboard_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:user_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_topics_on_user_id</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">DbTextSearch</span><span class="ruby-operator">::</span><span class="ruby-constant">FullText</span>.<span class="ruby-identifier">add_index</span> <span class="ruby-identifier">connection</span>, <span class="ruby-value">:thredded_topics</span>, <span class="ruby-value">:title</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_topics_title_fts</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_user_details</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:latest_activity_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:posts_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:topics_count</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:last_seen_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:moderation_state</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">0</span> <span class="ruby-comment"># pending_moderation</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamp</span> <span class="ruby-value">:moderation_state_changed_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">moderation_state</span> <span class="ruby-identifier">moderation_state_changed_at</span>],
+            <span class="ruby-identifier">order</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">moderation_state_changed_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span> },
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_details_for_moderations</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">latest_activity_at</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_details_on_latest_activity_at</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_details_on_user_id</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_messageboard_users</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:thredded_user_detail</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:thredded_messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:last_seen_at</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">thredded_messageboard_id</span> <span class="ruby-identifier">thredded_user_detail_id</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_messageboard_users_primary</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">thredded_messageboard_id</span> <span class="ruby-identifier">last_seen_at</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_messageboard_users_for_recently_active</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">add_foreign_key</span> <span class="ruby-value">:thredded_messageboard_users</span>, <span class="ruby-value">:thredded_user_details</span>,
+                  <span class="ruby-identifier">column</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_user_detail_id</span>, <span class="ruby-identifier">on_delete</span><span class="ruby-operator">:</span> <span class="ruby-value">:cascade</span>
+  <span class="ruby-identifier">add_foreign_key</span> <span class="ruby-value">:thredded_messageboard_users</span>, <span class="ruby-value">:thredded_messageboards</span>,
+                  <span class="ruby-identifier">column</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_messageboard_id</span>, <span class="ruby-identifier">on_delete</span><span class="ruby-operator">:</span> <span class="ruby-value">:cascade</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_user_preferences</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:follow_topics_on_mention</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:auto_follow_topics</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> [<span class="ruby-value">:user_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_preferences_on_user_id</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_user_messageboard_preferences</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:follow_topics_on_mention</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:auto_follow_topics</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">messageboard_id</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_user_messageboard_preferences_user_id_messageboard_id</span>,
+            <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-operator">%</span>[<span class="ruby-identifier">topic</span> <span class="ruby-identifier">private_topic</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">topics_table</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">table_name</span> = <span class="ruby-value">:&quot;thredded_user_#{topics_table}_read_states&quot;</span>
+    <span class="ruby-identifier">create_table</span> <span class="ruby-identifier">table_name</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:postable</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:page</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamp</span> <span class="ruby-value">:read_at</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">postable_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:&quot;#{table_name}_user_postable&quot;</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_messageboard_groups</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:name</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:position</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamps</span> <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_user_topic_follows</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:topic</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:created_at</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:reason</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">1</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">topic_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:thredded_user_topic_follows_user_topic</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_post_moderation_records</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:post</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:post_content</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">65_535</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:post_user</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">text</span> <span class="ruby-value">:post_user_name</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:moderator</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:moderation_state</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">integer</span> <span class="ruby-value">:previous_moderation_state</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">timestamp</span> <span class="ruby-value">:created_at</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">messageboard_id</span> <span class="ruby-identifier">created_at</span>],
+            <span class="ruby-identifier">order</span><span class="ruby-operator">:</span> { <span class="ruby-identifier">created_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span> },
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span>  <span class="ruby-value">:index_thredded_moderation_records_for_display</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_notifications_for_private_topics</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:notifier_key</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">90</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:enabled</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">notifier_key</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;thredded_notifications_for_private_topics_unique&#39;</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_notifications_for_followed_topics</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:notifier_key</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">90</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:enabled</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">notifier_key</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;thredded_notifications_for_followed_topics_unique&#39;</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_messageboard_notifications_for_followed_topics</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:messageboard</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">:notifier_key</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">limit</span><span class="ruby-operator">:</span> <span class="ruby-number">90</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">boolean</span> <span class="ruby-value">:enabled</span>, <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">messageboard_id</span> <span class="ruby-identifier">notifier_key</span>],
+            <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;thredded_messageboard_notifications_for_followed_topics_unique&#39;</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">create_table</span> <span class="ruby-value">:thredded_user_post_notifications</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:user</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-identifier">user_id_type</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">references</span> <span class="ruby-value">:post</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">datetime</span> <span class="ruby-value">:notified_at</span>, <span class="ruby-identifier">null</span><span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-value">:post_id</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_post_notifications_on_post_id</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">%</span>[<span class="ruby-identifier">user_id</span> <span class="ruby-identifier">post_id</span>], <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-value">:index_thredded_user_post_notifications_on_user_id_and_post_id</span>, <span class="ruby-identifier">unique</span><span class="ruby-operator">:</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">add_foreign_key</span> <span class="ruby-value">:thredded_user_post_notifications</span>,
+                  <span class="ruby-constant">Thredded</span>.<span class="ruby-identifier">user_class</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column</span><span class="ruby-operator">:</span> <span class="ruby-value">:user_id</span>, <span class="ruby-identifier">on_delete</span><span class="ruby-operator">:</span> <span class="ruby-value">:cascade</span>
+  <span class="ruby-identifier">add_foreign_key</span> <span class="ruby-value">:thredded_user_post_notifications</span>,
+                  <span class="ruby-value">:thredded_posts</span>, <span class="ruby-identifier">column</span><span class="ruby-operator">:</span> <span class="ruby-value">:post_id</span>, <span class="ruby-identifier">on_delete</span><span class="ruby-operator">:</span> <span class="ruby-value">:cascade</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+
+    </div>
+  </body>
+</html>

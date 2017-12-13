@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>tipstest.feature</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            tipstest.feature
+        </h1>
+        <ul class="files">
+            <li>features/tipstest.feature</li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Feature: <a href="../../classes/User.html">User</a> can submit a tip and
+then view it on a different page</p>
+
+<pre><code>As a user of this website
+So that I can contribute tips
+I want to be able to submit them using this page
+</code></pre>
+
+<p>Scenario: Add a tip</p>
+
+<pre><code>Given I am on the SocialSupportNetwork home page
+And I am logged in
+When I follow &quot;Anonymously Submit Advice&quot;
+Then I should be on the Tips page
+When I fill in &quot;Title&quot; with &quot;Testing Tip&quot;
+And I fill in &quot;Body&quot; with &quot;test&quot;
+And I select &quot;Misc.&quot; from &quot;Subject&quot;
+And I press &quot;Submit&quot;
+Then I should be on the &quot;Tips&quot; page
+When I press &quot;Back&quot;
+Then I should be on the &quot;Tips&quot; page
+And I should see &quot;Testing Tip&quot;</code></pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>wait-for-tcp</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            wait-for-tcp
+        </h1>
+        <ul class="files">
+            <li>script/wait-for-tcp</li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>#!/usr/bin/env bash if [ -z “$2” ]; then cat &lt;&lt;&#39;HELP&#39;; exit;
+fi Usage: <a href="wait-for-tcp.html">script/wait-for-tcp</a> ADDRESS PORT
+Wait for TCP connection at ADDRESS:PORT, retrying every 3 seconds, maximum
+20 times. HELP</p>
+
+<p>wait_for_tcp() {</p>
+
+<pre><code>local addr=&quot;$1&quot;
+local port=&quot;$2&quot;
+local status=&quot;down&quot;
+local counter=0
+local wait_time=3
+local max_retries=20
+while [ &quot;$status&quot; = &#39;down&#39; -a ${counter} -lt ${max_retries} ]; do
+  status=&quot;$( (echo &gt; &quot;/dev/tcp/${addr}/${port}&quot;) &gt;/dev/null 2&gt;&amp;1 &amp;&amp; echo &#39;up&#39; || echo &#39;down&#39; )&quot;
+  if [ &quot;$status&quot; = &#39;up&#39; ]; then
+    echo &quot;Connection to ${addr}:${port} up&quot;
+  else
+    echo &quot;Waiting ${wait_time}s for connection to ${addr}:${port}...&quot;
+    sleep &quot;$wait_time&quot;
+    let counter++
+  fi
+done
+if [ ${status} = &#39;down&#39; ]; then
+  echo &quot;Could not connect to ${addr}:${port} after ${max_retries} retries&quot;
+  exit 1
+fi</code></pre>
+
+<p>}</p>
+
+<p>wait_for_tcp “$1” “$2”</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>
