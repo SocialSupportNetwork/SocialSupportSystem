@@ -51,9 +51,12 @@ class User < ApplicationRecord
   # def thredded_can_message_users
   # end
   
-    def blockUser
-       @user.canTalk = false 
-    end
+  def blockUser(userID)
+    puts userID
+    puts "is now blocked"
+    User.update(userID, :canTalk => 'false') 
+  end
+  
     
   
   
