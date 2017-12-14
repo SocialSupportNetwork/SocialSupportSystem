@@ -7,9 +7,13 @@ before_action :deny_banned
     
     def block_user
         #check if they are an admin before allowing them to block
-        userID = params[:id]
-        User.update(userID, :canTalk => 'false') 
-        redirect_to(root_path)
+        if current_user.admin
+            userID = params[:id]
+            User.update(userID, :canTalk => 'false') 
+            redirect_to('/forum')
+        else
+            redirect_to('/forum')
+        end
     end
     
     protected
