@@ -1,6 +1,7 @@
 GIT
   remote: https://github.com/SocialSupportNetwork/thredded.git
-  revision: e375620cef0fc5ae5daf2e29480c1be14a625fda
+  revision: ec82c655582bb78d9d58bcb4e5174aa86a9d7688
+  ref: ec82c65
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -432,4 +433,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.15.4
