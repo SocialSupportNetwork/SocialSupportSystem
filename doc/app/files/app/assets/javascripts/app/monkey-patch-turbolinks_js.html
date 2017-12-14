@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>monkey-patch-turbolinks.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            monkey-patch-turbolinks.js
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/assets/javascripts/app/monkey-patch-turbolinks.js
+                
+            </li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>// Monkey patch Turbolinks to render 403, 404 &amp; 500 normally // See <a
+href="https://github.com/turbolinks/turbolinks/issues/179">github.com/turbolinks/turbolinks/issues/179</a>
+//Dependency not working- patch
+window.Turbolinks.HttpRequest.prototype.requestLoaded = function() {</p>
+
+<pre><code>return this.endRequest(function() {
+  var code = this.xhr.status;
+  if (200 &lt;= code &amp;&amp; code &lt; 300 ||
+      code === 403 || code === 404 || code === 500) {
+    this.delegate.requestCompletedWithResponse(
+        this.xhr.responseText,
+        this.xhr.getResponseHeader(&quot;Turbolinks-Location&quot;));
+  } else {
+    this.failed = true;
+    this.delegate.requestFailedWithStatusCode(code, this.xhr.responseText);
+  }
+}.bind(this));</code></pre>
+
+<p>};</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>

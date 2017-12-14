@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>theme.js</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="banner">
+        
+        <h1>
+            theme.js
+        </h1>
+        <ul class="files">
+            
+            <li>
+                app/assets/javascripts/app/theme.js
+                
+            </li>
+            <li>Last modified: 2017-12-13 21:27:31 +0000</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>//Later?</p>
+
+<p>window.App.onPageLoad(function () {</p>
+
+<pre><code>Array.prototype.forEach.call(document.querySelectorAll(&#39;.app-nav-theme li button&#39;), function(button) {
+  button.addEventListener(&#39;click&#39;, function(evt) {
+    var expiresAt = new Date();
+    expiresAt.setMonth(expiresAt.getMonth() + 12);
+    document.cookie = &#39;app-theme=&#39; +
+        evt.currentTarget.parentNode.getAttribute(&#39;data-theme&#39;) +
+        &#39;;expires=&#39; + expiresAt + &#39;;path=/&#39;;
+    document.location.reload();
+  });
+});</code></pre>
+
+<p>});</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+
+    </div>
+  </body>
+</html>
