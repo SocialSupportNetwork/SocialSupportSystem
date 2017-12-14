@@ -5,6 +5,13 @@ before_action :deny_banned
         @user = User.find(params[:id])
     end
     
+    def block_user
+        #check if they are an admin before allowing them to block
+        userID = params[:id]
+        User.update(userID, :canTalk => 'false') 
+        redirect_to(root_path)
+    end
+    
     protected
     def deny_banned
         if current_user.canTalk == false
@@ -12,9 +19,5 @@ before_action :deny_banned
         end 
     end 
     
-    def block_user(userID)
-        puts userID
-        puts "is now blocked"
-        User.update(userID, :canTalk => 'false') 
-    end
+
 end
