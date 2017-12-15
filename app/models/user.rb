@@ -51,4 +51,8 @@ class User < ApplicationRecord
   # def thredded_can_message_users
   # end
   
+  
+    
+  
+  
 end
