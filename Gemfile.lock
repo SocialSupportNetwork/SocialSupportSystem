@@ -7,8 +7,8 @@ GIT
 
 GIT
   remote: https://github.com/SocialSupportNetwork/thredded.git
-  revision: ec82c655582bb78d9d58bcb4e5174aa86a9d7688
-  ref: ec82c65
+  revision: 2ae95b80db0cf9913ef4dfbc1cea342aa301c716
+  ref: 2ae95b8
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
