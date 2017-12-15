@@ -60,14 +60,17 @@ gem 'rails_email_preview'
 gem 'roadie-rails'
 gem 'plain-david'
 # for local development:
-# gem 'thredded', :path => '../thredded'
-gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', :ref => '283183f'
+# gem 'thredded', :path => 'thredded'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', :ref => '2ae95b8'
+
+
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
-gem 'haikunator'
+gem 'haikunator', :git => 'https://github.com/SocialSupportNetwork/haikunator.git', :ref => '6926e15'
 gem 'mail_form'
 gem 'simple_form'
+gem 'sdoc'
 
 group :test do 
   gem 'cucumber-rails', :require => false
