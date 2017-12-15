@@ -60,9 +60,10 @@ gem 'rails_email_preview'
 gem 'roadie-rails'
 gem 'plain-david'
 # for local development:
-# gem 'thredded', :path => 'thredded'
+
+# gem 'thredded', :path => '../thredded'
 gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', :ref => 'ec82c65'
-# gem 'thredded', :git => 'https://github.com/BillG18/thredded_test.git'
+
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
