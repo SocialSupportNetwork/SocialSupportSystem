@@ -1,5 +1,8 @@
+<div align="center">
+
 <h1>Tips</h1>
 
+</div>
 <%= form_for(@tip) do |f| %>
     <%= f.label :title%>
     <%= f.text_field :title, :required => true, maxlength: 100 %>
@@ -13,4 +16,5 @@
     <%= submit_tag "Submit" %>
 <%end%>
     
+
         
