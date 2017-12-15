@@ -65,7 +65,7 @@ gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', 
 gem 'rails-timeago'
 gem 'dalli'
 gem 'connection_pool'
-gem 'haikunator'
+gem 'haikunator', :git => 'https://github.com/SocialSupportNetwork/haikunator.git', :ref => '6926e15'
 gem 'mail_form'
 gem 'simple_form'
 gem 'sdoc'
