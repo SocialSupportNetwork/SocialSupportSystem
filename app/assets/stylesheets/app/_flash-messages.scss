@@ -12,6 +12,8 @@
 }
 
 .flash-message--error {
+  font-size: 115%;
+  font-weight: bold;
   @extend %thredded--alert--danger;
   
 }
