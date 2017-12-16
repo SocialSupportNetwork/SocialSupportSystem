@@ -13,8 +13,8 @@ Rails.application.routes.draw do
       mount RailsEmailPreview::Engine, at: 'emails'
     end
   end
-  
-  
+
+  get '/users/block/:id' => 'users#block_user'
 
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -25,8 +25,5 @@ Rails.application.routes.draw do
   
   match '/contacts',     to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
-  
-  
-  
   
 end

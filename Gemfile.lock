@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/SocialSupportNetwork/haikunator.git
+  revision: 6926e15163f17acb8f8125c4f627cefc636069b2
+  ref: 6926e15
+  specs:
+    haikunator (1.1.0)
+
+GIT
   remote: https://github.com/SocialSupportNetwork/thredded.git
   revision: 2ae95b80db0cf9913ef4dfbc1cea342aa301c716
   ref: 2ae95b8
@@ -179,7 +186,6 @@ GEM
     gherkin (5.0.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    haikunator (1.1.0)
     html-pipeline (2.7.1)
       activesupport (>= 2)
       nokogiri (>= 1.4)
@@ -407,7 +413,7 @@ DEPENDENCIES
   database_cleaner
   devise
   devise-i18n
-  haikunator
+  haikunator!
   jbuilder (~> 2.5)
   launchy
   listen (>= 3.0.5, < 3.2)
@@ -433,4 +439,4 @@ DEPENDENCIES
   web-console (>= 3.3.0)
 
 BUNDLED WITH
-   1.16.0
+   1.15.4
