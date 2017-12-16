@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/SocialSupportNetwork/thredded.git
-  revision: 2ae95b80db0cf9913ef4dfbc1cea342aa301c716
-  ref: 2ae95b8
+  revision: 55ba8246a8f1d97808b3e2f4c1fbbbc71c7e455d
+  ref: 55ba824
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -147,7 +147,7 @@ GEM
     dry-container (0.6.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.4.1)
+    dry-core (0.4.2)
       concurrent-ruby (~> 1.0)
     dry-equalizer (0.2.0)
     dry-logic (0.4.2)
@@ -329,7 +329,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
       nokogumbo (~> 1.4.1)
-    sass (3.5.3)
+    sass (3.5.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
