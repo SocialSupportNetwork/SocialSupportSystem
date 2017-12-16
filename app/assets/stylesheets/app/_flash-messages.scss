@@ -4,6 +4,7 @@
   transform: translate(0, 7rem);
   margin-bottom: 0;
   text-align: center;
+  border: none;
   @extend %thredded--alert;
 }
 
@@ -14,6 +15,8 @@
 .flash-message--error {
   font-size: 115%;
   font-weight: bold;
+  background: #676769;
+  color: #E1E1E7;
   @extend %thredded--alert--danger;
   
 }
