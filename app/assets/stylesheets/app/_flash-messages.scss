@@ -1,6 +1,9 @@
 .flash-message {
-  padding-top: 7.5rem;
-  margin-bottom: -6.5rem;
+  // padding-top: 7.5rem;
+  // margin-bottom: -6.5rem;
+  transform: translate(0, 7rem);
+  margin-bottom: 0;
+  text-align: center;
   @extend %thredded--alert;
 }
 
@@ -10,6 +13,7 @@
 
 .flash-message--error {
   @extend %thredded--alert--danger;
+  
 }
 
 .flash-message--notice {
