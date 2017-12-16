@@ -15,7 +15,7 @@
 .flash-message--error {
   font-size: 115%;
   font-weight: bold;
-  background: #676769;
+  background: rgba(0,0,0,0.5);
   color: #E1E1E7;
   @extend %thredded--alert--danger;
   
