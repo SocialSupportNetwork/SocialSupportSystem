@@ -57,14 +57,5 @@ Thredded::Messageboard.create!(
     name: 'Seeking Outside Resources',
     slug: 'seeking-outside-resources',
     description: 'Post here if you would like advice on finding outside resources such as therapy or shelters.'
-)
-
-Thredded::TopicForm.new(
-    title: 'Group Consensus',
-    content: <<-MARKDOWN,
-This is a test post
-    MARKDOWN
-    user: admin,
-    messageboard: messageboard
 ).save
 
