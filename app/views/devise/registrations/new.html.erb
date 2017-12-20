@@ -4,9 +4,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :username, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :username, required: true, autofocus: true, maxlength: 100 %>
+    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), maxlength: 100 %>
+    <%= f.input :password_confirmation, required: true, maxlength: 100 %>
+    <%= f.input :screening, required: true, label: "Why do you want to join the Extinguish community?", maxlength: 500, hint:("500 character limit")  %>
+
+    <%= f.label :terms_of_service do %>
+      <%= f.check_box :terms_of_service %>
+        I have read and agree to the <%= link_to 'Terms of Use', "/terms", target: :_blank %>
+    <% end %>
+    <%= f.label :minimum_age do %>
+      <%= f.check_box :minimum_age %>
+        I am at least 18 years old
+    <% end %>
   </div>
 
   <div class="form-actions">
