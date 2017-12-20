@@ -61,8 +61,7 @@ gem 'roadie-rails'
 gem 'plain-david'
 # for local development:
 # gem 'thredded', :path => 'thredded'
-gem 'thredded', :git => 'git@github.com:BillG18/thredded.git'
-# :ref => '55ba824'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', :ref => '55ba824'
 
 
 gem 'rails-timeago'
@@ -72,7 +71,6 @@ gem 'haikunator', :git => 'https://github.com/SocialSupportNetwork/haikunator.gi
 gem 'mail_form'
 gem 'simple_form'
 gem 'sdoc'
-gem 'table_print'
 
 group :test do 
   gem 'cucumber-rails', :require => false
