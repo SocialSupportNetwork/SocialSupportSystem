@@ -1,6 +1,14 @@
 GIT
-  remote: git@github.com:BillG18/thredded.git
-  revision: d1de3c7322f43cdd00ad93ada4371467e17f3091
+  remote: https://github.com/SocialSupportNetwork/haikunator.git
+  revision: 6926e15163f17acb8f8125c4f627cefc636069b2
+  ref: 6926e15
+  specs:
+    haikunator (1.1.0)
+
+GIT
+  remote: https://github.com/SocialSupportNetwork/thredded.git
+  revision: 55ba8246a8f1d97808b3e2f4c1fbbbc71c7e455d
+  ref: 55ba824
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -23,13 +31,6 @@ GIT
       sass (>= 3.4.21)
       sprockets-es6
       timeago_js
-
-GIT
-  remote: https://github.com/SocialSupportNetwork/haikunator.git
-  revision: 6926e15163f17acb8f8125c4f627cefc636069b2
-  ref: 6926e15
-  specs:
-    haikunator (1.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -85,6 +86,9 @@ GEM
     backports (3.10.3)
     bcrypt (3.1.11)
     bindex (0.5.0)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.1.0)
     capybara (2.16.1)
@@ -228,6 +232,8 @@ GEM
     mail_form (1.7.0)
       actionmailer (>= 3.2, < 5.2)
       activemodel (>= 3.2, < 5.2)
+    material_icons (2.2.1)
+      railties (>= 3.2)
     method_source (0.9.0)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
@@ -244,7 +250,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
       nokogiri
-    onebox (1.8.30)
+    onebox (1.8.32)
       fast_blank (>= 1.0.0)
       htmlentities (~> 4.3)
       moneta (~> 1.0)
@@ -373,7 +379,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    table_print (1.5.6)
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
@@ -402,6 +407,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-sass
   byebug
   capybara
   coffee-rails (~> 4.2)
@@ -418,6 +424,7 @@ DEPENDENCIES
   launchy
   listen (>= 3.0.5, < 3.2)
   mail_form
+  material_icons
   pg (~> 0.18)
   plain-david
   puma (~> 3.7)
@@ -432,7 +439,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  table_print
   thredded!
   turbolinks (~> 5)
   tzinfo-data

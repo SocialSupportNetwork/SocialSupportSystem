@@ -1,5 +1,6 @@
 @import "./header/theme_selector";
 
+
 .app-header {
   font-size: 110%;
   z-index: 5;
@@ -26,23 +27,80 @@
     a:hover {
       color: $banner-color;
     }
+    .mobile-menu-content {
+      display: none;
+    }
     .left-menu {
       height: 40px;
+      width: 40%;
+      right: 55%;
+      position: absolute;
       //margin: 0;
       //padding: 0;
       }
+      .left-menu-content {
+        position: absolute;
+        right: 0;
+      }
     .center-icon {
+      position: absolute;
       height: 40px;
-      display: inline-block;
-      vertical-align:middle;
+      width: 100%;
+      //left: 60%;
+      }
+    .center-icon-content {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-top: 8px;
       }
     .right-menu {
-      height:40px;
+      position: absolute;
+      height: 40px;
+      width: 40%;
+      left: 55%;
       }
+    .right-menu-content {
+      position: absolute;
+      left: 0;
+    }
       @include thredded-media-mobile { 
-        font-size: 65%;
+        //font-size: 85%;
+        vertical-align: center;
+        .left-menu {
+          display: none;
+        }
         .center-icon {
-          padding-top: 0.5rem;
+          display: none;
+          // padding-top: 0.5rem;
+        }
+        .right-menu {
+          display: none;
+        }
+        .mobile-menu {
+          display: table;
+          margin: 0 auto;
+        }
+        .mobile-menu-content {
+          display: inline-block;
+          //position: absolute;
+          .bottom-navbar {
+            padding: 0;
+            padding-top: 3%;
+            margin: 0;
+            background: none;
+          }
+          ul {
+            list-style: none;
+            li {
+              height: 36px;
+              display: inline;
+              padding:0 15px;
+              a {
+                padding: 0;
+              }
+            }
+          }
         }
       }
     }
@@ -68,6 +126,9 @@
         display: none;
       }
       .right-menu {
+        display: none;
+      }
+      .mobile-menu {
         display: none;
       }
     }

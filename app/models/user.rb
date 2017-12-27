@@ -1,7 +1,9 @@
 class User < ApplicationRecord
   
-  validates :minimum_age, acceptance: { alert: 'must be accepted' }
-  validates :terms_of_service, acceptance: { alert: 'must be accepted' }
+
+  validates :minimum_age, presence: true, acceptance: { message: 'must be accepted' }
+  validates :terms_of_service, presence: true, acceptance: { message: 'must be accepted' }
+
   #ricki changed here from display_name to username
   validates :username, presence: true, uniqueness: true
   #before_validation :uniq_username!, on: :create
