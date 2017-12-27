@@ -61,9 +61,8 @@ gem 'roadie-rails'
 gem 'plain-david'
 # for local development:
 # gem 'thredded', :path => 'thredded'
-gem 'thredded', :git => 'git@github.com:BillG18/thredded.git'
-# :ref => '55ba824'
 gem 'bootstrap-sass'
+gem 'thredded', :git => 'https://github.com/SocialSupportNetwork/thredded.git', :ref => '55ba824'
 
 gem 'rails-timeago'
 gem 'dalli'
