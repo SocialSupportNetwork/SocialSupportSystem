@@ -12,10 +12,6 @@ body {
   padding-bottom: 4rem;
   height: 100%;
   width:70%;
-  // background-image: image-url('backgroundtile.png');
-  // background-attachment: fixed;
-  //background: rgba(0,0,0,0.25);
-  
   @include thredded-media-tablet-and-up {
      //padding: 0 2rem 0.75rem 2rem;
   }
@@ -31,9 +27,8 @@ body {
   li {
     font-size: 120%;
   }
-  
-
 }
+
 .app-content-container .thredded-container{
   width: 100%;
   margin: 0;

@@ -4,58 +4,74 @@
 <header role="banner" class="app-header" onload="function()">
   <div class="top-navbar">
       <div id="desktopMenu"> 
-        
         <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
-        <!--<a <%= link_to 'Forum', thredded.root_path %></a>-->
-        <!--<a <%= link_to 'Resources', "/about" %></a>-->
-        <!--<a <%= link_to 'Give Advice', "/tips/new" %></a>-->
         <a <%= link_to 'About', "/info" %></a>
       </div>
       <div class="app-nav-auth">
-      <% if current_user %>
-        <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
-                    method: :delete %>
-      <% else %>
-        <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
-      <% end %>
+        <% if current_user %>
+          <%= link_to t('nav.sign_out'), main_app.destroy_user_session_path,
+                      method: :delete %>
+        <% else %>
+          <%= link_to t('nav.sign_in'), main_app.new_user_session_path %>
+        <% end %>
     </div>
   </div>
+  
   <div class="bottom-navbar">
-    <center>
-    <span class="left-menu">
-      <a <%= link_to "Give Advice", "/tips/new" %></a> •
-      <a <%= link_to "Rick's Tips", "/tips" %></a>
-    </span>
-    <span class="center-icon">
-      <img src=<%= asset_path('icon_white.png') %> alt="icon" style="width:40px;">
-    </span>
-    <span class="right-menu">
-      <a <%= link_to t('nav.forums'), thredded.root_path %></a> • 
-      <a <%= link_to "Resources", "/about" %></a>
-    </span>
-    </center>
+    <div class="left-menu">
+      <div class="left-menu-content">
+        <a <%= link_to "Give Advice", "/tips/new" %></a> •
+        <a <%= link_to "Rick's Tips", "/tips" %></a>
+      </div>
+    </div>
+    
+    <div class="center-icon">
+      <div class="center-icon-content">
+        <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width: 40px;">
+      </div>
+    </div>
+    
+    <div class="right-menu">
+      <div class="right-menu-content">
+        <a <%= link_to t('nav.forums'), thredded.root_path %></a> • 
+        <a <%= link_to "Resources", "/about" %></a>
+      </div>
+    </div>
+    
+    <div class="mobile-menu">
+      <div class="mobile-menu-content">
+        <ul class="bottom-navbar">
+          <li>
+            <%= link_to "/tips/new" do %>
+              <i class="material-icons md-36">comment</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/tips" do %>
+              <i class="material-icons md-36">mood</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/" do %>
+              <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width:34px">
+            <% end %>
+          </li>
+          <li>
+            <%= link_to thredded.root_path do %>
+              <i class="material-icons md-36">forum</i>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "/about" do %>
+              <i class="material-icons md-36">import_contacts</i>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
   </div>
   
- <!--t brand.name-->
-  
-  <div id="menuToggle">
-    <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
-    <input type="checkbox" />
-    
-    <!--Some spans to act as a hamburger-->
-    <span></span>
-    <span></span>
-    <span></span>
-    
-    <ul id=menu>
-      <li><a<%= link_to 'Home', "/" %></a></li>
-      <li><a<%= link_to 'Forum', thredded.root_path %></a></li>
-      <li><a<%= link_to 'Resources', "/about" %></a></li>
-      <li><a<%= link_to 'Give Advice', "/tips/new" %></a></li>
-      <li><a<%= link_to 'About', "/info" %></a></li>
-      <li><a<%= link_to 'Contact', "/contacts/new" %></a></li>
-    </ul>
-  </div>
 <%= javascript_include_tag "shortcut" %>
 <script>
 $(window).on("scroll", function () {
@@ -68,7 +84,7 @@ $(window).on("scroll", function () {
 });
 
 shortcut.add("ctrl+x", function() {
-  window.location.replace("https://www.reddit.com/r/all/");
+  window.location.replace("https://www.buzzfeed.com");
 });  
 </script>
 
