@@ -45,27 +45,27 @@
         <ul class="bottom-navbar">
           <li>
             <%= link_to "/tips/new" do %>
-              <i class="material-icons md-36">comment</i>
+              <i class="material-icons md-36">comment</i><span class="caption">GIVE ADVICE</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/tips" do %>
-              <i class="material-icons md-36">mood</i>
+              <i class="material-icons md-36">mood</i><span class="caption">RICKI'S TIPS</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/" do %>
-              <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width:34px">
+              <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width:32px"><span class="caption">HOME</span>
             <% end %>
           </li>
           <li>
             <%= link_to thredded.root_path do %>
-              <i class="material-icons md-36">forum</i>
+              <i class="material-icons md-36">forum</i><span class="caption">FORUMS</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/about" do %>
-              <i class="material-icons md-36">import_contacts</i>
+              <i class="material-icons md-36">import_contacts</i><span class="caption">RESOURCES</span>
             <% end %>
           </li>
         </ul>

@@ -32,12 +32,11 @@
       display: none;
     }
     .left-menu {
+      position: absolute;
       height: 40px;
       width: 40%;
       right: 52%;
-      position: absolute;
-      //margin: 0;
-      //padding: 0;
+      z-index: 1;
       }
       .left-menu-content {
         position: absolute;
@@ -47,34 +46,30 @@
       position: absolute;
       height: 40px;
       width: 100%;
-      //left: 60%;
       }
     .center-icon-content {
       position: absolute;
       left: 50%;
       transform: translate(-50%, -8%);
-      //transform: translate(0, -10%);
-      //margin-top: 8px;
       }
     .right-menu {
       position: absolute;
       height: 40px;
       width: 40%;
       left: 52%;
+      z-index: 1;
       }
     .right-menu-content {
       position: absolute;
       left: 0;
     }
       @include thredded-media-tablet { 
-        //font-size: 85%;
         vertical-align: center;
         .left-menu {
           display: none;
         }
         .center-icon {
           display: none;
-          // padding-top: 0.5rem;
         }
         .right-menu {
           display: none;
@@ -82,12 +77,13 @@
         .mobile-menu {
           display: table;
           margin: 0 auto;
+          font-size: 50%;
         }
         .mobile-menu-content {
           display: inline-block;
           .bottom-navbar {
             padding: 0;
-            padding-top: 3%;
+            padding-top: 0%;
             margin: 0;
             background: none;
           }
@@ -97,22 +93,25 @@
               height: 36px;
               display: inline;
               padding:0 15px;
+              vertical-align: top;
+              text-align: center;
               a {
                 padding: 0;
+              }
+              .caption {
+                display: block;
               }
             }
           }
         }
       }
       @include thredded-media-mobile {
-        //font-size: 85%;
         vertical-align: center;
         .left-menu {
           display: none;
         }
         .center-icon {
           display: none;
-          // padding-top: 0.5rem;
         }
         .right-menu {
           display: none;
@@ -120,12 +119,13 @@
         .mobile-menu {
           display: table;
           margin: 0 auto;
+          font-size: 50%;
         }
         .mobile-menu-content {
           display: inline-block;
           .bottom-navbar {
             padding: 0;
-            padding-top: 3%;
+            padding-top: 0%;
             margin: 0;
             background: none;
           }
@@ -134,9 +134,14 @@
             li {
               height: 36px;
               display: inline;
-              padding:0 15px;
+              padding:0 5px;
+              vertical-align: top;
+              text-align: center;
               a {
                 padding: 0;
+              }
+              .caption {
+                display: block;
               }
             }
           }
