@@ -134,7 +134,7 @@
             li {
               height: 36px;
               display: inline;
-              padding:0 5px;
+              padding:0 2px;
               vertical-align: top;
               text-align: center;
               a {
@@ -207,20 +207,10 @@
   color: $body-background-color;
 }
 
-.desktopfooter {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 5rem;
-  
-  //margin-top: 7rem;
-  //margin-bottom: 5rem;
-  text-align: center;
-  //border: 5px;
+#desktopfooter {
+  padding-top: 15px;
   a {
     display: inline-block;
-    padding: 1rem 0;
   }
   
   

@@ -50,7 +50,7 @@
           </li>
           <li>
             <%= link_to "/tips" do %>
-              <i class="material-icons md-36">mood</i><span class="caption">RICKI'S TIPS</span>
+              <i class="material-icons md-36">person</i><span class="caption">RICK'S TIPS</span>
             <% end %>
           </li>
           <li>
@@ -86,7 +86,18 @@ $(window).on("scroll", function () {
 });
 
 shortcut.add("ctrl+x", function() {
-  window.location.replace("https://www.buzzfeed.com");
+  var x = Math.random() * (3) + 1;
+  var y =""
+  if (x == 1) {
+    y = "https://www.youtube.com";
+  }
+  else if (x == 2) {
+    y ="https://weather.com/";
+  }
+  else {
+    y = "https://www.buzzfeed.com";
+  }
+  window.location.replace(y);
 });  
 </script>
 

@@ -1,14 +1,12 @@
 GIT
+  remote: git@github.com:BillG18/thredded.git
+  revision: cfb87b97a5d89eff47c72383301a1e2e8c4c217a
+
   remote: https://github.com/SocialSupportNetwork/haikunator.git
   revision: 6926e15163f17acb8f8125c4f627cefc636069b2
   ref: 6926e15
   specs:
     haikunator (1.1.0)
-
-GIT
-  remote: https://github.com/SocialSupportNetwork/thredded.git
-  revision: 55ba8246a8f1d97808b3e2f4c1fbbbc71c7e455d
-  ref: 55ba824
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -83,7 +81,7 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
-    backports (3.10.3)
+    backports (3.11.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
     bootstrap-sass (3.3.7)
@@ -245,7 +243,7 @@ GEM
     multi_json (1.12.2)
     multi_test (0.1.2)
     mustache (1.0.5)
-    nio4r (2.1.0)
+    nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
@@ -388,7 +386,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.0.2)
+    uglifier (4.1.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
