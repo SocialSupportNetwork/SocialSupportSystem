@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:BillG18/thredded.git
-  revision: cfb87b97a5d89eff47c72383301a1e2e8c4c217a
+  revision: e7d88b89c56b58ba2b0c42c45ec631ea46e2ccf4
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -249,7 +249,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
       nokogiri
-    onebox (1.8.32)
+    onebox (1.8.33)
       fast_blank (>= 1.0.0)
       htmlentities (~> 4.3)
       moneta (~> 1.0)
