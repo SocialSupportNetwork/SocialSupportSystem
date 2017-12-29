@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   
-
-  validates :minimum_age, presence: true, acceptance: { message: 'must be accepted' }
+  validates :minimum_age, presence: true, acceptance: { message: "must be accepted" }
   validates :terms_of_service, presence: true, acceptance: { message: 'must be accepted' }
+  validates :screening, presence: true
 
   #ricki changed here from display_name to username
   validates :username, presence: true, uniqueness: true
