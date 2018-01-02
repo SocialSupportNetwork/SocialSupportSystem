@@ -25,7 +25,7 @@ Thredded::Messageboard.create!(
     slug: 'second-opinions',
     description: 'Has something felt different? Are you unsure about something that happened? Post here to just get a second (or third!) opinion from our community.'
 )
-bu
+
 Thredded::Messageboard.create!(
     name: 'Interesting Articles',
     slug: 'interesting-articles',
