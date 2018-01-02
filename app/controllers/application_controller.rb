@@ -9,11 +9,6 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up, keys: %i(display_name))
-    
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(screening))
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(minimum_age))
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i(terms_of_service))
-    
     devise_parameter_sanitizer.permit(:account_update, keys: %i(display_name))
   end
 
