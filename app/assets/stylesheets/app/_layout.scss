@@ -38,8 +38,32 @@ body {
   @include thredded-media-tablet-and-up {
      padding: 0 2rem 0.75rem 2rem;
   }
-  
 }
+
+.thredded--topic-header--follow-info {
+    display: none;
+  }
+  
+.thredded--messageboard {
+  border-color: rgba(0,0,0,0);
+  // box-shadow: none;
+  transition: all .25s ease-in-out;
+}
+
+.thredded--messageboard:hover {
+    border-color: rgba(0,0,0,0);
+    background-color: rgba(159,124,177,0.3);
+    // box-shadow: 0 0 5px 2px $brand-primary;
+}
+
+.thredded--messageboard:active {
+  border-color: rgba(0,0,0,0);
+}
+
+.thredded--messageboard:focus {
+  border-color: rgba(0,0,0,0);
+}
+
 .app-header {
   margin: 0 auto;
   padding: 0 0rem 0rem 0rem;
@@ -54,8 +78,8 @@ body {
   margin: 0;
   
   @include thredded-media-mobile {
-    
   }
+  
   a:hover{
     color: $button-hover-background;
   }
