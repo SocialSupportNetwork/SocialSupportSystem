@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:BillG18/thredded.git
-  revision: e7d88b89c56b58ba2b0c42c45ec631ea46e2ccf4
+  revision: 44455b4872e2205560805b68622d872db23167b8
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -75,7 +75,7 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    autoprefixer-rails (7.2.3)
+    autoprefixer-rails (7.2.4)
       execjs
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -141,7 +141,7 @@ GEM
     db_text_search (0.2.2)
       activerecord (>= 4.1.15, < 6.0)
     deep_merge (1.1.1)
-    devise (4.3.0)
+    devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -238,7 +238,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.0)
     moneta (1.0.0)
     multi_json (1.12.2)
     multi_test (0.1.2)
@@ -305,7 +305,8 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
-    request_store (1.3.2)
+    request_store (1.4.0)
+      rack (>= 1.4)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -386,7 +387,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.1.0)
+    uglifier (4.1.2)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)

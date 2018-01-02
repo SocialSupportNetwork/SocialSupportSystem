@@ -27,8 +27,11 @@
     
     <div class="center-icon">
       <div class="center-icon-content">
+        
         <%= link_to "/" do %>
-              <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width: 40px;">
+              <div class="header-icon">
+              <%= inline_svg "icon-logo.svg", class: 'icon' %>
+              </div>
         <% end %>
       </div>
     </div>
@@ -55,7 +58,7 @@
           </li>
           <li>
             <%= link_to "/" do %>
-              <img src=<%= asset_path('icon_white.png') %> alt="Extinguish-icon" style="width:32px"><span class="caption">HOME</span>
+              <img src=<%= asset_path('icon_white.svg') %> alt="Extinguish-icon" style="width:32px"><span class="caption">HOME</span>
             <% end %>
           </li>
           <li>
