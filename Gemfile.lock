@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:BillG18/thredded.git
-  revision: e7d88b89c56b58ba2b0c42c45ec631ea46e2ccf4
+  revision: 49167100aac1b55389b82295ca7e71885f3748bd
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -142,7 +142,7 @@ GEM
     db_text_search (0.2.2)
       activerecord (>= 4.1.15, < 6.0)
     deep_merge (1.1.1)
-    devise (4.3.0)
+    devise (4.4.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 5.2)
@@ -388,7 +388,7 @@ GEM
     turbolinks-source (5.0.3)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
-    uglifier (4.1.0)
+    uglifier (4.1.1)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)

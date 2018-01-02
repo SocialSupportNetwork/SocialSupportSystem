@@ -5,42 +5,6 @@ admin = User.create!(
     admin: true
 )
 
-User.create!(
-    username: "MarkZuckerberg",
-    password: "facebook",
-    admin: false
-)
-
-User.create!(
-    username: "ElonMusk",
-    password: "spacex",
-    admin: false
-)
-
-User.create!(
-    username: "MarissaMayer",
-    password: "yahoosearch",
-    admin: true
-)
-
-User.create!(
-    username: "MegWhitman",
-    password: "hpcomputers",
-    admin: false
-)
-
-User.create!(
-    username: "SteveJobs",
-    password: "appleiscool",
-    admin: false
-)
-
-User.create!(
-    username: "SusanWojcicki",
-    password: "youtube",
-    admin: false
-)
-
 messageboard = Thredded::Messageboard.create!(
     name: 'General',
     slug: 'general',
@@ -48,14 +12,14 @@ messageboard = Thredded::Messageboard.create!(
 )
 
 Thredded::Messageboard.create!(
-    name: 'Emergency Situations',
-    slug: 'emergency-situations',
-    description: 'Post here if you have an emergency situation and need immediate help.'
+    name: 'Local Resources',
+    slug: 'local-resources',
+    description: 'Post here to find out about resources available in your area from our community.'
 )
 
 Thredded::Messageboard.create!(
-    name: 'Seeking Outside Resources',
-    slug: 'seeking-outside-resources',
-    description: 'Post here if you would like advice on finding outside resources such as therapy or shelters.'
+    name: 'Second Opinions',
+    slug: 'second-opinions',
+    description: 'Has something felt different? Are you unsure about something that happned? Post here to just get a second (or third!) opinion from our community.'
 ).save
 
