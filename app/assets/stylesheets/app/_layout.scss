@@ -45,23 +45,29 @@ body {
   }
   
 .thredded--messageboard {
-  border-color: rgba(0,0,0,0);
+  //border-color: rgba(0,0,0,0);
   // box-shadow: none;
-  transition: all .25s ease-in-out;
+  transition: all .15s ease-in-out;
 }
 
 .thredded--messageboard:hover {
-    border-color: rgba(0,0,0,0);
+    //border-color: rgba(0,0,0,0);
     background-color: rgba(159,124,177,0.3);
     // box-shadow: 0 0 5px 2px $brand-primary;
 }
 
 .thredded--messageboard:active {
-  border-color: rgba(0,0,0,0);
+  //border-color: rgba(0,0,0,0);
 }
 
 .thredded--messageboard:focus {
-  border-color: rgba(0,0,0,0);
+  //border-color: rgba(0,0,0,0);
+}
+
+.thredded--messageboard--byline {
+  cite {
+    //display: none;
+  }
 }
 
 .app-header {

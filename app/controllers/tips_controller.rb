@@ -2,16 +2,18 @@ class TipsController < ApplicationController
   
   def index
     @tips = Tip.all
+    @tip = Tip.new
   end
 
   def new
+    @tips = Tip.all
     @tip = Tip.new
   end
 
   def create
     @tip = Tip.new(tip_params)
     if @tip.save
-        redirect_to "/", alert: "Advice submitted successfully."
+        redirect_to "/tips", alert: "Advice submitted successfully."
     else
         redirect_to new_tip_path, alert: "Error submitting advice."
         # maybe change to new_user_path
