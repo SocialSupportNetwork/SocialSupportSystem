@@ -18,3 +18,17 @@
     </tbody>
 </table>
 </div>
+
+<%= form_for(@tip) do |f| %>
+    <%= f.label :title%>
+    <%= f.text_field :title, :required => true, maxlength: 100 %>
+
+    <%= f.label :body %>
+    <%= f.text_area :body, :required => true, maxlength: 500 %>
+    
+    <%= f.label :subject %>
+    <%= f.select :subject, ['Safety', 'Resources', 'Misc.'] %>
+    
+    <%= submit_tag "Submit" %>
+<%end%>
+

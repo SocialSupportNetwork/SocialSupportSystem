@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171219212544) do
+ActiveRecord::Schema.define(version: 20180103155959) do
 
   create_table "advice", force: :cascade do |t|
     t.string "title"
@@ -207,6 +207,7 @@ ActiveRecord::Schema.define(version: 20171219212544) do
     t.datetime "moderation_state_changed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "moderation_id"
     t.index ["latest_activity_at"], name: "index_thredded_user_details_on_latest_activity_at"
     t.index ["moderation_state", "moderation_state_changed_at"], name: "index_thredded_user_details_for_moderations"
     t.index ["user_id"], name: "index_thredded_user_details_on_user_id"

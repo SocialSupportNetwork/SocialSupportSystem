@@ -5,7 +5,7 @@
   <div class="top-navbar">
       <div id="desktopMenu"> 
         <a class="app-nav-logo" href="/"><%= t 'Home' %></a>
-        <a <%= link_to 'About', "/info" %></a>
+        <!--<a link_to 'About', "/info"</a>-->
       </div>
       <div class="app-nav-auth">
         <% if current_user %>
@@ -20,7 +20,7 @@
   <div class="bottom-navbar">
     <div class="left-menu">
       <div class="left-menu-content">
-        <a <%= link_to "Give Advice", "/tips/new" %></a> •
+        <a <%= link_to "About Us", "/info" %></a> •
         <a <%= link_to "Rick's Tips", "/tips" %></a>
       </div>
     </div>
@@ -47,28 +47,30 @@
       <div class="mobile-menu-content">
         <ul class="bottom-navbar">
           <li>
-            <%= link_to "/tips/new" do %>
-              <i class="material-icons md-36">comment</i><span class="caption">GIVE ADVICE</span>
+            <%= link_to "/info" do %>
+              <i class="material-icons md-36">people</i><span class="caption">About Us</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/tips" do %>
-              <i class="material-icons md-36">person</i><span class="caption">RICK'S TIPS</span>
+              <i class="material-icons md-36">whatshot</i><span class="caption">Rick's Tips</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/" do %>
-              <img src=<%= asset_path('icon_white.svg') %> alt="Extinguish-icon" style="width:32px"><span class="caption">HOME</span>
+              <div class="header-icon">
+              <%= inline_svg "icon-logo.svg", class: 'icon' %>Home
+              </div>
             <% end %>
           </li>
           <li>
             <%= link_to thredded.root_path do %>
-              <i class="material-icons md-36">forum</i><span class="caption">FORUMS</span>
+              <i class="material-icons md-36">forum</i><span class="caption">Forums</span>
             <% end %>
           </li>
           <li>
             <%= link_to "/about" do %>
-              <i class="material-icons md-36">import_contacts</i><span class="caption">RESOURCES</span>
+              <i class="material-icons md-36">import_contacts</i><span class="caption">Resources</span>
             <% end %>
           </li>
         </ul>

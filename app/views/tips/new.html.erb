@@ -1,5 +1,26 @@
 <div align="center">
 
+<div>
+<h1>Tips</h1>
+
+<table>
+    <thead>
+        <th width=20%>Title</th>
+        <th width=60%>Advice</th>
+        <th width=20%>Subject</th>
+    </thead>
+    <tbody>
+<% @tips.each do |tip| %>
+    <tr>
+        <td><%= tip.title %></td>
+        <td><%= tip.body %></td>
+        <td><%= tip.subject %></td>
+    </tr>
+<% end %>
+    </tbody>
+</table>
+</div>
+
 <h1>Tips</h1>
 
 </div>
