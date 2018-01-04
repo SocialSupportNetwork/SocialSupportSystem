@@ -18,7 +18,6 @@ body {
   @include thredded-media-mobile { 
     margin: auto;
     width: 90%;
-    
   }
   center {
     font-size: 120%;
@@ -26,6 +25,12 @@ body {
   }
   li {
     font-size: 120%;
+  }
+  a:hover {
+    color: $button-hover-background;
+  }
+  .thredded--button:hover {
+    color: $body-background-color;
   }
 }
 
@@ -64,12 +69,6 @@ body {
   //border-color: rgba(0,0,0,0);
 }
 
-.thredded--messageboard--byline {
-  cite {
-    //display: none;
-  }
-}
-
 .app-header {
   margin: 0 auto;
   padding: 0 0rem 0rem 0rem;
@@ -82,13 +81,6 @@ body {
   font-size: $base-font-size;
   line-height: $base-line-height;
   margin: 0;
-  
-  @include thredded-media-mobile {
-  }
-  
-  a:hover{
-    color: $button-hover-background;
-  }
   height: 100%;
   
 }

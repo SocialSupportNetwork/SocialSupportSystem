@@ -1,4 +1,12 @@
 # frozen_string_literal: true
+queue = User.create!(
+    username: "Queue",
+    password: "123456",
+    admin: true,
+    minimum_age: true,
+    terms_of_service: true,
+    screening: "Yip!")
+
 halo = User.create!(
     username: "Halo",
     password: "123456",

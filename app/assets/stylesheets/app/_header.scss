@@ -214,10 +214,11 @@
  position: fixed;
  top: 0;
  right: 0;
-
+ a {
+   color: $brand-primary;
+ }
   @include thredded-media-mobile {
     font-size: 0;
-
     a {
       margin-left: 0.4rem;
       font-size: 1rem;
