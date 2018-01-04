@@ -64,6 +64,11 @@
     .icon:hover {
       transform: scale(1.2);
       fill: $banner-color;
+      #flame {
+        @include thredded-media-tablet-and-up {
+          transform: scale(0);
+        }
+      }
     }
     
     .right-menu {
@@ -105,6 +110,7 @@
             }
             .icon:hover {
               transform: scale(0.9);
+              
             }
           }
           ul {

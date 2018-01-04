@@ -29,6 +29,12 @@ body {
   a:hover {
     color: $button-hover-background;
   }
+  a:active {
+    color: $button-hover-background;
+  }
+  a:focus {
+    color: $button-hover-background;
+  }
   .thredded--button:hover {
     color: $body-background-color;
   }
