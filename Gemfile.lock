@@ -1,6 +1,6 @@
 GIT
   remote: git@github.com:BillG18/thredded.git
-  revision: b0b55ea989d544d99e36ef87f69f7ba6f2322fb9
+  revision: 202f87ea6cd37f398dacb2f4568e1a873695c1ee
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
