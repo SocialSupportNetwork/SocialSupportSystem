@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   mount Thredded::Engine => '/forum'
 
   resources :tips
+  match '/tip-moderation',     to: 'tips#moderation', via: 'get'
   
   match '/contacts',     to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
