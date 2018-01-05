@@ -1,34 +1,124 @@
+<%= render 'nav' %>
 <div align="center">
 <h1>Tips</h1>
+</div>
 
-<table>
+<div class="tip-dropdown"><h2 class="tip-table-header">Safety<div id="safety-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
+<div class="safety">
+<table width=100% class="tip-table">
     <thead>
         <th width=20%>Title</th>
-        <th width=60%>Advice</th>
-        <th width=20%>Subject</th>
+        <th width=40%>Advice</th>
     </thead>
     <tbody>
-<% @tips.each do |tip| %>
-    <tr>
-        <td><%= tip.title %></td>
-        <td><%= tip.body %></td>
-        <td><%= tip.subject %></td>
-    </tr>
-<% end %>
+        <% @tips.each do |tip| %>
+        <% unless !tip.approved %>
+        <% if tip.subject == 'Safety' %>
+        <tr>
+            <td><%= tip.title %></td>
+            <td><%= tip.body %></td>
+        </tr>
+        <% end %>
+        <% end %>
+        <% end %>
     </tbody>
 </table>
 </div>
 
+<div class="tip-dropdown"><h2 class="tip-table-header">Resources<div id="resources-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
+<div class="resources">
+    <table width=100% class="tip-table">
+    <thead>
+        <th width=20%>Title</th>
+        <th width=40%>Advice</th>
+    </thead>
+    <tbody>
+        <% @tips.each do |tip| %>
+        <% unless !tip.approved %>
+        <% if tip.subject == 'Resources' %>
+        <tr>
+            <td><%= tip.title %></td>
+            <td><%= tip.body %></td>
+        </tr>
+        <% end %>
+        <% end %>
+        <% end %>
+    </tbody>
+</table>
+</div>
+
+<div class="tip-dropdown"><h2 class="tip-table-header">Miscellaneous<div id="misc-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
+<div class="misc">
+    <table width=100% class="tip-table">
+    <thead>
+        <th width=20%>Title</th>
+        <th width=40%>Advice</th>
+    </thead>
+    <tbody>
+        <% @tips.each do |tip| %>
+        <% unless !tip.approved %>
+        <% if tip.subject == 'Misc.' %>
+        <tr>
+            <td><%= tip.title %></td>
+            <td><%= tip.body %></td>
+        </tr>
+        <% end %>
+        <% end %>
+        <% end %>
+    </tbody>
+</table>
+</div>
+<div id="tip-bottom"></div>
+<div class="tip-blurb" align="center">
+    <h1>What are Rick's Tips?</h1>
+    <p>Rick's Tips are our own living dynamic resource that is built by YOU the community </p>
+</div>
+<div align="center">
+    <h1 style=" margin-bottom: 0">Submit your own tip!</h1>
+</div>
+
 <%= form_for(@tip) do |f| %>
     <%= f.label :title%>
-    <%= f.text_field :title, :required => true, maxlength: 100 %>
+    <%= f.text_field :title, :required => true, maxlength: 100  %>
 
     <%= f.label :body %>
-    <%= f.text_area :body, :required => true, maxlength: 500 %>
+    <%= f.text_area :body, :required => true, maxlength: 500  %>
     
     <%= f.label :subject %>
     <%= f.select :subject, ['Safety', 'Resources', 'Misc.'] %>
     
     <%= submit_tag "Submit" %>
 <%end%>
+
+<script>
+$("#safety-button").click(function(){
+    if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
+    }
+    else{
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
+    }
+    $(".safety").slideToggle();
+});
+
+$("#resources-button").click(function(){
+    if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
+    }
+    else{
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
+    }
+    $(".resources").slideToggle();
+});
+
+$("#misc-button").click(function(){
+    if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
+    }
+    else{
+        $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
+    }
+    $(".misc").slideToggle();
+});
+</script>
 
