@@ -6,7 +6,7 @@
         <% end %>
         <% if current_uri != "/tip-moderation" %>
             <% if current_user.admin %> 
-                <li><%= Tip.where(approved: false).count %> tips require <%= link_to "moderation", "/tip-moderation" %></li>
+                <li><%= Tip.where(approved: false).count %> tips in <%= link_to "moderation", "/tip-moderation" %> queue</li>
             <% end %>
         <% end %>
     </ul>

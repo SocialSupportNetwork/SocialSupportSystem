@@ -4,7 +4,13 @@
 <% end %>
 <div align="center">
 <h1>Tip Moderation Queue</h1>
+
+<% if (Tip.where(approved: false).count) == 0  %>
+    <h2>Woo! The tip moderation queue is empty!</h2>
+    </div>
+<% else %>
 </div>
+
 <table width=100%>
     <thead>
         <th width=20%>Title</th>
@@ -28,3 +34,4 @@
     </tbody>
 </table>
 </div>
+<% end %>
