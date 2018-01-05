@@ -29,13 +29,15 @@
   font-size: 80%;
 }
 
-.safety {
-  display: none;
+.tip-table {
+  width: 90%;
+   td {
+     border: none
+     
+   }
 }
-.resources {
-  display: none;
-}
-.misc {
+
+.tip-minimize-window {
   display: none;
 }
 
@@ -43,12 +45,20 @@
   display: inline-block;
   margin: 0;
   margin-top: 1rem;
+  i:hover {
+    cursor: pointer;
+  }
 }
 
 .tip-dropdown {
   width: 100%; 
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid;
   //color: $brand-primary;
+}
+
+.tip-dropdown-button {
+  display:inline-block; 
+  float:right;
 }
 
 .tip-blurb {
@@ -61,3 +71,4 @@
 #tip-bottom {
   height: 1rem;
 }
+

@@ -1,73 +1,42 @@
 <%= render 'nav' %>
+
 <div align="center">
-<h1>Tips</h1>
+    <h1>Rick's Tips</h1>
 </div>
 
-<div class="tip-dropdown"><h2 class="tip-table-header">Safety<div id="safety-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
-<div class="safety">
-<table width=100% class="tip-table">
-    <thead>
-        <th width=20%>Title</th>
-        <th width=40%>Advice</th>
-    </thead>
-    <tbody>
-        <% @tips.each do |tip| %>
-        <% unless !tip.approved %>
-        <% if tip.subject == 'Safety' %>
-        <tr>
-            <td><%= tip.title %></td>
-            <td><%= tip.body %></td>
-        </tr>
-        <% end %>
-        <% end %>
-        <% end %>
-    </tbody>
-</table>
-</div>
+<% subjects = Tip.where(approved: true).distinct.pluck(:subject) %>
+<% subjects.each do |subject| %>
 
-<div class="tip-dropdown"><h2 class="tip-table-header">Resources<div id="resources-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
-<div class="resources">
-    <table width=100% class="tip-table">
-    <thead>
-        <th width=20%>Title</th>
-        <th width=40%>Advice</th>
-    </thead>
-    <tbody>
-        <% @tips.each do |tip| %>
-        <% unless !tip.approved %>
-        <% if tip.subject == 'Resources' %>
-        <tr>
-            <td><%= tip.title %></td>
-            <td><%= tip.body %></td>
-        </tr>
-        <% end %>
-        <% end %>
-        <% end %>
-    </tbody>
-</table>
-</div>
+    <div>
+        <div class="tip-dropdown">
+            <h2 class="tip-table-header">
+                <%= subject %>
+                <div class="tip-dropdown-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div>
+            </h2>
+        </div>
+        <div class="tip-minimize-window">
+            <table class="tip-table">
+                <thead>
+                    <th width=20%>Title</th>
+                    <th width=40%>Advice</th>
+                </thead>
+                <tbody>
+                <% @tips.each do |tip| %>
+                <% unless !tip.approved %>
+                <% if tip.subject == subject %>
+                    <tr>
+                        <td><%= tip.title %></td>
+                        <td><%= tip.body %></td>
+                    </tr>
+                <% end %>
+                <% end %>
+                <% end %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<% end %>
 
-<div class="tip-dropdown"><h2 class="tip-table-header">Miscellaneous<div id="misc-button" style="display:inline-block; float:right;"><i class="material-icons md-36">keyboard_arrow_right</i></div></h2></div>
-<div class="misc">
-    <table width=100% class="tip-table">
-    <thead>
-        <th width=20%>Title</th>
-        <th width=40%>Advice</th>
-    </thead>
-    <tbody>
-        <% @tips.each do |tip| %>
-        <% unless !tip.approved %>
-        <% if tip.subject == 'Misc.' %>
-        <tr>
-            <td><%= tip.title %></td>
-            <td><%= tip.body %></td>
-        </tr>
-        <% end %>
-        <% end %>
-        <% end %>
-    </tbody>
-</table>
-</div>
 <div id="tip-bottom"></div>
 <div class="tip-blurb" align="center">
     <h1>What are Rick's Tips?</h1>
@@ -90,35 +59,21 @@
     <%= submit_tag "Submit" %>
 <%end%>
 
+<% cities = {
+  'USA'      => ['Washington', 'New York'],
+  'Bulgaria' => ['Sofia', 'Svishtov']
+} %>
+<%= select_tag :city, grouped_options_for_select(cities) %>
+
 <script>
-$("#safety-button").click(function(){
+$(".tip-dropdown-button").click(function(){
     if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
         $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
     }
     else{
         $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
     }
-    $(".safety").slideToggle();
-});
-
-$("#resources-button").click(function(){
-    if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
-        $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
-    }
-    else{
-        $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
-    }
-    $(".resources").slideToggle();
-});
-
-$("#misc-button").click(function(){
-    if($(this).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
-        $(this).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
-    }
-    else{
-        $(this).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
-    }
-    $(".misc").slideToggle();
+    $(this.parentNode.parentNode.parentNode.children[1]).slideToggle();
 });
 </script>
 

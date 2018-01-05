@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180104181441) do
+ActiveRecord::Schema.define(version: 20180105220154) do
 
   create_table "advice", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20180104181441) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "subtopics", force: :cascade do |t|
+    t.string "name"
+    t.integer "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thredded_categories", force: :cascade do |t|
@@ -271,6 +278,12 @@ ActiveRecord::Schema.define(version: 20180104181441) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "approved", default: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
