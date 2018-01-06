@@ -15,7 +15,7 @@ class TipsController < ApplicationController
     if @tip.save
         redirect_to "/tips", alert: "Advice submitted successfully."
     else
-        redirect_to new_tip_path, alert: "Error submitting advice."
+        redirect_to "/tips", alert: "Error submitting advice."
         # maybe change to new_user_path
     end
   end
@@ -29,7 +29,7 @@ class TipsController < ApplicationController
     if current_user.admin
       @tips = Tip.find(params[:id])
       @tips.destroy
-      redirect_to "/tips", notice: "Tip deleted successfully."
+      redirect_to "/tip-moderation", notice: "Tip deleted successfully."
     else
       redirect_to "/tips", alert: "An error occurred while trying to delete tip."
     end
@@ -40,7 +40,7 @@ class TipsController < ApplicationController
     if current_user.admin
         @tips = Tip.find(params[:id])
         @tips.update_attribute(:approved, 'true')
-        redirect_to "/tips", notice: "Tip approved successfully."
+        redirect_to "/tip-moderation", notice: "Tip approved successfully."
     else
       redirect_to "/tips", alert: "An error occurred while trying to approve tip."
     end
@@ -51,6 +51,6 @@ class TipsController < ApplicationController
   end
   
   def tip_params
-    params.require(:tip).permit(:title, :body, :subject)
+    params.require(:tip).permit(:title, :body, :topic_id, :subtopic_id)
   end
 end

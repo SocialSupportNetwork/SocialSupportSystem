@@ -274,7 +274,8 @@ ActiveRecord::Schema.define(version: 20180105220154) do
   create_table "tips", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.string "subject"
+    t.integer "topic_id"
+    t.integer "subtopic_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "approved", default: false

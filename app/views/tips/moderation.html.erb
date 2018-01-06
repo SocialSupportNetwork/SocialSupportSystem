@@ -1,7 +1,7 @@
 <%= render 'nav' %>
 <% if !current_user.admin? %>
-<!--REDIRECT UNAUTHORIZED HERE -->
-<% end %>
+  <p class="thredded--alert thredded--alert-warning">You are not authorized to view this content</p>
+<% else %>
 <div align="center">
 <h1>Tip Moderation Queue</h1>
 
@@ -15,7 +15,8 @@
     <thead>
         <th width=20%>Title</th>
         <th width=40%>Advice</th>
-        <th width=20%>Subject</th>
+        <th width=20%>Topic</th>
+        <th width=20%>Subtopic</th>
         <th width=10%></th>
         <th width=10%></th>
     </thead>
@@ -25,13 +26,15 @@
         <tr>
             <td><%= tip.title %></td>
             <td><%= tip.body %></td>
-            <td><%= tip.subject %></td>
+            <td><%= tip.topic.name %></td>
+            <td><%= tip.subtopic.name %></td>
             <td><%= button_to "Delete Tip", tip_path(tip), data: { confirm: "Are you sure you want to delete this tip? This CANNOT be undone." }, method: :delete, :class => "table-button"%></td>
             <td><%= button_to "Approve Tip", tip_path(tip), method: :put,  :class => "table-button"%></td>
         </tr>
     <% end %>
 <% end %>
-    </tbody>
+</tbody>
 </table>
 </div>
+<% end %>
 <% end %>

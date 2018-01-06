@@ -1,4 +1,22 @@
 # frozen_string_literal: true
+require 'csv'
+
+puts "Importing countries..."
+CSV.foreach(Rails.root.join("topic.csv"), headers: true) do |row|
+  Topic.create! do |topic|
+    topic.name = row[0]
+    topic.id = row[1]
+    end
+end
+
+puts "Importing states..."
+CSV.foreach(Rails.root.join("subtopic.csv"), headers: true) do |row|
+  Subtopic.create! do |subtopic|
+    subtopic.topic_id = row[0]
+    subtopic.name = row[1]
+  end
+end
+
 queue = User.create!(
     username: "Queue",
     password: "123456",

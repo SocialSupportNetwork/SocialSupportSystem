@@ -20,8 +20,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:show]
   mount Thredded::Engine => '/forum'
-
+  
   resources :tips
+  
   match '/tip-moderation',     to: 'tips#moderation', via: 'get'
   
   match '/contacts',     to: 'contacts#new', via: 'get'
