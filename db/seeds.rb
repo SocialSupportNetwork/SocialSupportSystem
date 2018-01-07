@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'csv'
 
-puts "Importing countries..."
+puts "Importing tip topics..."
 CSV.foreach(Rails.root.join("topic.csv"), headers: true) do |row|
   Topic.create! do |topic|
     topic.name = row[0]
@@ -9,7 +9,7 @@ CSV.foreach(Rails.root.join("topic.csv"), headers: true) do |row|
     end
 end
 
-puts "Importing states..."
+puts "Importing tip subtopics..."
 CSV.foreach(Rails.root.join("subtopic.csv"), headers: true) do |row|
   Subtopic.create! do |subtopic|
     subtopic.topic_id = row[0]

@@ -1,6 +1,6 @@
 GIT
-  remote: git@github.com:BillG18/thredded.git
-  revision: 202f87ea6cd37f398dacb2f4568e1a873695c1ee
+  remote: https://github.com/BillG18/thredded.git
+  revision: 0cdcff1678605f227e4d3a80cee2b66fffd31008
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -246,7 +246,7 @@ GEM
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
       nokogiri
-    onebox (1.8.33)
+    onebox (1.8.34)
       fast_blank (>= 1.0.0)
       htmlentities (~> 4.3)
       moneta (~> 1.0)
@@ -337,7 +337,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
       nokogumbo (~> 1.4.1)
-    sass (3.5.4)
+    sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
