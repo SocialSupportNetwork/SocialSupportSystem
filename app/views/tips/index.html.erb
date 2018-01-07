@@ -67,17 +67,17 @@
 
 <%= form_for @tip do |f| %>
     <%= f.label :title, "My Tip's Title" %>
-    <%= f.text_field :title, placeholder: "Tip Title...", maxlength: 50, id: "title" %>
+    <%= f.text_field :title, placeholder: "Tip Title...", :required => true, maxlength: 50, id: "title" %>
     <div id="form" style="display: none;">
         <%= f.label :body, "My Tip"%>
-        <%= f.text_area :body, placeholder: "Tip Body...", maxlength: 500 %>
+        <%= f.text_area :body, placeholder: "Tip Body...", :required => true, maxlength: 500 %>
         <div class="field">
             <%= f.label :topic_id %>
             <%= f.collection_select :topic_id, Topic.order(:id), :id, :name, include_blank: false, include_blank: "Please select a topic" %>
         </div>
         <div class="field">
             <%= f.label :subtopic_id, "Subtopic" %>
-            <%= f.grouped_collection_select :subtopic_id, Topic.order(:id), :subtopics, :name, :id, :name, include_blank: true %>
+            <%= f.grouped_collection_select :subtopic_id, Topic.order(:id), :subtopics, :name, :id, :name, :required => true, include_blank: true %>
         </div>
         <%= submit_tag "Submit" %>
     </div>
