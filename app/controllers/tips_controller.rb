@@ -1,7 +1,7 @@
 class TipsController < ApplicationController
   
   def index
-    @tips = Tip.all
+    @tips = Tip.search(params[:term])
     @tip = Tip.new
   end
 
@@ -13,7 +13,7 @@ class TipsController < ApplicationController
   def create
     @tip = Tip.new(tip_params)
     if @tip.save
-        redirect_to "/tips", alert: "Advice submitted successfully."
+        redirect_to "/tips", alert: "Advice submitted! It will be visible after its been reviewed by a moderator. Check back soon!"
     else
         redirect_to "/tips", alert: "Error submitting advice."
         # maybe change to new_user_path
@@ -51,6 +51,6 @@ class TipsController < ApplicationController
   end
   
   def tip_params
-    params.require(:tip).permit(:title, :body, :topic_id, :subtopic_id)
+    params.require(:tip).permit(:title, :body, :topic_id, :subtopic_id, :term)
   end
 end

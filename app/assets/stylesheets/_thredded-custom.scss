@@ -24,9 +24,28 @@
 }
 
 .tips--moderation-navigation--items {
-  list-style: none;
-  text-align: right;
-  font-size: 80%;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  #nav-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include thredded-media-mobile {
+      position: relative;
+      text-align: right;
+      margin-top: 1rem;
+    }
+  }
+  form {
+    width: 25%;
+    @include thredded-media-mobile {
+      width: 100%;
+    }
+    #submit-button {
+      display: none;
+    }
+  }
 }
 
 .tip-header {
@@ -37,14 +56,26 @@
 }
 
 #second.tip-header {
-  font-size: 110%;
+  font-size: 80%;
+  @include thredded-media-tablet-and-up {
+    font-size: 90%;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 110%;
+  }
   i {
     transform: scale(0.9);
   }
 }
 
 #third.tip-header {
-  font-size: 80%;
+  font-size: 60%;
+  @include thredded-media-tablet-and-up {
+    font-size: 70%;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 85%;
+  }
   i {
     transform: scale(0.8);
   }
@@ -67,6 +98,9 @@
 .tip-detail-list {
   list-style: none;
   margin: 0;
+  @include thredded-media-mobile {
+    padding-left: 1rem;
+  }
   li {
     border-bottom: 1px solid;
   }
@@ -76,14 +110,23 @@
   display: none;
   list-style: none;
   margin: 0;
-  font-size: 70%;
+  @include thredded-media-mobile {
+    padding-left: 1rem;
+    font-size: 50%;
+  }
+  @include thredded-media-tablet-and-up {
+    font-size: 60%;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 70%;
+  }
   li {
     border-bottom: none;
   }
 }
 
 #tip-bottom {
-  height: 1rem;
+  height: 2rem;
 }
 
 .tip-blurb {
@@ -92,3 +135,4 @@
     margin: 0;
   }
 }
+

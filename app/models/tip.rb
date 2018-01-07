@@ -5,7 +5,7 @@ class Tip < ActiveRecord::Base
     
     validates :title,
     presence: true,
-    length: {maximum: 100},
+    length: {maximum: 50},
     on: :create,
     allow_nil: false
     
@@ -19,5 +19,18 @@ class Tip < ActiveRecord::Base
     presence: true,
     on: :create,
     allow_nil: false
-    
+   
+    validates :subtopic_id,
+    presence: true,
+    on: :create,
+    allow_nil: false 
+   
+    def self.search(term)
+        if term
+            where('title LIKE ?', "%#{term}%").or(where('body LIKE ?', "%#{term}%")) #.order('id DESC')
+        else
+            all
+        end
+    end
+   
 end

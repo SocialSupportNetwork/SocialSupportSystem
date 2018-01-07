@@ -1,12 +1,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
 <%= render 'nav' %>
+
 <div align="center">
     <h1>Rick's Tips</h1>
 </div>
-<% subjects = Tip.select(:topic_id).distinct.where(approved: true).order(topic_id: :asc) %>
+<% subjects = @tips.select(:topic_id).distinct.where(approved: true).order(topic_id: :asc) %>
 <% if subjects.length == 0 %>
-    <h2 align="center">There are currently no tips</h2>
+    <h2 align="center">Sorry, we couldn't find any tips</h2>
 <% else %>
     <% subjects.each do |subject| %>
         <div>
@@ -26,7 +27,7 @@
                                         <div class="tip-dropdown-button"><i class="material-icons md-36">keyboard_arrow_right</i></div>
                                     </h2>
                                     <div class="tip-minimize-window">
-                                        <% tips = Tip.all.where(approved: true).where(topic_id: subject.topic_id).where(subtopic_id: subject_detail.subtopic_id) %>
+                                        <% tips = @tips.where(approved: true).where(topic_id: subject.topic_id).where(subtopic_id: subject_detail.subtopic_id) %>
                                         <% tips.each do |tip| %>
                                             <ul class="tip-detail-list">
                                                 <li>
@@ -57,7 +58,7 @@
 
 <div class="tip-blurb" align="center">
     <h1>What are Rick's Tips?</h1>
-    <p>Rick's Tips are our own constantly evoliving resource that is continuously being built by YOU the community</p>
+    <p>Rick's Tips are our own constantly evolving resource that is continuously being built by YOU the community</p>
 </div>
 
 <div align="center">
@@ -65,11 +66,11 @@
 </div>
 
 <%= form_for @tip do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title, placeholder: 'Ex. "Showering"', id: "title" %>
+    <%= f.label :title, "My Tip's Title" %>
+    <%= f.text_field :title, placeholder: "Tip Title...", maxlength: 50, id: "title" %>
     <div id="form" style="display: none;">
-        <%= f.label :body %>
-        <%= f.text_area :body, placeholder: 'Ex. "The clear thing goes on the inside!"' %>
+        <%= f.label :body, "My Tip"%>
+        <%= f.text_area :body, placeholder: "Tip Body...", maxlength: 500 %>
         <div class="field">
             <%= f.label :topic_id %>
             <%= f.collection_select :topic_id, Topic.order(:id), :id, :name, include_blank: false, include_blank: "Please select a topic" %>
