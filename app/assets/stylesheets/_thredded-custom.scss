@@ -3,7 +3,7 @@
 @import "thredded";
 body{
   //prevent safari artefacts on tip animations
-  -webkit-perspective: 1000;
+  //-webkit-perspective: 1000; //breaks chrome header
   -webkit-backface-visibility: hidden;
 } 
 
@@ -112,9 +112,7 @@ body{
   border-bottom: 1px solid;
   transition: border-bottom 2s;
   -webkit-transform:translate3d(0,0,0); //safari
-  
 }
-
 
 .tip-dropdown-button {
   display:inline-block; 
@@ -127,7 +125,6 @@ body{
   @include thredded-media-desktop-and-up {
     transform: translateY(-0.25rem);
   }
-    
 }
 
 .tip-minimize-window {
@@ -141,7 +138,7 @@ body{
     padding-left: 1rem;
   }
   li {
-    -webkit-transform:translate3d(0,0,0);
+    //-webkit-transform:translate3d(0,0,0);
     border-bottom: 1px solid;
   }
 }
@@ -162,6 +159,7 @@ body{
   }
   li {
     border-bottom: none;
+    //-webkit-transform:translate3d(0,0,0);
     #tip-body {
       margin-bottom: 0.5rem;
     }
