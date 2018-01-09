@@ -12,8 +12,10 @@ body {
   padding-bottom: 4rem;
   height: 100%;
   width:70%;
-  @include thredded-media-tablet-and-up {
-     //padding: 0 2rem 0.75rem 2rem;
+  @include thredded-media-tablet {
+    margin: auto;
+    width: 80%;
+    //padding: 0 2rem 0.75rem 2rem;
   }
   @include thredded-media-mobile { 
     margin: auto;
@@ -24,7 +26,7 @@ body {
     padding: 20px;
   }
   li {
-    font-size: 120%;
+    //font-size: 120%;
   }
   a:hover {
     color: $button-hover-background;

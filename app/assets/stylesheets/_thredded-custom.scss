@@ -47,6 +47,9 @@ body{
     @include thredded-media-mobile {
       width: 100%;
     }
+    @include thredded-media-tablet {
+      width: 50%;
+    }
     #submit-button {
       display: none;
     }
@@ -59,7 +62,6 @@ body{
   padding: 0;
   margin: 0;
   h2 {
-    font-size: 130%;
     margin: 0;
   }
   li {
@@ -82,12 +84,12 @@ body{
 }
 
 #second.tip-header {
-  font-size: 80%;
+  font-size: 0.95em;
   @include thredded-media-tablet-and-up {
-    font-size: 90%;
+    font-size: 1.15em;
   }
   @include thredded-media-desktop-and-up {
-    font-size: 110%;
+    font-size: 1.35em;
   }
   i {
     transform: scale(0.85);
@@ -95,12 +97,12 @@ body{
 }
 
 #third.tip-header {
-  font-size: 60%;
+  font-size: 0.9em;
   @include thredded-media-tablet-and-up {
-    font-size: 70%;
+    font-size: 1em;
   }
   @include thredded-media-desktop-and-up {
-    font-size: 85%;
+    font-size: 1.15em;
   }
   i {
     transform: scale(0.7);
@@ -135,10 +137,10 @@ body{
   list-style: none;
   margin: 0;
   @include thredded-media-mobile {
-    padding-left: 1rem;
+    padding-left: 0.75rem;
   }
   li {
-    //-webkit-transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
     border-bottom: 1px solid;
   }
 }
@@ -148,18 +150,18 @@ body{
   list-style: none;
   margin: 0;
   @include thredded-media-mobile {
-    padding-left: 1rem;
-    font-size: 50%;
+    padding-left: 0.75rem;
+    font-size: 0.85em;
   }
   @include thredded-media-tablet-and-up {
-    font-size: 60%;
+    font-size: 0.925em;
   }
   @include thredded-media-desktop-and-up {
-    font-size: 65%; //???
+    font-size: 1em;
   }
   li {
     border-bottom: none;
-    //-webkit-transform:translate3d(0,0,0);
+    -webkit-transform:translate3d(0,0,0);
     #tip-body {
       margin-bottom: 0.5rem;
     }
