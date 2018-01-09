@@ -5,10 +5,10 @@ class TipsController < ApplicationController
     @tip = Tip.new
   end
 
-  def new
-    @tips = Tip.all
-    @tip = Tip.new
-  end
+  # def new
+  #   # @tips = Tip.all
+  #   # @tip = Tip.new
+  # end
 
   def create
     @tip = Tip.new(tip_params)

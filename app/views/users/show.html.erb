@@ -31,7 +31,7 @@
     <%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
                                                locals: { posts: posts_page } %>
 <% end %>
-<h4 align="center" style="font-size: 0.9rem; color: grey;">Don't worry only you can see this page, a users profile information is only visible to that user in order to preserve anonymity</h4>
+<h4 align="center" style="font-size: 0.9rem; color: grey;">Don't worry only you can see this page. Your profile information is only visible to you in order to preserve anonymity</h4>
 <% else %>
   <% controller.redirect_to root_path %>
   <p class="thredded--alert thredded--alert-warning">You are not authorized to view this content</p>

@@ -5,7 +5,7 @@ class Tip < ActiveRecord::Base
     
     validates :title,
     presence: true,
-    length: {maximum: 50},
+    length: {maximum: 45},
     on: :create,
     allow_nil: false
     

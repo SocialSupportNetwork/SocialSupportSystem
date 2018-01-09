@@ -2,7 +2,7 @@
 <nav class="tips--moderation-navigation">
     <div class="tips--moderation-navigation--items">
         <%= form_tag(tips_path, method: :get) do %>
-            <%= text_field_tag :term, nil, placeholder: "Search tips..." %>
+            <%= text_field_tag :term, nil, placeholder: "Search tips" %>
             <%= submit_tag 'Search', name: nil, id: "submit-button" %>
         <% end %>
         <% if current_uri != "/tips" %>
