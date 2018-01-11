@@ -1,6 +1,15 @@
 @import "variables";
 @import "thredded-variables";
 @import "thredded";
+
+::selection {
+  background: $highlight-color; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: $highlight-color; /* Gecko Browsers */
+}
+
 body{
   //prevent safari artefacts on tip animations
   //-webkit-perspective: 1000; //breaks chrome header
@@ -53,6 +62,7 @@ body{
     #flame {
       cursor: pointer;
       fill: $brand-primary;
+      //fill: #FF6700; accent orange
       animation: show 1.5s ease;
       opacity: 1;
     }
