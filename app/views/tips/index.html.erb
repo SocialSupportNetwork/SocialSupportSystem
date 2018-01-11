@@ -9,6 +9,9 @@
 <% if subjects.length == 0 %>
     <h2 align="center">Sorry, we couldn't find any tips</h2>
 <% else %>
+<div id="tip-main-header">
+    <h1><span id="count"><%= @tips.where(approved: true).count %></span> Tips Available</h1>
+</div>
     <% subjects.each do |subject| %>
         <div>
             <div class="tip-dropdown">
@@ -60,7 +63,9 @@
 
 <div class="tip-blurb">
     <h1 align="center">What are Rick's Tips?</h1>
-    <p>Rick's Tips are our own constantly evolving resource that is continuously being built by YOU the community</p>
+    <p>Do you have any tips or advice that you think could help even one person somewhere? We want this to be a place you can put it. Rick's Tips are our own constantly evolving resource that is continuously being built by YOU the community. We want Rick's Tips to be a platform for our community member's voice's to be heard. Each tip submitted is completely anonymous, like the rest of Extinguish, and reviewed by one of our moderators before it is sorted and displayed to keep our tips as helpful as possible.</p>
+    <p>If you have any suggestions for new tip topics or subtopics feel free to <%= link_to 'contact us', "/contacts/new" %>!</p>
+    
 </div>
 
 <div align="center">

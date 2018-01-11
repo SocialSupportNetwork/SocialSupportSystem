@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/info" => "static#info"
   get "/terms" => "static#terms"
   get "/privacy" => "static#privacy"
+  get "/rules" => "static#rules"
   
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do

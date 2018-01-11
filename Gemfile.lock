@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/BillG18/thredded.git
-  revision: cfa4df4a1a7b6ec60b269533e59d22fc05d1c0ef
+  revision: fa275dba5512a86399d0c0017fce1ccfb8e67925
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
@@ -242,7 +242,7 @@ GEM
     mini_portile2 (2.3.0)
     minitest (5.11.1)
     moneta (1.0.0)
-    multi_json (1.12.2)
+    multi_json (1.13.0)
     multi_test (0.1.2)
     mustache (1.0.5)
     netrc (0.11.0)
@@ -396,9 +396,9 @@ GEM
     thread_safe (0.3.6)
     tilt (2.0.8)
     timeago_js (3.0.2)
-    turbolinks (5.0.1)
-      turbolinks-source (~> 5)
-    turbolinks-source (5.0.3)
+    turbolinks (5.1.0)
+      turbolinks-source (~> 5.1)
+    turbolinks-source (5.1.0)
     tzinfo (1.2.4)
       thread_safe (~> 0.1)
     uglifier (4.1.3)

@@ -16,6 +16,10 @@ body{
   }
 }
 
+.thredded--navigation {
+  font-size: 120%;
+}
+
 .thredded--currently-online {
   display: none;
 }
@@ -23,6 +27,63 @@ body{
 .thredded--post--avatar {
   display: none;
 }
+
+//-----Home-----
+.home-description {
+  font-size: 120%;
+  color: $banner-color;
+  h2 {
+    text-align: center;
+  }
+}
+
+.extinguish-logo {
+  display: none;
+}
+
+@include thredded-media-desktop-and-up {
+  .mobile-logo {
+   display: none; 
+  }
+
+  .extinguish-logo{
+    display: inline;
+    width: 100%;
+    fill: $banner-color;
+    #flame {
+      cursor: pointer;
+      fill: $brand-primary;
+      animation: show 1.5s ease;
+      opacity: 1;
+    }
+    .smoke {
+      animation: show 3s ease;
+      opacity: 1;
+    }  
+  }
+
+  .extinguish-logo.ignite {
+    #flame {
+      animation: hide 1.5s ease;
+      opacity: 0;
+    }
+    .smoke {
+      animation: hide 3s ease;
+      opacity: 0;
+    }  
+  }
+  @keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+}
+
+//-----Rick's Tips Moderation-----
 
 .tips--moderation-navigation {
   border-bottom: 1px solid;
@@ -75,6 +136,24 @@ body{
 
 }
 
+//-----Rick's Tips-----
+.tip-count-blurb {
+  color: $banner-color;
+}
+
+#tip-count {
+  color: $brand-primary;
+  margin: 0;
+  padding: 0;
+}
+
+#tip-main-header {
+  border-bottom: 1px solid;
+  #count {
+    color: $brand-primary;
+  }
+}
+
 .tip-header {
   display: inline-block;
   margin: 0;
@@ -102,7 +181,7 @@ body{
     font-size: 1em;
   }
   @include thredded-media-desktop-and-up {
-    font-size: 1.15em;
+    font-size: 1.2em;
   }
   i {
     transform: scale(0.7);
@@ -149,15 +228,15 @@ body{
   display: none;
   list-style: none;
   margin: 0;
+  font-size:  0.9em;
   @include thredded-media-mobile {
     padding-left: 0.75rem;
-    font-size: 0.85em;
   }
   @include thredded-media-tablet-and-up {
-    font-size: 0.925em;
+    font-size: 1em;
   }
   @include thredded-media-desktop-and-up {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   li {
     border-bottom: none;
@@ -181,4 +260,3 @@ body{
     font-size: 120%;
   }
 }
-
