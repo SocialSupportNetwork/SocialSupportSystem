@@ -62,8 +62,14 @@ interesting_articles = Thredded::Messageboard.create!(
 Thredded::TopicForm.new(
     title: 'Check out our forum rules before you post',
     content: <<-MARKDOWN,
-We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!
-[Our Rules](Extinguish.io/rules)
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
     MARKDOWN
     user: admin,
     messageboard: general,
@@ -74,8 +80,14 @@ We take moderation very seriously so make sure you're familiar with the rules be
 Thredded::TopicForm.new(
     title: 'Check out our forum rules before you post',
     content: <<-MARKDOWN,
-We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!
-[Our Rules](Extinguish.io/rules)
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
     MARKDOWN
     user: admin,
     messageboard: local_resources,
@@ -85,9 +97,15 @@ We take moderation very seriously so make sure you're familiar with the rules be
 
 Thredded::TopicForm.new(
     title: 'Check out our forum rules before you post',
-    content: <<-MARKDOWN,
-We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!
-[Our Rules](Extinguish.io/rules)
+    content:<<-MARKDOWN,
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
     MARKDOWN
     user: admin,
     messageboard: second_opinions,
@@ -98,8 +116,14 @@ We take moderation very seriously so make sure you're familiar with the rules be
 Thredded::TopicForm.new(
     title: 'Check out our forum rules before you post',
     content: <<-MARKDOWN,
-We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!
-[Our Rules](Extinguish.io/rules)
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
     MARKDOWN
     user: admin,
     messageboard: interesting_articles,

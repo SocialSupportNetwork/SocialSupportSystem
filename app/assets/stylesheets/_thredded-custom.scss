@@ -27,6 +27,9 @@ body{
 
 .thredded--navigation {
   font-size: 120%;
+  a {
+    font-size: 120%;
+  }
 }
 
 .thredded--currently-online {
@@ -50,6 +53,16 @@ body{
   display: none;
 }
 
+#quick-exit {
+  display: none;
+}
+
+#homebutton {
+  input {
+    font-size: 100%;
+  }
+}
+
 @include thredded-media-desktop-and-up {
   .mobile-logo {
    display: none; 
@@ -62,7 +75,7 @@ body{
     #flame {
       cursor: pointer;
       fill: $brand-primary;
-      //fill: #FF6700; accent orange
+      //fill: #FF6700; accent orange?
       animation: show 1.5s ease;
       opacity: 1;
     }
@@ -91,10 +104,16 @@ body{
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
+  
+  #quick-exit {
+    display: inline;
+    #shortcut {
+      color: $brand-primary;
+    }
+  }
 }
 
 //-----Rick's Tips Moderation-----
-
 .tips--moderation-navigation {
   border-bottom: 1px solid;
 }
@@ -269,4 +288,27 @@ body{
   p {
     font-size: 120%;
   }
+}
+
+//-----Resources-----
+
+#abuse-definition {
+  text-align: left; 
+  color: $banner-color; 
+  font-weight: normal; 
+  font-style: italic;
+}
+
+#attribution {
+  text-align: right; 
+  font-style: italic;
+}
+
+.resource-header {
+  color: $banner-color;
+}
+
+.resource-list {
+  font-weight: bold; 
+  list-style-type: none;
 }
