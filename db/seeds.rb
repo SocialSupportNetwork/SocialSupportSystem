@@ -1,70 +1,150 @@
 # frozen_string_literal: true
+require 'csv'
+
+puts "Importing tip topics..."
+CSV.foreach(Rails.root.join("topic.csv"), headers: true) do |row|
+  Topic.create! do |topic|
+    topic.name = row[0]
+    topic.id = row[1]
+    end
+end
+
+puts "Importing tip subtopics..."
+CSV.foreach(Rails.root.join("subtopic.csv"), headers: true) do |row|
+  Subtopic.create! do |subtopic|
+    subtopic.topic_id = row[0]
+    subtopic.name = row[1]
+  end
+end
+
+halo = User.create!(
+    username: "Halo",
+    password: "123456",
+    admin: true,
+    minimum_age: true,
+    terms_of_service: true,
+    screening: "bark!"
+)
+
 admin = User.create!(
     username: "Admin",
     password: "123456",
-    admin: true
+    admin: true,
+    minimum_age: true,
+    terms_of_service: true,
+    screening: "Administrator Account"
 )
 
-User.create!(
-    username: "MarkZuckerberg",
-    password: "facebook",
-    admin: false
-)
-
-User.create!(
-    username: "ElonMusk",
-    password: "spacex",
-    admin: false
-)
-
-User.create!(
-    username: "MarissaMayer",
-    password: "yahoosearch",
-    admin: true
-)
-
-User.create!(
-    username: "MegWhitman",
-    password: "hpcomputers",
-    admin: false
-)
-
-User.create!(
-    username: "SteveJobs",
-    password: "appleiscool",
-    admin: false
-)
-
-User.create!(
-    username: "SusanWojcicki",
-    password: "youtube",
-    admin: false
-)
-
-messageboard = Thredded::Messageboard.create!(
+general = Thredded::Messageboard.create!(
     name: 'General',
     slug: 'general',
-    description: 'Determine severity of specific situations by polling our community'
+    description: 'Determine the severity of specific situations by polling our community.'
 )
 
-Thredded::Messageboard.create!(
-    name: 'Emergency Situations',
-    slug: 'emergency-situations',
-    description: 'Post here if you have an emergency situation and need immediate help.'
+local_resources = Thredded::Messageboard.create!(
+    name: 'Local Resources',
+    slug: 'local-resources',
+    description: 'Post here to find out about resources available in your area from our community.'
 )
 
-Thredded::Messageboard.create!(
-    name: 'Seeking Outside Resources',
-    slug: 'seeking-outside-resources',
-    description: 'Post here if you would like advice on finding outside resources such as therapy or shelters.'
+second_opinions = Thredded::Messageboard.create!(
+    name: 'Second Opinions',
+    slug: 'second-opinions',
+    description: 'Has something felt different? Are you unsure about something that happened? Post here to just get a second (or third!) opinion from our community.'
+)
+
+interesting_articles = Thredded::Messageboard.create!(
+    name: 'Interesting Articles',
+    slug: 'interesting-articles',
+    description: "Have you come across any interesting articles that you'd like to share with the community? Post them here!"
 )
 
 Thredded::TopicForm.new(
-    title: 'Group Consensus',
+    title: 'Check out our forum rules before you post',
     content: <<-MARKDOWN,
-This is a test post
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
     MARKDOWN
     user: admin,
-    messageboard: messageboard
+    messageboard: general,
+    locked: true,
+    sticky: true
 ).save
 
+Thredded::TopicForm.new(
+    title: 'Check out our forum rules before you post',
+    content: <<-MARKDOWN,
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
+    MARKDOWN
+    user: admin,
+    messageboard: local_resources,
+    locked: true,
+    sticky: true
+).save
+
+Thredded::TopicForm.new(
+    title: 'Check out our forum rules before you post',
+    content:<<-MARKDOWN,
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
+    MARKDOWN
+    user: admin,
+    messageboard: second_opinions,
+    locked: true,
+    sticky: true
+).save
+
+Thredded::TopicForm.new(
+    title: 'Check out our forum rules before you post',
+    content: <<-MARKDOWN,
+**We take moderation very seriously so make sure you're familiar with the rules before you post to make sure your posts don't get removed!**
+    
+1. DO NOT identify yourself in any way
+2. If you suspect you know someone on the forum, DO NOT identify them in any way
+3. DO NOT use any information to find out real world facts about anyone on the forum
+4. Be kind, courteous, and respectful
+5. If any personally identifiable information (such as names, emails, phone numbers, etc.) is posted, it will be removed from the site as soon as possible.
+6. Any members that are disrespectful, inappropriate, or aggressive will be blocked.
+    MARKDOWN
+    user: admin,
+    messageboard: interesting_articles,
+    locked: true,
+    sticky: true
+).save
+
+Thredded::TopicForm.new(
+    title: 'The general forums',
+    content: <<-MARKDOWN,
+Welcome to the Extinguish forums! If you have something to say but don't think the other boards are a good fit post it here. 
+    MARKDOWN
+    user: admin,
+    messageboard: general
+).save
+
+Thredded::TopicForm.new(
+    title: 'Local resources can also be found on the tips page',
+    content: <<-MARKDOWN,
+Local resources that have been recommended by our community can also be found on "Rick's Tip's"!
+    MARKDOWN
+    user: admin,
+    messageboard: local_resources
+).save

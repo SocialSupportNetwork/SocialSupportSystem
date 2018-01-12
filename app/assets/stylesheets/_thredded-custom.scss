@@ -2,6 +2,20 @@
 @import "thredded-variables";
 @import "thredded";
 
+::selection {
+  background: $highlight-color; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+  background: $highlight-color; /* Gecko Browsers */
+}
+
+body{
+  //prevent safari artefacts on tip animations
+  //-webkit-perspective: 1000; //breaks chrome header
+  -webkit-backface-visibility: hidden;
+} 
+
 .thredded--main-container {
   // The padding and max-width are handled by the app's container.
   max-width: none;
@@ -11,62 +25,11 @@
   }
 }
 
-.popup {
-    position:absolute;
-    bottom:1rem;
-    right: 6rem;
-    display: inline-block;
-    cursor: pointer;
-}
-
-/* The actual popup */
-.popup .popuptext {
-    visibility: hidden;
-    width: 160px;
-    background-color: #c62b2b;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -80px;
-}
-
-/* Popup arrow */
-// .popup .popuptext::after {
-//     content: "";
-//     position: absolute;
-//     top: 100%;
-//     left: 50%;
-//     margin-left: -5px;
-//     border-width: 5px;
-//     border-style: solid;
-//     border-color: #555 transparent transparent transparent;
-// }
-
-/* Toggle this class when clicking on the popup container (hide and show the popup) */
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s
-}
-
-/* Add animation (fade in the popup) */
-@-webkit-keyframes fadeIn {
-    from {opacity: 0;} 
-    to {opacity: 1;}
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity:1 ;}
-}
-
-.popup .popuptext .internetsafety{
-    color: white;
+.thredded--navigation {
+  font-size: 120%;
+  a {
+    font-size: 120%;
+  }
 }
 
 .thredded--currently-online {
@@ -75,4 +38,277 @@
 
 .thredded--post--avatar {
   display: none;
+}
+
+//-----Home-----
+.home-description {
+  font-size: 120%;
+  color: $banner-color;
+  h2 {
+    text-align: center;
+  }
+}
+
+.extinguish-logo {
+  display: none;
+}
+
+#quick-exit {
+  display: none;
+}
+
+#homebutton {
+  input {
+    font-size: 100%;
+  }
+}
+
+@include thredded-media-desktop-and-up {
+  .mobile-logo {
+   display: none; 
+  }
+
+  .extinguish-logo{
+    display: inline;
+    width: 100%;
+    fill: $banner-color;
+    #flame {
+      cursor: pointer;
+      fill: $brand-primary;
+      //fill: #FF6700; accent orange?
+      animation: show 1.5s ease;
+      opacity: 1;
+    }
+    .smoke {
+      animation: show 3s ease;
+      opacity: 1;
+    }  
+  }
+
+  .extinguish-logo.ignite {
+    #flame {
+      animation: hide 1.5s ease;
+      opacity: 0;
+    }
+    .smoke {
+      animation: hide 3s ease;
+      opacity: 0;
+    }  
+  }
+  @keyframes hide {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes show {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  #quick-exit {
+    display: inline;
+    #shortcut {
+      color: $brand-primary;
+    }
+  }
+}
+
+//-----Rick's Tips Moderation-----
+.tips--moderation-navigation {
+  border-bottom: 1px solid;
+}
+
+.tips--moderation-navigation--items {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  #nav-link {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include thredded-media-mobile {
+      position: relative;
+      text-align: right;
+      margin-top: 1rem;
+    }
+  }
+  form {
+    width: 25%;
+    @include thredded-media-mobile {
+      width: 100%;
+    }
+    @include thredded-media-tablet {
+      width: 50%;
+    }
+    #submit-button {
+      display: none;
+    }
+  }
+}
+
+#tip-moderation-list {
+  list-style: none;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  h2 {
+    margin: 0;
+  }
+  li {
+    text-align: left;
+  }
+  .table-button {
+    margin: 1rem;
+    margin-left: 0;
+    display: table;
+  }
+
+}
+
+//-----Rick's Tips-----
+.tip-count-blurb {
+  color: $banner-color;
+}
+
+#tip-count {
+  color: $brand-primary;
+  margin: 0;
+  padding: 0;
+}
+
+#tip-main-header {
+  border-bottom: 1px solid;
+  #count {
+    color: $brand-primary;
+  }
+}
+
+.tip-header {
+  display: inline-block;
+  margin: 0;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+#second.tip-header {
+  font-size: 0.95em;
+  @include thredded-media-tablet-and-up {
+    font-size: 1.15em;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 1.35em;
+  }
+  i {
+    transform: scale(0.85);
+  }
+}
+
+#third.tip-header {
+  font-size: 0.9em;
+  @include thredded-media-tablet-and-up {
+    font-size: 1em;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 1.2em;
+  }
+  i {
+    transform: scale(0.7);
+  }
+}
+
+.tip-dropdown {
+  width: 100%; 
+  border-bottom: 1px solid;
+  transition: border-bottom 2s;
+  -webkit-transform:translate3d(0,0,0); //safari
+}
+
+.tip-dropdown-button {
+  display:inline-block; 
+  float:right;
+  transform: translateY(-0.65rem);
+  height: 20px; //FIND BETTER SOLUTION FOR KEEPING ARROW ABOVE BORDER
+  @include thredded-media-tablet-and-up {
+    transform: translateY(-0.5rem);
+  }
+  @include thredded-media-desktop-and-up {
+    transform: translateY(-0.25rem);
+  }
+}
+
+.tip-minimize-window {
+  display: none;
+}
+
+.tip-detail-list {
+  list-style: none;
+  margin: 0;
+  @include thredded-media-mobile {
+    padding-left: 0.75rem;
+  }
+  li {
+    -webkit-transform:translate3d(0,0,0);
+    border-bottom: 1px solid;
+  }
+}
+
+.tip-individual-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+  font-size:  0.9em;
+  @include thredded-media-mobile {
+    padding-left: 0.75rem;
+  }
+  @include thredded-media-tablet-and-up {
+    font-size: 1em;
+  }
+  @include thredded-media-desktop-and-up {
+    font-size: 1.2em;
+  }
+  li {
+    border-bottom: none;
+    -webkit-transform:translate3d(0,0,0);
+    #tip-body {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+#tip-bottom {
+  height: 2rem;
+}
+
+.tip-blurb {
+  width: 100%;
+  h1 {
+    margin: 0;
+  }
+  p {
+    font-size: 120%;
+  }
+}
+
+//-----Resources-----
+
+#abuse-definition {
+  text-align: left; 
+  color: $banner-color; 
+  font-weight: normal; 
+  font-style: italic;
+}
+
+#attribution {
+  text-align: right; 
+  font-style: italic;
+}
+
+.resource-header {
+  color: $banner-color;
+}
+
+.resource-list {
+  font-weight: bold; 
+  list-style-type: none;
 }

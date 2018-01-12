@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171213190051) do
+ActiveRecord::Schema.define(version: 20180105220154) do
 
   create_table "advice", force: :cascade do |t|
     t.string "title"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 20171213190051) do
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
     t.index ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
+  end
+
+  create_table "subtopics", force: :cascade do |t|
+    t.string "name"
+    t.integer "topic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "thredded_categories", force: :cascade do |t|
@@ -207,6 +214,7 @@ ActiveRecord::Schema.define(version: 20171213190051) do
     t.datetime "moderation_state_changed_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "moderation_id"
     t.index ["latest_activity_at"], name: "index_thredded_user_details_on_latest_activity_at"
     t.index ["moderation_state", "moderation_state_changed_at"], name: "index_thredded_user_details_for_moderations"
     t.index ["user_id"], name: "index_thredded_user_details_on_user_id"
@@ -266,7 +274,15 @@ ActiveRecord::Schema.define(version: 20171213190051) do
   create_table "tips", force: :cascade do |t|
     t.string "title"
     t.string "body"
-    t.string "subject"
+    t.integer "topic_id"
+    t.integer "subtopic_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "approved", default: false
+  end
+
+  create_table "topics", force: :cascade do |t|
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -286,6 +302,7 @@ ActiveRecord::Schema.define(version: 20171213190051) do
     t.boolean "admin", default: false, null: false
     t.string "username"
     t.boolean "canTalk", default: true, null: false
+    t.text "screening"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

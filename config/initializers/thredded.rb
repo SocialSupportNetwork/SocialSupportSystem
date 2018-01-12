@@ -10,7 +10,7 @@ Thredded.user_class = 'User'
 
 # User name column, used in @mention syntax and *must* be unique.
 # This is the column used to search for users' names if/when someone is @ mentioned.
-Thredded.user_name_column = :display_name
+Thredded.user_name_column = :username
 
 # User display name method, by default thredded uses the user_name_column defined above
 # You may want to use :to_s or some more elaborate method
@@ -47,7 +47,7 @@ Thredded.moderator_column = :admin
 Thredded.admin_column = :admin
 
 # Whether posts and topics pending moderation are visible to regular users.
-Thredded.content_visible_while_pending_moderation = true
+Thredded.content_visible_while_pending_moderation = false
 
 # Whether users that are following a topic are listed on topic page.
 Thredded.show_topic_followers = false

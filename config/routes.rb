@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "/info" => "static#info"
   get "/terms" => "static#terms"
   get "/privacy" => "static#privacy"
+  get "/rules" => "static#rules"
   
   scope path: 'admin' do
     authenticate :user, lambda { |u| u.admin? } do
@@ -20,8 +21,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:show]
   mount Thredded::Engine => '/forum'
-
+  
   resources :tips
+
+  match '/tip-moderation',     to: 'tips#moderation', via: 'get'
   
   match '/contacts',     to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]

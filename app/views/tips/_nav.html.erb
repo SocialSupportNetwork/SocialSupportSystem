@@ -1,0 +1,17 @@
+<% current_uri = request.env['PATH_INFO'] %>
+<nav class="tips--moderation-navigation">
+    <div class="tips--moderation-navigation--items">
+        <%= form_tag(tips_path, method: :get) do %>
+            <%= text_field_tag :term, nil, placeholder: "Search tips" %>
+            <%= submit_tag 'Search', name: nil, id: "submit-button" %>
+        <% end %>
+        <% if current_uri != "/tips" %>
+            <div id="nav-link"><%= link_to "Back", "/tips" %></div>
+        <% end %>
+        <% if current_uri != "/tip-moderation" %>
+            <% if current_user.admin %> 
+                <div id="nav-link"><%= Tip.where(approved: false).count %> tips in <%= link_to "moderation", "/tip-moderation" %> queue</div>
+            <% end %>
+        <% end %>
+    </div>
+</nav>

@@ -3,7 +3,8 @@ class CreateTips < ActiveRecord::Migration[5.1]
     create_table :tips do |t|
       t.string :title
       t.string :body
-      t.string :subject
+      t.integer :topic_id
+      t.integer :subtopic_id
 
       t.timestamps
     end

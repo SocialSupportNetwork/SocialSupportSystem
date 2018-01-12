@@ -1,14 +1,15 @@
 <div align="center">
   <h1>Send Us a Message</h1>
 </div>
+<p>Have a question about your profile or moderation status? Have a good idea for a tip category or subcategory? Have a suggestion for the site? Let us know, we'd love to hear from you!</p>
   <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
     <%= f.input :name, :required => true, maxlength: 100 %>
-    <%= f.input :email, :required => true, maxlength: 100 %>
+    <%= f.input :email, :required => true, maxlength: 100, placeholder: "If you don't want to provide your own email you can use anonymous@extinguish.io" %>
     <%= f.input :message, :as => :text, :required => true, maxlength: 500 %>
     <div>
       </br>
       <%= f.button :submit, 'Send message', :class=> "btn btn-primary" %>
     </div>
   <% end %>
-
+<p>We ask that anyone who contacts us submits a secure and private email so that we can respond. This email will not be stored for later use.</p>
 

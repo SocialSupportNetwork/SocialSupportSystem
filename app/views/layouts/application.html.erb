@@ -2,9 +2,9 @@
 <html>
   <head>
     <title><%= "Extinguish" %></title>
-    <%= favicon_link_tag 'favicon.ico' %>
-    <%= favicon_link_tag 'apple-touch-icon.png',
-                         rel: 'apple-touch-icon', type: 'image/png' %>
+    
+    <%= render 'application/favicon' %>
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag current_theme, media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -15,6 +15,10 @@
                                 'data-turbolinks-track': 'reload' %>
 
       <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+      <meta name="description" content="An anonymous social support network." />
+      <meta property="og:title" content="Extinguish" />
+      <meta property="og:description" content="An anonymous social support network." />
+      <meta property="og:image" content=<%= asset_path('preview_logo.png') %>/>
 </head>
 
   <body class="app">

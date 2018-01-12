@@ -1,5 +1,6 @@
 @import "./header/theme_selector";
 
+
 .app-header {
   font-size: 110%;
   z-index: 5;
@@ -19,32 +20,169 @@
     background: $secondary-banner-color;
     height: 3.5rem;
     transition: height 0.25s;
-    color: white;
+    color: $body-background-color;
+    cursor: default;
     a {
-      color: white;
+      color: $body-background-color;
+      margin: 0 10px;
     }
     a:hover {
       color: $banner-color;
     }
+    .mobile-menu-content {
+      display: none;
+    }
     .left-menu {
+      position: absolute;
       height: 40px;
-      //margin: 0;
-      //padding: 0;
+      width: 40%;
+      right: 52%;
+      z-index: 1;
+      }
+      .left-menu-content {
+        position: absolute;
+        right: 0;
       }
     .center-icon {
+      position: absolute;
       height: 40px;
-      display: inline-block;
-      vertical-align:middle;
+      width: 100%;
+    }
+    .center-icon-content {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 15%);
+      a {
+        padding: 0;
+        margin: 0;
       }
-    .right-menu {
-      height:40px;
+    }
+    .icon {
+      display: block;
+      fill: $body-background-color;
+      transition: all 0.15s ease-in-out;
+      #flame {
+        transform: translate(-496px,-391px) scale(1) ; //initial state included for safari (else flame doesnt return)
       }
-      @include thredded-media-mobile { 
-        font-size: 65%;
-        .center-icon {
-          padding-top: 0.5rem;
+    }
+    .icon:hover {
+      transform: scale(1.2);
+      fill: $banner-color;
+      #flame {
+        @include thredded-media-desktop-and-up {
+          transform: scale(0);
         }
       }
+    }
+    
+    .right-menu {
+      position: absolute;
+      height: 40px;
+      width: 40%;
+      left: 52%;
+      z-index: 1;
+      }
+    .right-menu-content {
+      position: absolute;
+      left: 0;
+    }
+      @include thredded-media-tablet { 
+        vertical-align: center;
+        .left-menu {
+          display: none;
+        }
+        .center-icon {
+          display: none;
+        }
+        .right-menu {
+          display: none;
+        }
+        .mobile-menu {
+          display: table;
+          margin: 0 auto;
+          font-size: 50%;
+        }
+        .mobile-menu-content {
+          display: inline-block;
+          .bottom-navbar {
+            padding: 0;
+            padding-top: 0%;
+            margin: 0;
+            background: none;
+            .icon {
+              transform: scale(0.9);
+            }
+            .icon:hover {
+              transform: scale(0.9);
+              
+            }
+          }
+          ul {
+            list-style: none;
+            li {
+              height: 36px;
+              display: inline;
+              padding:0 15px;
+              vertical-align: top;
+              text-align: center;
+              a {
+                padding: 0;
+              }
+              .caption {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      @include thredded-media-mobile {
+        vertical-align: center;
+        .left-menu {
+          display: none;
+        }
+        .center-icon {
+          display: none;
+        }
+        .right-menu {
+          display: none;
+        }
+        .mobile-menu {
+          display: table;
+          margin: 0 auto;
+          font-size: 50%;
+        }
+        .mobile-menu-content {
+          display: inline-block;
+          .bottom-navbar {
+            padding: 0;
+            padding-top: 0%;
+            margin: 0;
+            background: none;
+            .icon {
+              transform: scale(0.9);
+            }
+            .icon:hover {
+              transform: scale(0.9);
+            }
+          }
+          ul {
+            list-style: none;
+            li {
+              height: 36px;
+              display: inline;
+              //padding:0 1px;
+              vertical-align: top;
+              text-align: center;
+              a {
+                padding: 0;
+              }
+              .caption {
+                display: block;
+              }
+            }
+          }
+        }
+  }
     }
   a {
     display: inline-block;
@@ -70,6 +208,9 @@
       .right-menu {
         display: none;
       }
+      .mobile-menu {
+        display: none;
+      }
     }
   }
 .app-nav-logo {
@@ -83,10 +224,11 @@
  position: fixed;
  top: 0;
  right: 0;
-
+ a {
+   color: $brand-primary;
+ }
   @include thredded-media-mobile {
     font-size: 0;
-
     a {
       margin-left: 0.4rem;
       font-size: 1rem;
@@ -98,24 +240,15 @@
 //footer css
 .app-footer {
   background: $banner-color;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
   color: $body-background-color;
+  cursor: default;
 }
 
-.desktopfooter {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 5rem;
-  
-  //margin-top: 7rem;
-  //margin-bottom: 5rem;
-  text-align: center;
-  //border: 5px;
+#desktopfooter {
+  padding-top: 15px;
   a {
     display: inline-block;
-    padding: 1rem 0;
   }
   
   

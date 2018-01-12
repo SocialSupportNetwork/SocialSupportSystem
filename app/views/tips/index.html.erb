@@ -1,20 +1,128 @@
-<div align="center">
-<h1>Tips</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 
-<table>
-    <thead>
-        <th width=20%>Title</th>
-        <th width=60%>Advice</th>
-        <th width=20%>Subject</th>
-    </thead>
-    <tbody>
-<% @tips.each do |tip| %>
-    <tr>
-        <td><%= tip.title %></td>
-        <td><%= tip.body %></td>
-        <td><%= tip.subject %></td>
-    </tr>
-<% end %>
-    </tbody>
-</table>
+<%= render 'nav' %>
+
+<div align="center">
+    <h1>Rick's Tips</h1>
 </div>
+<% subjects = @tips.select(:topic_id).distinct.where(approved: true).order(topic_id: :asc) %>
+<% if subjects.length == 0 %>
+    <h2 align="center">Sorry, we couldn't find any tips</h2>
+<% else %>
+<div id="tip-main-header">
+    <h1><span id="count"><%= @tips.where(approved: true).count %></span> Tips Available</h1>
+</div>
+    <% subjects.each do |subject| %>
+        <div>
+            <div class="tip-dropdown">
+                <h2 id="first" class="tip-header">
+                    <%= subject.topic.name %>
+                    <div class="tip-dropdown-button"><i class="material-icons md-36">keyboard_arrow_right</i></div>
+                </h2>
+                <div class="tip-minimize-window">
+                    <% subject_details = subjects.select(:subtopic_id).distinct.order(subtopic_id: :asc) %><!--.limit(10)-->
+                    <% subject_details.each do |subject_detail| %>
+                        <% if subject_detail.topic_id == subject.topic_id %>
+                            <ul class="tip-detail-list">
+                                <li>
+                                    <h2 id="second" class="tip-header">
+                                        <%= subject_detail.subtopic.name %>
+                                        <div class="tip-dropdown-button"><i class="material-icons md-36">keyboard_arrow_right</i></div>
+                                    </h2>
+                                    <div class="tip-minimize-window">
+                                        <% tips = @tips.where(approved: true).where(topic_id: subject.topic_id).where(subtopic_id: subject_detail.subtopic_id) %>
+                                        <% tips.each do |tip| %>
+                                            <ul class="tip-detail-list">
+                                                <li>
+                                                    <h2 id="third" class="tip-header">
+                                                        <%= tip.title.split.map(&:capitalize)*' ' %>
+                                                        <div class="tip-dropdown-button"><i class="material-icons md-36">keyboard_arrow_right</i></div>
+                                                    </h2>
+                                                    <ul class="tip-individual-list">
+                                                        <li>
+                                                            <div id="tip-body">
+                                                                <%= tip.body %>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        <% end %>
+                                    </div>
+                                </li>
+                            </ul>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% end %>
+
+<div id="tip-bottom"></div>
+
+<div class="tip-blurb">
+    <h1 align="center">What are Rick's Tips?</h1>
+    <p>Do you have any tips or advice that you think could help someone somewhere? We want this to be a place you can put it. Rick's Tips are our own constantly evolving resource that is continuously being built by YOU the community. We want Rick's Tips to be a platform for our community member's voice's to be heard. Each tip submitted is completely anonymous, like the rest of Extinguish, and reviewed by one of our moderators before it is sorted and displayed to keep our tips as helpful as possible.</p>
+    <p>If you have any suggestions for new tip topics or subtopics feel free to <%= link_to 'contact us', "/contacts/new" %>!</p>
+    
+</div>
+
+<div align="center">
+    <h1 style=" margin-bottom: 0">Submit a new tip!</h1>
+</div>
+
+<%= form_for @tip do |f| %>
+    <%= f.label :title, "Title" %>
+    <%= f.text_field :title, placeholder: 'Ex. "Walk In Groups"', :required => true, maxlength: 45, id: "title" %>
+    <div id="form" style="display: none;">
+        <%= f.label :body, "Content"%>
+        <%= f.text_area :body, placeholder: 'Ex. "Even when you are close to home always walk in groups at night."', :required => true, maxlength: 500 %>
+        <div class="field">
+            <%= f.label :topic_id %>
+            <%= f.collection_select :topic_id, Topic.order(:id), :id, :name, include_blank: false, include_blank: "Please select a topic" %>
+        </div>
+        <div class="field">
+            <%= f.label :subtopic_id, "Subtopic" %>
+            <%= f.grouped_collection_select :subtopic_id, Topic.order(:id), :subtopics, :name, :id, :name, :required => true, include_blank: true %>
+        </div>
+        <%= submit_tag "Submit" %>
+    </div>
+<% end %>
+
+<script>
+$(".tip-header").click(function(){
+    if($(this.children[0]).html() == '<i class="material-icons md-36">keyboard_arrow_right</i>'){
+        $(this.children[0]).html('<i class="material-icons md-36">keyboard_arrow_down</i>');
+    }
+    else{
+        $(this.children[0]).html('<i class="material-icons md-36">keyboard_arrow_right</i>');
+    }
+    $(this.parentNode.children[1]).slideToggle();
+});
+
+$("#title").focus(function(){
+    $("#form").slideDown();
+});
+
+jQuery(function() {
+  var subtopics;
+  $('#tip_subtopic_id').parent().hide();
+  subtopics = $('#tip_subtopic_id').html();
+  console.log(subtopics);
+  return $('#tip_topic_id').change(function() {
+    var topic, escaped_topic, options;
+    topic = $('#tip_topic_id :selected').text();
+    escaped_topic = topic.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1');
+    options = $(subtopics).filter("optgroup[label=" + escaped_topic + "]").html();
+    console.log(options);
+    if (options) {
+      $('#tip_subtopic_id').html(options);
+      return $('#tip_subtopic_id').parent().show();
+    } else {
+      $('#tip_subtopic_id').empty();
+      return $('#tip_subtopic_id').parent().hide();
+    }
+  });
+});
+</script>

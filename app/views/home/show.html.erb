@@ -1,35 +1,37 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
 <body>
+<center>
+    <div class="mobile-logo"><img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:100%;"></div>
+    <div class="extinguish-logo"><%= inline_svg "Full-logo.svg", class: 'full-logo' %></div>
+</center>
+
+<div class=home-description>
+    <h2>What is Extinguish?</h2>
+    <p>Extinguish™ is a support network committed to ending domestic violence by extinguishing gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide support. All users on Extinguish are completely anonymous. You must be approved by one of our moderators before your posts are visible to other users.</p>
+    <h2>What is Gaslighting?</h2>
+    <p>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.</p>
+    <h2>Where do I Begin?</h2>
+    <p>In order to maximize security, you must create an account to access Extinguish. All users must be approved by one of our moderators before their posts are visible to other users. We do not ask for any personal potentially identifying information, like email, so you must remember your username and password. This is done because we want this site and our community to remain as secure as possible.</p>
+    <h2>How to Use Our Forum</h2>
+    <p>Each post and comment you make will be anonymized. To start, first log in/sign up and navigate to our "Forum" page located at the top of every page. Once there, choose the topic that most fits your situation and click on it. Then you can create a new post. To read through other posts, navigate to the topic and click the posts to view them. To comment, go to the bottom of a post, write a response in the "Comment" section, and press the "Reply" button.</p>
+    <br />
+    <!--Disclaimer-->
+    <p>Extinguish is NOT a replacement for professional help and all of the advice found here is from our own community of users like you. Any opinions, advice, statements or other information contained in any comments posted by any third party are the opinions of the author of that comment and not of Extinguish. The fact that a particular comment is posted on our forum does not mean that Extinguish has endorsed that comment in any way or verified the accuracy, completeness or usefulness of any comment. Information found on Extinguish is for informational purposes only and you should rely on any advice found here at your own risk. </p>    
+    <div id="homebutton" align="center">
+        <%= button_to "Sign Up Now", "/users/sign_up", :method => "get" %>
+    </div>
+</div>
 
 <center>
-    <img src=<%= asset_path('Logo_1.png') %> alt="logo" style="width:100%;">
-    <!--<h1>Users Must Sign In To Access Forum</h1>-->
-</center>
-<div class=home-description>
-<h2>What is Extinguish?</h2>
-<p>Extinguish is a support network committed to ending domestic violence by putting out gaslights one case at a time. We do this with the help of our growing community of users whose combined experience provide anonymous support.</p>
-<h2>What is Gaslighting?</h2>
-<p>Gaslighting is the process of manipulating someone via psychological means with the intent of making them question their own sanity.</p>
-<h2>Where do I Begin?</h2>
-<p>In order to maximize security, you must create an account to access our forums. We do not ask for any personal information so you must remember your username and password. We want our site to be absolutely secure, so no email recovery option is available.</p>
-<h2>How to Use Our Forum</h2>
-<p>Each post and comment you make will be anonymized. To start, first log in/sign up and navigate to our "Forum" page located at the top of every page. Once there, choose the topic that most fits your situation and click on it. Then you can create a new post. To read through other posts, navigate to the topic and click the posts to view them. To comment, press the "Comment" button and write a response.</p>
-    <p>To quickly exit Extinguish at any time press "ctrl+x" on your keyboard</p>
-</div>
-<center>
-    <div id=homebutton>
-    <%= button_to "Sign Up Now", "/users/sign_up", :method => "get" %>
+    <div id="quick-exit">
+        <p>To quickly exit Extinguish at any time press <span id="shortcut">ctrl+x</span> on your keyboard</p>
     </div>
 </center>
-<style>
-    .home-description {
-        text-align: center;
-        font-size: 120%;
-        color: $banner-color;
-    h2 {
-        font-weight: bold;
-        color: green;
-        }
-    }
-</style>
-</body>
 
+<script>
+$(".extinguish-logo").click(function () {
+    $(this).toggleClass('ignite');
+});
+</script>
+</body>

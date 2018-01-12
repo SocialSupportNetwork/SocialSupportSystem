@@ -1,14 +1,17 @@
+
 <%
   user = @user
   user_detail = user.thredded_user_detail
 %>
+<% if user == current_user %>
 <h1>
-  <%= image_tag Thredded.avatar_url.call(user), class: 'thredded--user--avatar' %><%= user.thredded_display_name %>
+  <%= user.thredded_display_name %>
 </h1>
-<ul>
-  <% if user == current_user %>
+  
+    <h3>Current Moderation Status: <%= user_detail.moderation_state.to_s.humanize %></h3>
     <%= link_to t('nav.edit_my_account'), edit_user_registration_path %>
-  <% end %>
+    
+<ul>
   <li><%= t 'thredded.users.user_since_html', time_ago: time_ago(user.created_at) %></li>
   <% if user_detail.last_seen_at %>
       <li><%= t 'thredded.users.last_active_html', time_ago: time_ago(user_detail.last_seen_at) %></li>
@@ -27,4 +30,9 @@
     <h2><%= t 'thredded.users.recent_activity' %></h2>
     <%= Thredded::ApplicationController.render partial: 'thredded/users/posts',
                                                locals: { posts: posts_page } %>
+<% end %>
+<!--<h4 align="center" style="font-size: 0.9rem; color: grey;">Don't worry only you can see this page. Your profile information is not visible to other users</h4>-->
+<% else %>
+  <% controller.redirect_to root_path %>
+  <p class="thredded--alert thredded--alert-warning">You are not authorized to view this content</p>
 <% end %>
