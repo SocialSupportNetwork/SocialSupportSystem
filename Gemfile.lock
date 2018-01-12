@@ -6,7 +6,7 @@ GIT
 
 GIT
   remote: https://github.com/BillG18/thredded.git
-  revision: c75fd9faedda32d3baf574b4da8e50b823ee13e0
+  revision: 02a23c1cefab1e3c62cfcb9df69779e323b22e86
   specs:
     thredded (0.13.4)
       active_record_union (>= 1.2.0)
