@@ -134,7 +134,7 @@ Thredded::TopicForm.new(
 Thredded::TopicForm.new(
     title: 'The general forums',
     content: <<-MARKDOWN,
-Welcome to the Extinguish forums! If you have something to say but don't think the other borads are a good fit post it here. 
+Welcome to the Extinguish forums! If you have something to say but don't think the other boards are a good fit post it here. 
     MARKDOWN
     user: admin,
     messageboard: general
